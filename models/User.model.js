@@ -1,6 +1,5 @@
 const { Schema, model } = require('mongoose');
 
-// TODO: Please make sure you edit the user model to whatever makes sense in this case
 const userSchema = new Schema({
 	username: {
 		type: String,
@@ -11,11 +10,42 @@ const userSchema = new Schema({
 		type: String,
 		required: true
 	},
-	email: {
-		type: String,
+	age: {
+		type: Number,
+		min: 18,
 		required: true
 	},
-	// favorites: [{ type: Schema.Types.ObjectId, ref: 'Room', default: [] }]
+	name: {
+		type: String,
+		required: true,
+		minLength: 3
+	},
+	interests: {
+		type: [String],
+		min: 1
+	},
+	aboutMe: {
+		type: String,
+		maxLength: [250, "You can't have more than 250 characters."]
+	},
+	campus: {
+		type: String,
+		enum: {
+			value: ["Madrid", "Barcelona", "Miami", "Berlín", "Paris", "Amsterdam"]
+		},
+		required: [true, "You must select a campus."]
+	},
+	profileImg: {
+		type: String,
+		required: [true, "You must provide a profile picture."]
+	},
+	photos: [{ type: Schema.Types.ObjectId, ref: 'Photo', default: [] }],
+	liked: [{ type: Schema.Types.ObjectId, ref: 'User', default: [] }],
+	disliked: [{ type: Schema.Types.ObjectId, ref: 'User', default: [] }],
+	matches: [{ type: Schema.Types.ObjectId, ref: 'Match', default: [] }]
+},
+{
+    timestamps: true
 });
 
 const User = model('User', userSchema);

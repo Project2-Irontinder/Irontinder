@@ -1,20 +1,26 @@
 require('dotenv').config()
 
-var createError = require('http-errors');
-var express = require('express');
+const createError = require('http-errors');
+const express = require('express');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+const indexRouter = require('./routes/index');
+const authRouter = require('./routes/auth.routes');
+const swipeRouter = require('./routes/swipe.routes');
+const profileRouter = require('./routes/profile.routes');
+const matchesRouter = require('./routes/matches.routes');
 
-var app = express();
+const app = express();
 
 // Functional curling style of loading configuration
 require('./config/db')
 require('./config/global')(app)
 
 
+app.use('/matches', matchesRouter);
+app.use('/profile', profileRouter);
+app.use('/swipe', swipeRouter);
+app.use('/', authRouter);
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

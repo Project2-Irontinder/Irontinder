@@ -1,6 +1,6 @@
-var express = require('express');
+const express = require('express');
 
-var logger = require('morgan');
+const logger = require('morgan');
 
 const cookieParser = require("cookie-parser");
 
@@ -38,14 +38,14 @@ module.exports = (app) => {
 
   app.use(
 		session({
-			secret: 'Globtrotters-secret',
+			secret: process.env.SESSION_SECRET,
 			resave: false,
 			saveUninitialized: true,
 			cookie: {
 				maxAge: 24 * 60 * 60 * 1000
 			},
 			store: MongoStore.create({
-				mongoUrl: `${process.env.MONGODB_URI}/${process.env.DB_NAME}`
+				mongoUrl: process.env.MONGODB_URI
 			})
 		})
 	);

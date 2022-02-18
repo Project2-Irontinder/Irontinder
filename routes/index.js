@@ -1,16 +1,15 @@
 
 
-var express = require('express');
-var router = express.Router();
+const express = require('express');
+const router = express.Router();
 
-const User = require("../models/User.model")
-const Api = require("../apis/api")
+const User = require("../models/User.model");
+const Api = require("../apis/api");
+const isLoggedIn = require('../middleware/isLoggedIn');
 
 /* GET home page. */
-router.get('/', (req, res)=> {
-  User.find().then((users)=>
-  res.render('index', { title: 'Express', users})
-  )
+router.get('/', isLoggedIn, (req, res)=> {
+  res.redirect(`/swipe/show/${   ____req.session.userId____   }`);
 });
 
 /* GET from API */
