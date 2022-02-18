@@ -1,6 +1,6 @@
 function isNotLoggedIn(req, res, next) {
-	if (req.session.currentUser) {
-		res.redirect('/private/profile');
+	if (req.session.userId) {
+		res.redirect(`/profile/${req.session.userId}`);
 	} else {
 		next();
 	}

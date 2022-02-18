@@ -1,4 +1,5 @@
 const axios = require("axios");
+
 class Api {
   constructor(baseURL) { //baseUrl could be overwritten in the route that uses the API
     this.baseURL = baseURL
