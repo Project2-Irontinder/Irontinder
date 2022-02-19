@@ -16,7 +16,7 @@ router.route("/signup")
 .get(isNotLoggedIn, (req, res) => {
   res.render("auth/signup")
 })
-.post((req, res, next) => {
+.post(fileUploader.single("profileImg"), (req, res, next) => {
   const {username, password, age, name, interests, aboutMe, campus} = req.body;
   const profileImg = req.file.path;
 
