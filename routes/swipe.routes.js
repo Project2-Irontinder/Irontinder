@@ -1,47 +1,95 @@
 const express = require('express');
 const router = express.Router();
 const User = require("../models/User.model")
+const Match = require("../models/Match.model")
 
 
-/* GET users listing. */
 router.get('/show/:userId', (req, res) => {
   User.findById(req.params.userId)
     .then(user => {
-      //console.log(random)
-      res.render("pages/swipe", getRandomUser(user))
-    
+      const randomUser = getRandomUser(user)
+      res.render("pages/swipe", { randomUser, activeUser: user })
     })
 });
 
-router.post("/like/:userId/:likedId", (req, res) => {
 
+
+router.post("/like/:userId/:likedId", (req, res) => {
+  
+  User.findById(req.params.likedId)
+    .then(likedUser => {
+      User.findByIdAndUpdate(req.params.userId, { $push: { liked: likedUser._id } })
+        .then(user => {
+          checkMatch(user._id, likedUser._id)
+        })
+    })
+    .then(() => res.redirect(`/swipe/show/${req.params.userId}`))
 })
+
+
+
 
 router.post("/dislike/:userId/:dislikedId", (req, res) => {
-
+  User.findById(req.params.dislikedId)
+    .then(dislikedUser => {
+      User.findByIdAndUpdate(req.params.userId, { $push: { disliked: dislikedUser._id } })
+    })
+    .then(() => res.redirect(`/swipe/show/${req.params.userId}`))
 })
+
+
 
 router.post("/filter/:userId", (req, res) => {
+  req.session.filter = req.body.campus
 
+  res.redirect(`/swipe/show/${req.params.userId}`)
 })
+
+
 
 const getRandomUser = (user) => {
   const liked = user.liked;
   const disliked = user.disliked
 
-  console.log(liked)
-  console.log(disliked)
+  const filter = req.session.filter || "none"
+
 
   User.find({
     $and: [
       { "_id": { $nin: liked } },
-      { "_id": { $nin: disliked } }
+      { "_id": { $nin: disliked } },
+      { campus: { $eq: filter } }
     ]
   })
     .then(users => {
       const randomUser = Math.floor(Math.random() * users.length)
-      //console.log(users[randomUser])
       return users[randomUser]
+    })
+}
+
+const checkMatch = (firstUserId, secondUserId) => {
+
+  User.findById(secondUserId)
+    .then(secondUser => {
+
+      const liked = secondUser.liked
+
+      if (liked.includes(firstUserId)) {
+
+        Match.create({ firstUser: firstUserId, secondUser: secondUserId })
+          .then(match => {
+
+            User.findByIdAndUpdate(firstUserId, { $push: { matches: match._id } })
+            .then(()=>{
+
+              User.findByIdAndUpdate(secondUserId, { $push: { matches: match_id } })
+            })
+            
+
+          })
+
+      }
+
     })
 }
 
