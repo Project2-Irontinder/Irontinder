@@ -14,13 +14,19 @@ router.get("/signup", isNotLoggedIn, (req, res) => {
 })
 
 router.post("/signup", isNotLoggedIn, (req, res, next) => {
-  const {username, password, age, name, interests, aboutMe, campus, profileImg} = req.body;
+  const {username, password, age, name, campus, profileImg} = req.body;
 
   if(!username || !password || !age || !name || !campus || !profileImg) {
     return res.render("auth/signup", { errorMessage: "Please provide the mandatory fields"})
   }
 
-  const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
+  User.findOne({ username }).then((user) => {
+    if (user && user.username) {
+      {
+        res.render("auth/signup", { errorMessage: "User already taken"})
+      }
+    }
+  })
 
 })
 
