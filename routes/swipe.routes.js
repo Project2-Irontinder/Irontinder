@@ -25,7 +25,7 @@ const getRandomUser = (user)=>{
   const liked = user.liked;
   const disliked = user.disliked
 
-  User.findOne({"_id": {$nin: liked}})
+  return User.findOne({"_id": {$nin: liked}})
 }
 
 module.exports = router;
