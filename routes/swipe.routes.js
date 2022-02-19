@@ -5,12 +5,12 @@ const User = require("../models/User.model")
 
 /* GET users listing. */
 router.get('/show/:userId', (req, res) => {
- /* User.findById(req.params.userId)
+  User.findById(req.params.userId)
     .then(user => {
       //console.log(random)
       res.render("pages/swipe", getRandomUser(user))
     
-    })*/
+    })
 });
 
 router.post("/like/:userId/:likedId", (req, res) => {
