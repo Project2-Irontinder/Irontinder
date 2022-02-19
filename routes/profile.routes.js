@@ -52,7 +52,7 @@ router.get('/:userId', (req, res)=>{
     User.findById(id)
     .populate("photos")
     .then((user)=>{
-      return res.render("pages/profile", {isNotTheOwner, user});
+      return res.render("pages/profile", {isNotTheOwner:isNotTheOwner, user});
     })
     .catch((err)=>{console.log(err)});
   }
@@ -60,7 +60,7 @@ router.get('/:userId', (req, res)=>{
   User.findById(id)
   .populate("photos")
   .then((user)=>{
-    res.render("pages/profile", {isTheOwner, user});
+    res.render("pages/profile", {isTheOwner:isTheOwner, user});
   })
   .catch((err)=>{console.log(err)});
 });
