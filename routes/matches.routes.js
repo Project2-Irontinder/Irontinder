@@ -1,8 +1,9 @@
 const express = require('express');
+const isLoggedIn = require('../middleware/isLoggedIn');
 const router = express.Router();
 const User = require("../models/User.model");
 
-router.get('/:userId',  function(req, res) {
+router.get('/:userId', isLoggedIn, (req, res)=>{
 
   const id = req.params.userId;
 

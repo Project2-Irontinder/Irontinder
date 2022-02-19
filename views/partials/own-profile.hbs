@@ -1,7 +1,7 @@
 <img src="{{user.profileImg}}" alt="profile image">
 
-<form action="/{{user._id}}/edit-imgProfile" method="POST" enctype="multipart/form-data">
-    <input type="file" name="imgProfile">
+<form action="/profile/{{user._id}}/edit-imgProfile" method="POST" enctype="multipart/form-data">
+    <input type="file" name="profileImg">
     <button type="submit">Change image profile</button>
 </form>
 
@@ -14,7 +14,7 @@
 <button type="button">Edit info</button>
 
 <section class="hidden">
-    <form action="/{{user._id}}/edit-infoProfile" method="POST">
+    <form action="/profile/{{user._id}}/edit-infoProfile" method="POST">
 
     <label for="name">Name:</label>
     <input type="text" name="name" value="{{user.name}}">
@@ -49,14 +49,14 @@
     {{#each user.photos}}
     <div>
         <img src="{{this.imgUrl}}" alt="photo">
-        <form action="/{{user._id}}/delete-photo/{{this._id}}" method="POST">
+        <form action="/profile/{{../user._id}}/delete-photo/{{this._id}}" method="POST">
             <button type="submit">Delete</button>
         </form>
     </div>
     {{/each}}
 </section>
 
-<form action="/{{user._id}}/add-newPhoto" method="POST" enctype="multipart/form-data">
+<form action="/profile/{{user._id}}/add-newPhoto" method="POST" enctype="multipart/form-data">
     <input type="file" name="imgUrl">
     <button type="submit">Add new photo</button>
 </form>

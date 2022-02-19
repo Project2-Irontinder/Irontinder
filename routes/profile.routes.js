@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const fileUploader = require("../config/cloudinary.config");
+const fileUploader = require("../config/cloudinary");
 const User = require("../models/User.model");
 const Photo = require("../models/Photo.model");
 
@@ -28,17 +28,17 @@ router.post("/:userId/add-newPhoto", fileUploader.single("imgUrl"), (req, res)=>
   .catch((err)=>{console.log(err)});
 });
 
-router.post("/:userId/edit-imgProfile", fileUploader.single("imgProfile"), (req, res)=>{
-  const id = req.params.id;
-  const imgProfile = req.file.path;
+router.post("/:userId/edit-imgProfile", fileUploader.single("profileImg"), (req, res)=>{
+  const id = req.params.userId;
+  const profileImg = req.file.path;
 
-  User.findByIdAndUpdate(id, {imgProfile})
+  User.findByIdAndUpdate(id, {profileImg})
   .then(()=>{res.redirect(`/profile/${id}`)})
   .catch((err)=>{console.log(err)});
 });
 
 router.post("/:userId/edit-infoProfile", (req, res)=>{
-  const id = req.params.id;
+  const id = req.params.userId;
   const {name, interests, aboutMe} = req.body;
   User.findByIdAndUpdate(id, {name, interests, aboutMe})
   .then(()=>res.redirect(`/profile/${id}`))
@@ -52,7 +52,7 @@ router.get('/:userId', (req, res)=>{
     User.findById(id)
     .populate("photos")
     .then((user)=>{
-      return res.render("pages/profile", {isNotTheOwner:isNotTheOwner, user});
+      return res.render("pages/profile", {isNotTheOwner:true, user});
     })
     .catch((err)=>{console.log(err)});
   }
@@ -60,7 +60,7 @@ router.get('/:userId', (req, res)=>{
   User.findById(id)
   .populate("photos")
   .then((user)=>{
-    res.render("pages/profile", {isTheOwner:isTheOwner, user});
+    res.render("pages/profile", {isTheOwner:true, user});
   })
   .catch((err)=>{console.log(err)});
 });
