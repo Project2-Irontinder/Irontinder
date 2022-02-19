@@ -14,7 +14,7 @@ const storage = new CloudinaryStorage({
   cloudinary,
   params: {
     allowed_formats: ['svg', 'png', 'jpg'],
-    folder: 'cloudinary-test' // Folder name on the Cloudinary disk
+    folder: 'IronTinder' // Folder name on the Cloudinary disk
   }
 })
 

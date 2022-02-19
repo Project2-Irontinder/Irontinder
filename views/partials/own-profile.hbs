@@ -1,0 +1,63 @@
+<img src="{{user.profileImg}}" alt="profile image">
+
+<form action="/{{user._id}}/edit-imgProfile" method="POST" enctype="multipart/form-data">
+    <input type="file" name="imgProfile">
+    <button type="submit">Change image profile</button>
+</form>
+
+{{user.name}}
+{{user.age}}
+{{user.campus}}
+{{user.interests}}
+{{user.aboutMe}}
+
+<button type="button">Edit info</button>
+
+<section class="hidden">
+    <form action="/{{user._id}}/edit-infoProfile" method="POST">
+
+    <label for="name">Name:</label>
+    <input type="text" name="name" value="{{user.name}}">
+
+    <fieldset>
+        <legend>Interests:</legend>
+        
+        <input type="checkbox" name="Food">
+        <label for="Food">Food</label>
+
+        <input type="checkbox" name="Music">
+        <label for="Music">Music</label>
+
+        <input type="checkbox" name="Coding">
+        <label for="Coding">Coding</label>
+
+        <input type="checkbox" name="Dance">
+        <label for="Dance">Dance</label>
+    </fieldset>
+
+    <label for="aboutMe">aboutMe:</label>
+    <textarea name="aboutMe" >{{user.aboutMe}}</textarea>
+
+    <button type="submit">Save</button>
+
+    </form>
+
+    <button type="button">Close</button>
+</section>
+
+<section>
+    {{#each user.photos}}
+    <div>
+        <img src="{{this.imgUrl}}" alt="photo">
+        <form action="/{{user._id}}/delete-photo/{{this._id}}" method="POST">
+            <button type="submit">Delete</button>
+        </form>
+    </div>
+    {{/each}}
+</section>
+
+<form action="/{{user._id}}/add-newPhoto" method="POST" enctype="multipart/form-data">
+    <input type="file" name="imgUrl">
+    <button type="submit">Add new photo</button>
+</form>
+

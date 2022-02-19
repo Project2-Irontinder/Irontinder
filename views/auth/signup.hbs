@@ -3,7 +3,7 @@
 <section>
 
     <label for="usernamme" >Username</label>
-    <input type="text" name"username" minlength="3" maxlength="15" required>
+    <input type="text" name="username" minlength="3" maxlength="15" required>
 
     <label for="password">Password</label>
     <input type="password" name="password" required>
@@ -19,29 +19,36 @@
     <label for="name">Name</label>
     <input type="text" name="name" minlength="3" maxlength="10" required>
 
-    <label for="interest" >Interest</label>
-        <select required>
-            <option  selected="selected"  value="3">Select an option</option>
-            <option  value="1">Food</option>
-            <option  value="2">Music</option>
-            <option  value="4">Coding</option>
-            <option  value="5">Dance</option>
-        </select>
+    <fieldset>
+        <legend>Interests:</legend>
+
+        <input type="checkbox" name="Food">
+        <label for="Food">Food</label>
+
+        <input type="checkbox" name="Music">
+        <label for="Music">Music</label>
+
+        <input type="checkbox" name="Coding">
+        <label for="Coding">Coding</label>
+
+        <input type="checkbox" name="Dance">
+        <label for="Dance">Dance</label>
+    </fieldset>
 
     <label for="aboutMe">About me</label>
     <input type="text" name="aboutMe" minlength="3" maxlength="250" required>
 
 
     <label for="campus" >Campus</label>
-        <select required>
-            <option  selected="selected"  value="3">Select an option</option>
-            <option  value="1">Barcelona</option>
-            <option  value="2">Amsterdam</option>
-            <option  value="4">Madrid</option>
-            <option  value="5">Miami</option>
-            <option  value="5">Berlin</option>
-            <option  value="5">Paris</option>
-        </select>
+    <select name="campus" required>
+        <option  selected="selected"  value="3">Select an option</option>
+        <option  value="Barcelona">Barcelona</option>
+        <option  value="Amsterdam">Amsterdam</option>
+        <option  value="Madrid">Madrid</option>
+        <option  value="Miami">Miami</option>
+        <option  value="Berlin">Berlin</option>
+        <option  value="Paris">Paris</option>
+    </select>
 
     <button type="button"> Step 3</button>
 
