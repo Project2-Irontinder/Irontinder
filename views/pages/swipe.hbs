@@ -1,9 +1,48 @@
 <div class="swipe-container">
     <section class="card">
         <div class="card-body">
-            <h1>TEST</h1>
-            <img src="{{random.profileImg}}" alt="" class="card-img-top">
-            <h2>{{random.username}}</h2>
+           
+            <a href="/profile/{{randomUser._id}}">
+            <img src="{{randomUser.profileImg}}" alt="" class="card-img-top">
+            </a>
+
+            <h2>{{randomUser.username}}, {{randomUser.age}}</h2>
+
+            <form action="/swipe/dislike/{{randomUser._id}}/{{activeUser_id}}" method="POST">
+            <button type="submit">X</button>
+            </form>
+
+
+            <button type="button">Filter</button>
+
+
+            <form action="/swipe/like/{{randomUser._id}}/{{activeUser_id}}" method="POST">
+            <button type="submit">✔</button>
+            </form>
+
         </div>
     </section>
+</div>
+
+
+
+
+
+<div class="filter-form hidden">
+    <button type="button">X</button>
+    <h1>Filter by campus</h1>
+    <form action="/swipe/filter" method="POST">
+    <select name="campus" value="none">
+        <option  value="Barcelona">Barcelona</option>
+        <option  value="Amsterdam">Amsterdam</option>
+        <option  value="Madrid">Madrid</option>
+        <option  value="Miami">Miami</option>
+        <option  value="Berlin">Berlin</option>
+        <option  value="Paris">Paris</option>
+        <option  value="All">All</option>
+        
+    </select>
+
+    <button type="submit">Filter</button>
+    </form>
 </div>
