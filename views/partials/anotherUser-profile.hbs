@@ -1,0 +1,16 @@
+<img src="{{user.profileImg}}" alt="profile image">
+
+{{user.name}}
+{{user.age}}
+{{user.campus}}
+{{user.interests}}
+{{user.aboutMe}}
+
+
+<section>
+    {{#each user.photos}}
+    <div>
+        <img src="{{this.imgUrl}}" alt="photo">
+    </div>
+    {{/each}}
+</section>
