@@ -6,8 +6,8 @@ const bcrypt = require("bcrypt")
 
 const User = require("../models/User.model")
 
-const isLoggedIn = require("..middleware/isLoggedIn.js")
-const isNotLoggedIn = require("..middleware/isLoggedOut.js")
+const isLoggedIn = require("../middleware/isLoggedIn")
+const isNotLoggedIn = require("../middleware/isNotLoggedIn")
 
 router.route("/signup")
 .get(isNotLoggedIn, (req, res) => {
