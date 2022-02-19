@@ -38,8 +38,6 @@ const getRandomUser = (user) => {
       { "_id": { $nin: disliked } }
     ]
   })
-    .populate(liked)
-    .populate(disliked)
     .then(users => {
       const randomUser = Math.floor(Math.random() * users.length)
       //console.log(users[randomUser])
