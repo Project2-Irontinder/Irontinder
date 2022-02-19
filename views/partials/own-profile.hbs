@@ -1,0 +1,12 @@
+<img src="{{user.profileImg}}" alt="profile image">
+
+<form action="/{{user._id}}/edit-imgProfile" enctype="multipart/form-data">
+<input type="file" name="imgProfile">
+</form>
+
+{{user.name}}
+{{user.age}}
+{{user.campus}}
+{{user.interests}}
+{{user.aboutMe}}
+
