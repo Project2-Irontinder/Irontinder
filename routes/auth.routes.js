@@ -75,7 +75,7 @@ router.route("/login")
 })
 
 router.get("/logout", (req, res) => {
-  req.session.destroy((err) => res.redirect("/auth/login"))
+  req.session.destroy((err) => res.redirect("/login"))
 })
 
 

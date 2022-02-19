@@ -5,9 +5,12 @@ const Match = require("../models/Match.model")
 
 
 router.get('/show/:userId', (req, res) => {
+
+  const filter = req.session.filter || "none"
+
   User.findById(req.params.userId)
     .then(user => {
-      const randomUser = getRandomUser(user)
+      const randomUser = getRandomUser(user, filter)
       res.render("pages/swipe", { randomUser, activeUser: user })
     })
 });
@@ -47,11 +50,10 @@ router.post("/filter/:userId", (req, res) => {
 
 
 
-const getRandomUser = (user) => {
+const getRandomUser = (user, filter) => {
   const liked = user.liked;
   const disliked = user.disliked
 
-  const filter = req.session.filter || "none"
 
 
   User.find({
