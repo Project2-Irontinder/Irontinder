@@ -30,9 +30,7 @@ const userSchema = new Schema({
 	},
 	campus: {
 		type: String,
-		enum: {
-			value: ["Madrid", "Barcelona", "Miami", "Berlín", "Paris", "Amsterdam"]
-		},
+		enum: ["Madrid", "Barcelona", "Miami", "Berlín", "Paris", "Amsterdam"],
 		required: [true, "You must select a campus."]
 	},
 	profileImg: {
