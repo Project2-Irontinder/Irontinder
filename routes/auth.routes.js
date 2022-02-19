@@ -9,14 +9,18 @@ const User = require("../models/User.model")
 const isLoggedIn = require("../middleware/isLoggedIn")
 const isNotLoggedIn = require("../middleware/isNotLoggedIn")
 
+const fileUploader = require("../config/cloudinary")
+
 router.route("/signup")
+
 .get(isNotLoggedIn, (req, res) => {
   res.render("auth/signup")
 })
-.post((req, res, next) => {
+.post(fileUploader.single("profileImg"), (req, res, next) => {
   const {username, password, age, name, interests, aboutMe, campus} = req.body;
   const profileImg = req.file.path;
 
+  
   if(!username || !password || !age || !name || !campus || !profileImg) {
     return res.render("auth/signup", { errorMessage: "Please provide the mandatory fields"})
   }
@@ -29,6 +33,7 @@ router.route("/signup")
 
     const salt = bcrypt.genSaltSync(saltRounds);
     const hashedPwd = bcrypt.hashSync(password, salt);
+
 
     User.create({ username, password: hashedPwd, age, name, interests, aboutMe, campus, profileImg})
     .then((user) => {
