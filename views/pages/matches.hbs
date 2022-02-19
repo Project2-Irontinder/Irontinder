@@ -1,7 +1,7 @@
 <section>
     {{#each user.matches}}
     <div>
-        <img src="{{profileImg}}" alt="{{name}}">
+        <a href="/profile/{{_id}}"><img src="{{profileImg}}" alt="{{name}}"></a> 
         <p>{{name}}</p>
     </div>
     {{/each}}
