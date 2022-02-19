@@ -6,11 +6,14 @@ const router = express.Router();
 const User = require("../models/User.model");
 const Api = require("../apis/api");
 const isLoggedIn = require('../middleware/isLoggedIn');
+const isNotLoggedIn = require('../middleware/isNotLoggedIn');
 
 /* GET home page. */
-router.get('/', isLoggedIn, (req, res)=> {
-  res.redirect(`/swipe/show/${   ____req.session.userId____   }`);
+router.get('/', isNotLoggedIn, (req, res)=> {
+  res.render("index");
 });
+
+
 
 /* GET from API */
 router.get('/api', (req, res)=> {
