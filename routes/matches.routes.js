@@ -30,8 +30,7 @@ router.get('/:userId', isLoggedIn, (req, res)=>{
       model: "User"
     }
   })
-  .then((user)=>{
-    res.render("pages/matches", {user})})
+  .then((user)=>{res.render("pages/matches", {user})})
   .catch((err)=>{console.log(err)});
 });
 
