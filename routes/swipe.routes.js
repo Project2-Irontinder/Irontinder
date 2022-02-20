@@ -11,15 +11,33 @@ router.get('/show/:userId', isLoggedIn, (req, res) => {
 
   User.findById(req.params.userId)
     .then(user => {
-      const randomUser = getRandomUser(user, filter)
-      res.render("pages/swipe", { randomUser, activeUser: user })
+
+      const liked = user.liked;
+      const disliked = user.disliked
+
+      User.find({
+        $and: [
+          { "_id": { $nin: liked } },
+          { "_id": { $nin: disliked } },
+          { campus: { $eq: "Miami" } }
+        ]
+      })
+        .then(users => {
+          const randomUser = users[Math.floor(Math.random() * users.length)]
+          console.log("randomUser:", randomUser)
+          res.render("pages/swipe", { randomUser, activeUser: user })
+        })
+
+
+
+
     })
 });
 
 
 
 router.post("/like/:userId/:likedId", (req, res) => {
-  
+
   User.findById(req.params.likedId)
     .then(likedUser => {
       User.findByIdAndUpdate(req.params.userId, { $push: { liked: likedUser._id } })
@@ -51,22 +69,19 @@ router.post("/filter/:userId", (req, res) => {
 
 
 
-const getRandomUser = (user, filter) => {
+const getRandomUser = (user, filter, randomUser) => {
   const liked = user.liked;
   const disliked = user.disliked
-
-
 
   User.find({
     $and: [
       { "_id": { $nin: liked } },
       { "_id": { $nin: disliked } },
-      { campus: { $eq: filter } }
+      { campus: { $eq: "Miami" } }
     ]
   })
     .then(users => {
-      const randomUser = Math.floor(Math.random() * users.length)
-      return users[randomUser]
+      randomUser = users[Math.floor(Math.random() * users.length)]
     })
 }
 
@@ -83,11 +98,11 @@ const checkMatch = (firstUserId, secondUserId) => {
           .then(match => {
 
             User.findByIdAndUpdate(firstUserId, { $push: { matches: match._id } })
-            .then(()=>{
+              .then(() => {
 
-              User.findByIdAndUpdate(secondUserId, { $push: { matches: match_id } })
-            })
-            
+                User.findByIdAndUpdate(secondUserId, { $push: { matches: match_id } })
+              })
+
 
           })
 
