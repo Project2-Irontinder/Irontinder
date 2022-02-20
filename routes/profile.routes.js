@@ -55,7 +55,7 @@ router.get('/:userId', (req, res)=>{
       return res.render("pages/profile", {isNotTheOwner:true, user});
     })
     .catch((err)=>{console.log(err)});
-  }
+  }else{
 
   User.findById(id)
   .populate("photos")
@@ -63,6 +63,7 @@ router.get('/:userId', (req, res)=>{
     res.render("pages/profile", {isTheOwner:true, user});
   })
   .catch((err)=>{console.log(err)});
+  }
 });
 
 module.exports = router;

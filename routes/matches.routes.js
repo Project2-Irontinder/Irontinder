@@ -16,6 +16,20 @@ router.get('/:userId', isLoggedIn, (req, res)=>{
 
   User.findById(id)
   .populate("matches")
+  .populate({
+    path: "matches",
+    populate: {
+      path: "firstUser",
+      model: "User"
+    }
+  })
+  .populate({
+    path: "matches",
+    populate: {
+      path: "secondUser",
+      model: "User"
+    }
+  })
   .then((user)=>{res.render("pages/matches", {user})})
   .catch((err)=>{console.log(err)});
 });

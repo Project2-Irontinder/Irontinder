@@ -1,9 +1,18 @@
 <section>
     {{#each user.matches}}
-    <div>
-        <a href="/profile/{{_id}}"><img src="{{profileImg}}" alt="{{name}}"></a> 
-        <p>{{name}}</p>
-    </div>
+        {{#if (equals firstUser._id ../user._id) }}
+        <div>
+            <a href="/profile/{{firstUser._id}}"><img src="{{firstUser.profileImg}}" alt="{{firstUser.name}}"></a> 
+            <p>{{firstUser.name}}</p>
+        </div>
+        {{/if}}
+
+        {{#if (equals secondUser._id ../user._id) }}
+        <div>
+            <a href="/profile/{{secondUser._id}}"><img src="{{secondUser.profileImg}}" alt="{{secondUser.name}}"></a> 
+            <p>{{secondUser.name}}</p>
+        </div>
+        {{/if}}
     {{/each}}
 </section>
 
