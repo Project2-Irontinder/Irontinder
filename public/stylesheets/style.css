@@ -6,3 +6,15 @@ body {
 a {
   color: #00B7FF;
 }
+
+.inline-buttons{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.swipe-container{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
