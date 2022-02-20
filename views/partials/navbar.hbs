@@ -2,16 +2,13 @@
     <nav>
       <ul>
         <li>
-              {{> swipe}}
-              <a href="/swipe/show/{{_id}}"> Swipe </a>
+              <a href="/swipe/show/{{activeUser._id}}"> Swipe </a>
         </li>
         <li>
-              {{> profile}}
-              <a href="/profile/{{_id}} ">Profile</a>
+              <a href="/profile/{{activeUser_id}} ">Profile</a>
         </li>
         <li>
-              {{> matches}}
-               <a href="/matches/{{_id}}"> Matches </a>
+               <a href="/matches/{{activeUser._id}}"> Matches </a>
         </li>
       </ul>
     </nav>

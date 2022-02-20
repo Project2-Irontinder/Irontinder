@@ -1,25 +1,29 @@
 <div class="swipe-container">
-    <section class="card">
+    <section class="card" style="width: 25rem;">
         <div class="card-body">
-           
+
             <a href="/profile/{{randomUser._id}}">
-            <img src="{{randomUser.profileImg}}" alt="" class="card-img-top">
+                <img src="{{randomUser.profileImg}}" alt="" class="card-img-top">
             </a>
 
             <h2>{{randomUser.username}}, {{randomUser.age}}</h2>
             <h3>{{randomUser.campus}}</h3>
 
-            <form action="/swipe/dislike/{{randomUser._id}}/{{activeUser._id}}" method="POST">
-            <button type="submit">X</button>
-            </form>
+            <div class="inline-buttons">
+                <form action="/swipe/dislike/{{activeUser._id}}/{{randomUser._id}}" method="POST">
+                    <button type="submit" class="btn btn-danger">X</button>
+                </form>
 
 
-            <button type="button">Filter</button>
+                <button type="button" class="btn btn-primary">Filter</button>
 
 
-            <form action="/swipe/like/{{randomUser._id}}/{{activeUser._id}}" method="POST">
-            <button type="submit">✔</button>
-            </form>
+                <form action="/swipe/like/{{activeUser._id}}/{{randomUser._id}}" method="POST">
+                    <button type="submit" class="btn btn-success">✔</button>
+                </form>
+
+            </div>
+
 
         </div>
     </section>
@@ -33,18 +37,19 @@
     <button type="button">X</button>
     <h1>Filter by campus</h1>
     <form action="/swipe/filter/{{activeUser._id}}" method="POST">
-    <select name="campus" value="none">
-        <option  value="Barcelona">Barcelona</option>
-        <option  value="Amsterdam">Amsterdam</option>
-        <option  value="Madrid">Madrid</option>
-        <option  value="Miami">Miami</option>
-        <option  value="Berlin">Berlin</option>
-        <option  value="Paris">Paris</option>
-        <option  value="All">All</option>
-        
-    </select>
+        <select name="campus" value="none">
+            <option value="Barcelona">Barcelona</option>
+            <option value="Amsterdam">Amsterdam</option>
+            <option value="Madrid">Madrid</option>
+            <option value="Miami">Miami</option>
+            <option value="Berlin">Berlin</option>
+            <option value="Paris">Paris</option>
+            <option value="All">All</option>
 
-    <button type="submit">Filter</button>
+        </select>
+
+        <button type="submit">Filter</button>
     </form>
 </div>
 
+{{>navbar}}
