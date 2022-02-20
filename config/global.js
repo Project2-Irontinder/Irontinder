@@ -11,7 +11,12 @@ const path = require("path");
 const session = require('express-session');
 const MongoStore = require('connect-mongo');
 
-const hbs = require('hbs')
+const hbs = require('hbs');
+
+hbs.registerHelper('includes', function (string, array) {
+  if(array.includes(string)){return selected="selected"}
+  return false
+});
 
 // Middleware configuration
 module.exports = (app) => {
