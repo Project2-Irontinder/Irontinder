@@ -1,10 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const User = require("../models/User.model")
-const Match = require("../models/Match.model")
+const Match = require("../models/Match.model");
+const isLoggedIn = require('../middleware/isLoggedIn');
 
 
-router.get('/show/:userId', (req, res) => {
+router.get('/show/:userId', isLoggedIn, (req, res) => {
 
   const filter = req.session.filter || "none"
 
