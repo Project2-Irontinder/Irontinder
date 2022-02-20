@@ -7,7 +7,7 @@ const isLoggedIn = require('../middleware/isLoggedIn');
 
 router.get('/show/:userId', isLoggedIn, (req, res) => {
 
-  const filter = req.session.filter || "none"
+  const filter = req.session.filter || "Barcelona"
 
   User.findById(req.params.userId)
     .then(user => {
@@ -19,7 +19,8 @@ router.get('/show/:userId', isLoggedIn, (req, res) => {
         $and: [
           { "_id": { $nin: liked } },
           { "_id": { $nin: disliked } },
-          { campus: { $eq: "Miami" } }
+          { "_id": {$ne: user._id}},
+          {campus : {$eq: filter}}
         ]
       })
         .then(users => {
@@ -54,6 +55,7 @@ router.post("/like/:userId/:likedId", (req, res) => {
 router.post("/dislike/:userId/:dislikedId", (req, res) => {
   User.findById(req.params.dislikedId)
     .then(dislikedUser => {
+      console.log(dislikedUser)
       User.findByIdAndUpdate(req.params.userId, { $push: { disliked: dislikedUser._id } })
     })
     .then(() => res.redirect(`/swipe/show/${req.params.userId}`))
@@ -63,6 +65,7 @@ router.post("/dislike/:userId/:dislikedId", (req, res) => {
 
 router.post("/filter/:userId", (req, res) => {
   req.session.filter = req.body.campus
+  console.log(req.session.filter)
 
   res.redirect(`/swipe/show/${req.params.userId}`)
 })

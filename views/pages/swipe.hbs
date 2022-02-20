@@ -7,6 +7,7 @@
             </a>
 
             <h2>{{randomUser.username}}, {{randomUser.age}}</h2>
+            <h3>{{randomUser.campus}}</h3>
 
             <form action="/swipe/dislike/{{randomUser._id}}/{{activeUser_id}}" method="POST">
             <button type="submit">X</button>
@@ -31,7 +32,7 @@
 <div class="filter-form hidden">
     <button type="button">X</button>
     <h1>Filter by campus</h1>
-    <form action="/swipe/filter" method="POST">
+    <form action="/swipe/filter/{{activeUser._id}}" method="POST">
     <select name="campus" value="none">
         <option  value="Barcelona">Barcelona</option>
         <option  value="Amsterdam">Amsterdam</option>
