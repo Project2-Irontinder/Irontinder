@@ -10,7 +10,7 @@
             <h3>{{randomUser.campus}}</h3>
 
             <div class="inline-buttons">
-                <form action="/swipe/dislike/{{activeUser._id}}/{{randomUser._id}}" method="POST">
+                <form action="/swipe/dislike/{{user._id}}/{{randomUser._id}}" method="POST">
                     <button type="submit" class="btn btn-danger">X</button>
                 </form>
 
@@ -18,7 +18,7 @@
                 <button type="button" class="btn btn-primary">Filter</button>
 
 
-                <form action="/swipe/like/{{activeUser._id}}/{{randomUser._id}}" method="POST">
+                <form action="/swipe/like/{{user._id}}/{{randomUser._id}}" method="POST">
                     <button type="submit" class="btn btn-success">✔</button>
                 </form>
 
@@ -36,7 +36,7 @@
 <div class="filter-form hidden">
     <button type="button">X</button>
     <h1>Filter by campus</h1>
-    <form action="/swipe/filter/{{activeUser._id}}" method="POST">
+    <form action="/swipe/filter/{{user._id}}" method="POST">
         <select name="campus" value="none">
             <option value="Barcelona">Barcelona</option>
             <option value="Amsterdam">Amsterdam</option>
