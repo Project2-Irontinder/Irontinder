@@ -53,6 +53,7 @@ router.post("/like/:userId/:likedId", (req, res) => {
 
 
 router.post("/dislike/:userId/:dislikedId", (req, res) => {
+  console.log("clicked dislike")
   User.findById(req.params.dislikedId)
     .then(dislikedUser => {
       console.log(dislikedUser)
@@ -72,21 +73,6 @@ router.post("/filter/:userId", (req, res) => {
 
 
 
-const getRandomUser = (user, filter, randomUser) => {
-  const liked = user.liked;
-  const disliked = user.disliked
-
-  User.find({
-    $and: [
-      { "_id": { $nin: liked } },
-      { "_id": { $nin: disliked } },
-      { campus: { $eq: "Miami" } }
-    ]
-  })
-    .then(users => {
-      randomUser = users[Math.floor(Math.random() * users.length)]
-    })
-}
 
 const checkMatch = (firstUserId, secondUserId) => {
 

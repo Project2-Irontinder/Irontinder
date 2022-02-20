@@ -9,7 +9,7 @@
             <h2>{{randomUser.username}}, {{randomUser.age}}</h2>
             <h3>{{randomUser.campus}}</h3>
 
-            <form action="/swipe/dislike/{{randomUser._id}}/{{activeUser_id}}" method="POST">
+            <form action="/swipe/dislike/{{randomUser._id}}/{{activeUser._id}}" method="POST">
             <button type="submit">X</button>
             </form>
 
@@ -17,7 +17,7 @@
             <button type="button">Filter</button>
 
 
-            <form action="/swipe/like/{{randomUser._id}}/{{activeUser_id}}" method="POST">
+            <form action="/swipe/like/{{randomUser._id}}/{{activeUser._id}}" method="POST">
             <button type="submit">✔</button>
             </form>
 
