@@ -88,7 +88,7 @@ const checkMatch = (firstUserId, secondUserId) => {
             User.findByIdAndUpdate(firstUserId, { $push: { matches: match._id } })
               .then(() => {
 
-                User.findByIdAndUpdate(secondUserId, { $push: { matches: match_id } })
+                User.findByIdAndUpdate(secondUserId, { $push: { matches: match._id } })
               })
 
 
