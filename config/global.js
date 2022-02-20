@@ -14,7 +14,7 @@ const MongoStore = require('connect-mongo');
 const hbs = require('hbs');
 
 hbs.registerHelper('includes', function (string, array) {
-  if(array.includes(string)){return true}
+  if(array.includes(string)){return selected="selected"}
   return false
 });
 
