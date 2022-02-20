@@ -39,13 +39,13 @@ router.get('/show/:userId', isLoggedIn, (req, res) => {
 router.post("/like/:userId/:likedId", (req, res) => {
 
   User.findById(req.params.likedId)
-    .then(likedUser => {
-      User.findByIdAndUpdate(req.params.userId, { $push: { liked: likedUser._id } })
-        .then(user => {
-          checkMatch(user._id, likedUser._id)
-        })
+  .then(likedUser => {
+    User.findByIdAndUpdate(req.params.userId, { $push: { liked: likedUser._id } })
+    .then((user) => {
+      checkMatch(user._id, likedUser._id);
+      return res.redirect(`/swipe/show/${req.session.userId}`)
     })
-    .then(() => res.redirect(`/swipe/show/${req.session.userId}`))
+  })
 })
 
 
@@ -76,27 +76,23 @@ router.post("/filter/:userId", (req, res) => {
 const checkMatch = (firstUserId, secondUserId) => {
 
   User.findById(secondUserId)
-    .then(secondUser => {
+  .then(secondUser => {
 
-      const liked = secondUser.liked
+    const liked = secondUser.liked
 
-      if (liked.includes(firstUserId)) {
+    if (liked.includes(firstUserId)) {
 
-        Match.create({ firstUser: firstUserId, secondUser: secondUserId })
-          .then(match => {
+      Match.create({ firstUser: firstUserId, secondUser: secondUserId })
+      .then(async (match) => {
+        try{
+          await User.findByIdAndUpdate(firstUserId, { $push: { matches: match._id } });
+          await User.findByIdAndUpdate(secondUserId, { $push: { matches: match._id } });
 
-            User.findByIdAndUpdate(firstUserId, { $push: { matches: match._id } })
-              .then(() => {
-
-                User.findByIdAndUpdate(secondUserId, { $push: { matches: match._id } })
-              })
-
-
-          })
-
-      }
-
-    })
+        }
+        catch(err){console.log(err)}
+      })
+    }
+  })
 }
 
 module.exports = router;
