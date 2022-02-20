@@ -19,20 +19,16 @@
     <label for="name">Name</label>
     <input type="text" name="name" minlength="3" maxlength="10" required>
 
+
+    
     <fieldset>
         <legend>Interests:</legend>
-
-        <input type="checkbox" name="Food">
-        <label for="Food">Food</label>
-
-        <input type="checkbox" name="Music">
-        <label for="Music">Music</label>
-
-        <input type="checkbox" name="Coding">
-        <label for="Coding">Coding</label>
-
-        <input type="checkbox" name="Dance">
-        <label for="Dance">Dance</label>
+        <select name="interests" multiple>
+            <option value="Food">Food</option>
+            <option value="Music">Music</option>
+            <option value="Coding">Coding</option>
+            <option value="Dance">Dance</option>
+        </select>
     </fieldset>
 
     <label for="aboutMe">About me</label>

@@ -21,18 +21,12 @@
 
     <fieldset>
         <legend>Interests:</legend>
-        
-        <input type="checkbox" name="Food">
-        <label for="Food">Food</label>
-
-        <input type="checkbox" name="Music">
-        <label for="Music">Music</label>
-
-        <input type="checkbox" name="Coding">
-        <label for="Coding">Coding</label>
-
-        <input type="checkbox" name="Dance">
-        <label for="Dance">Dance</label>
+        <select name="interests" multiple>
+            <option value="Food" {{includes "Food" "{{user.interests}}"}} selected="selected">Food</option>
+            <option value="Music" {{includes "Music" "{{user.interests}}"}} selected="selected">Music</option>
+            <option value="Coding" {{includes "Coding" "{{user.interests}}"}} selected="selected">Coding</option>
+            <option value="Dance" {{includes "Dance" "{{user.interests}}"}} selected="selected">Dance</option>
+        </select>
     </fieldset>
 
     <label for="aboutMe">aboutMe:</label>
