@@ -68,8 +68,6 @@ router.post("/dislike/:userId/:dislikedId", (req, res) => {
 
 router.post("/filter/:userId", (req, res) => {
   req.session.filter = req.body.campus
- 
-
   res.redirect(`/swipe/show/${req.params.userId}`)
 })
 
