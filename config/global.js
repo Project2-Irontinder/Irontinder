@@ -14,7 +14,7 @@ const MongoStore = require('connect-mongo');
 const hbs = require('hbs');
 
 hbs.registerHelper('includes', function (string, array) {
-  if(array.includes(string)){return selected="selected"}
+  if(array.includes(string)){return true}
   else return false
 });
 
@@ -22,6 +22,14 @@ hbs.registerHelper('equals', function (firstId, secondId) {
   if(firstId.toString() !== secondId.toString()){return true}
   else return false
 });
+
+// Swipe helper
+
+hbs.registerHelper('isEqual', function (value1, value2) {
+  return value1 === value2
+});
+
+
 
 // Middleware configuration
 module.exports = (app) => {
