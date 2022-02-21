@@ -57,4 +57,18 @@
 
 <a href="/logout">Logout</a>
 
-{{> navbar}}
+<footer>
+  <nav>
+    <ul>
+      <li>
+        <a class="navbar-btn" href="/swipe/show/{{user._id}}"> <img src="/images/grey-tinder-logo.ico" alt="swipe icon"> </a>
+      </li>
+      <li>
+        <a class="navbar-btn" href="/profile/{{user._id}} "> <img src="/images/colored-profile-logo.png" alt="profile icon"> </a>
+      </li>
+      <li>
+        <a class="navbar-btn" href="/matches/{{user._id}}"> <img src="/images/grey-matches-logo.ico" alt="matches icon"> </a>
+      </li>
+    </ul>
+  </nav>
+</footer>
