@@ -11,8 +11,7 @@ router.get('/show/:userId', isLoggedIn, (req, res) => {
 
   const filter = inputFilter === "All" ? ["Madrid", "Barcelona", "Miami", "Berlin", "Paris", "Amsterdam"] : req.session.filter;
 
-  console.log(inputFilter)
-  console.log(filter)
+  
   User.findById(req.params.userId)
     .then(user => {
 
@@ -69,7 +68,7 @@ router.post("/dislike/:userId/:dislikedId", (req, res) => {
 
 router.post("/filter/:userId", (req, res) => {
   req.session.filter = req.body.campus
-  console.log(req.session.filter)
+ 
 
   res.redirect(`/swipe/show/${req.params.userId}`)
 })
