@@ -15,6 +15,8 @@ body {
   justify-content: center;
 }
 
+/* CARWI'S CSS*/
+
 a.animated-button:link:after,
 a.animated-button:visited:after {
   content: "";
@@ -136,6 +138,12 @@ ul{
   transition: 0s;
 }
 
+
+.rounded-button {
+  border-radius: 50% !important;
+  border-color: rgba(148,43,250,1) !important;
+  color: rgba(148,43,250,1) !important
+}
 
 /* DIEGO'S CSS*/
 
