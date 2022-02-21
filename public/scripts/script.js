@@ -1,4 +1,4 @@
-window.onload = ()=>{
+/*window.onload = ()=>{
 
     setTimeout(() => {
         const img = document.querySelector(".start-img")
@@ -15,4 +15,4 @@ window.onload = ()=>{
         const startScreen = document.querySelector(".start-screen")
         startScreen.classList.toggle("hidden")
     }, 4000);
-}
+}*/
