@@ -88,8 +88,16 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   padding: 10px;
 }
 
-ul{
+.navbar{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-list{
   list-style-type: none;
+  display: flex;
 }
 
 .navbar-btn{
