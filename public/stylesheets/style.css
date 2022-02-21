@@ -86,5 +86,27 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   padding: 10px;
 }
 
+.submit-button{
+  display: inline-block;
+  background-color: rgb(59, 192, 236);
+  border: 3px solid rgb(159, 91, 226);
+  border-radius: 10px;
+  width: 100px;
+  height: 40px;
+  color: white;
+  font-size: 15px;
+}
+
+.form{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  margin:50px auto;
+
+}
+
+.text-button{
+ background-image: -webkit-linear-gradient(rgba(43,197,250,1) 20%, rgba(148,43,250,1) 50%, rgba(254,61,99,1) 80%);
+}
 
 
