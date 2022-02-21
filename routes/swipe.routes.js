@@ -28,7 +28,7 @@ router.get('/show/:userId', isLoggedIn, (req, res) => {
       })
         .then(users => {
           const randomUser = users[Math.floor(Math.random() * users.length)]
-          res.render("pages/swipe", { randomUser, user, inputFilter})
+          res.render("pages/swipe", { randomUser, user, inputFilter, inSwipe: true})
         })
 
 
