@@ -1,20 +1,90 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
 }
 
-a {
-  color: #00B7FF;
-}
-
-.inline-buttons{
+.inline-buttons {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
 }
 
-.swipe-container{
+.swipe-container {
   width: 100%;
   display: flex;
   justify-content: center;
 }
+
+a.animated-button:link:after,
+a.animated-button:visited:after {
+  content: "";
+  position: absolute;
+  height: 0%;
+  width: 150%;
+  z-index: -1;
+  -webkit-transition: all 0.75s ease 0s;
+  -moz-transition: all 0.75s ease 0s;
+  -o-transition: all 0.75s ease 0s;
+  transition: all 0.75s ease 0s;
+}
+a.animated-button:link:hover,
+a.animated-button:visited:hover {
+  color: #fff;
+  -webkit-text-fill-color: white;
+  text-shadow: none;
+}
+a.animated-button:link:hover:after,
+a.animated-button:visited:hover:after {
+  
+  height: 600%;
+}
+a.animated-button:link,
+a.animated-button:visited { /* contorno letra */
+  position: relative;
+  display: relative;
+  margin: 0 0 10px 0;
+  padding: 10px 10px;
+  width: 250px;
+  color: #fff;
+  font-size: 25px;
+  border-radius: 20px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  overflow: hidden;
+  letter-spacing: 0.08em;
+  /*text-shadow:-1.2px -1.2px rgba(148,43,250,1), 1.2px -1.2px rgba(148,43,250,1), 1.2px 1.2px rgba(148,43,250,1), -1.2px 1.2px rgba(148,43,250,1);*/
+  color: rgba(148,43,250,1);
+  background: linear-gradient(to right, rgba(43,197,250,1) 20%, rgba(148,43,250,1) 50%, rgba(254,61,99,1) 80%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+  -webkit-transition: all 1s ease;
+  -moz-transition: all 1s ease;
+  -o-transition: all 1s ease;
+  transition: all 1s ease;
+}
+
+a.animated-button.victoria-one {
+  border: 2px solid rgba(148,43,250,1);
+}
+a.animated-button.victoria-one:after { /* Background effect hover */
+  background: linear-gradient(138deg, rgba(43,197,250,1) 20%, rgba(148,43,250,1) 50%, rgba(254,61,99,1) 80%);
+  -moz-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+  -ms-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+  -webkit-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+  transform: translateX(-50%) translateY(-50%) rotate(-25deg);
+}
+
+.index-buttons {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+}
+
+
+
