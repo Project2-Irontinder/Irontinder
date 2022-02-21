@@ -7,7 +7,9 @@ const isLoggedIn = require('../middleware/isLoggedIn');
 
 router.get('/show/:userId', isLoggedIn, (req, res) => {
 
-  const filter = req.session.filter || "none"
+  const filter = req.session.filter || "All"
+
+  filter = filter === "All" ? ["Madrid", "Barcelona", "Miami", "Berlin", "Paris", "Amsterdam"] : req.session.filter;
 
   User.findById(req.params.userId)
     .then(user => {
@@ -20,7 +22,7 @@ router.get('/show/:userId', isLoggedIn, (req, res) => {
           { "_id": { $nin: liked } },
           { "_id": { $nin: disliked } },
           { "_id": {$ne: user._id}},
-          {campus : {$eq: filter}}
+          {campus : {$in: filter}},
         ]
       })
         .then(users => {
