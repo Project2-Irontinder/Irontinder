@@ -37,15 +37,14 @@
     <button type="button">X</button>
     <h1>Filter by campus</h1>
     <form action="/swipe/filter/{{user._id}}" method="POST">
-        <select name="campus" value="none">
-            <option value="Barcelona">Barcelona</option>
-            <option value="Amsterdam">Amsterdam</option>
-            <option value="Madrid">Madrid</option>
-            <option value="Miami">Miami</option>
-            <option value="Berlin">Berlin</option>
-            <option value="Paris">Paris</option>
-            <option value="All">All</option>
-
+        <select name="campus">
+            <option value="Barcelona" {{#if (isEqual "Barcelona" inputFilter)}} selected="selected" {{/if}}>Barcelona</option>
+            <option value="Amsterdam" {{#if (isEqual "Amsterdam" inputFilter)}} selected="selected" {{/if}}>Amsterdam</option>
+            <option value="Madrid" {{#if (isEqual "Madrid" inputFilter)}} selected="selected" {{/if}}>Madrid</option>
+            <option value="Miami" {{#if (isEqual "Miami" inputFilter)}} selected="selected" {{/if}}>Miami</option>
+            <option value="Berlin" {{#if (isEqual "Berlin" inputFilter)}} selected="selected" {{/if}}>Berlin</option>
+            <option value="Paris" {{#if (isEqual "Paris" inputFilter)}} selected="selected" {{/if}}>Paris</option>
+            <option value="All" {{#if (isEqual "All" inputFilter)}} selected="selected" {{/if}}>All</option>
         </select>
 
         <button type="submit">Filter</button>
