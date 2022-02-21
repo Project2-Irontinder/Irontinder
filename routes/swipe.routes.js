@@ -7,10 +7,12 @@ const isLoggedIn = require('../middleware/isLoggedIn');
 
 router.get('/show/:userId', isLoggedIn, (req, res) => {
 
-  const filter = req.session.filter || "All"
+  const inputFilter = req.session.filter || "All"
 
-  filter = filter === "All" ? ["Madrid", "Barcelona", "Miami", "Berlin", "Paris", "Amsterdam"] : req.session.filter;
+  const filter = inputFilter === "All" ? ["Madrid", "Barcelona", "Miami", "Berlin", "Paris", "Amsterdam"] : req.session.filter;
 
+  console.log(inputFilter)
+  console.log(filter)
   User.findById(req.params.userId)
     .then(user => {
 
@@ -27,7 +29,7 @@ router.get('/show/:userId', isLoggedIn, (req, res) => {
       })
         .then(users => {
           const randomUser = users[Math.floor(Math.random() * users.length)]
-          res.render("pages/swipe", { randomUser, user })
+          res.render("pages/swipe", { randomUser, user, inputFilter})
         })
 
 
