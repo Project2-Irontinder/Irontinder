@@ -1,73 +1,87 @@
-<img src="{{user.profileImg}}" alt="profile image">
+<div class="ownProfile-view">
+  <header class="app-logo-container">
+    <img class="app-logo" src="/images/gradient.png" alt="">
+    <hr class="logo-underline">
+  </header>
+  <img class="rounded-circle profileImg" src="{{user.profileImg}}" alt="profile image">
+  <img class="rounded-circle edit-btn" src="/images/edit-profile-img.ico" alt="change profile image" onclick="showEditProfileImg()">
 
-<form action="/profile/{{user._id}}/edit-imgProfile" method="POST" enctype="multipart/form-data">
-    <input type="file" name="profileImg">
-    <button type="submit">Change image profile</button>
-</form>
+  <form class="hidden" action="/profile/{{user._id}}/edit-imgProfile" method="POST" enctype="multipart/form-data">
+      <input type="file" name="profileImg">
+      <button type="submit">Change image profile</button>
+  </form>
 
-{{user.name}}
-{{user.age}}
-{{user.campus}}
-{{user.interests}}
-{{user.aboutMe}}
+  <section class="info-container">
+    <h2 class="profile-title">{{user.name}}, {{user.age}}</h2>
+    <p>{{user.campus}}</p>
+    <article class="interest-container">
+      {{#each user.interests}}
+      <div class="interest">{{this}}</div>
+      {{/each}}
+    </article>
+    <p>{{user.aboutMe}}</p>
+  </section>
 
-<button type="button">Edit info</button>
+  <img class="rounded-circle edit-btn" src="/images/edit-profile-info.png" alt="change profile info" onclick="showEditProfileInfo()">
 
-<section class="hidden">
-    <form action="/profile/{{user._id}}/edit-infoProfile" method="POST">
+  <section class="hidden">
+      <form action="/profile/{{user._id}}/edit-infoProfile" method="POST">
 
-    <label for="name">Name:</label>
-    <input type="text" name="name" value="{{user.name}}">
+      <label for="name">Name:</label>
+      <input type="text" name="name" value="{{user.name}}">
 
-    <fieldset>
-        <legend>Interests:</legend>
-        <select name="interests" multiple>
-            <option value="Food" {{#if (includes "Food" user.interests)}} selected="selected" {{/if}}>Food</option>
-            <option value="Music" {{#if (includes "Music" user.interests)}} selected="selected" {{/if}}>Music</option>
-            <option value="Coding" {{#if (includes "Coding" user.interests)}} selected="selected" {{/if}}>Coding</option>
-            <option value="Dance" {{#if (includes "Dance" user.interests)}} selected="selected" {{/if}}>Dance</option>
-        </select>
-    </fieldset>
+      <fieldset>
+          <legend>Interests:</legend>
+          <select name="interests" multiple>
+              <option value="Food" {{#if (includes "Food" user.interests)}} selected="selected" {{/if}}>Food</option>
+              <option value="Music" {{#if (includes "Music" user.interests)}} selected="selected" {{/if}}>Music</option>
+              <option value="Coding" {{#if (includes "Coding" user.interests)}} selected="selected" {{/if}}>Coding</option>
+              <option value="Dance" {{#if (includes "Dance" user.interests)}} selected="selected" {{/if}}>Dance</option>
+          </select>
+      </fieldset>
 
-    <label for="aboutMe">aboutMe:</label>
-    <textarea name="aboutMe" >{{user.aboutMe}}</textarea>
+      <label for="aboutMe">aboutMe:</label>
+      <textarea name="aboutMe" >{{user.aboutMe}}</textarea>
 
-    <button type="submit">Save</button>
+      <button type="submit">Save</button>
 
-    </form>
+      </form>
 
-    <button type="button">Close</button>
-</section>
+      <button type="button">Close</button>
+  </section>
 
-<section>
-    {{#each user.photos}}
-    <div>
-        <img src="{{this.imgUrl}}" alt="photo">
-        <form action="/profile/{{../user._id}}/delete-photo/{{this._id}}" method="POST">
-            <button type="submit">Delete</button>
-        </form>
-    </div>
-    {{/each}}
-</section>
+  <section class="photos-container">
+      {{#each user.photos}}
+      <div class="onePhoto-container">
+          <img src="{{this.imgUrl}}" alt="photo">
+          <form action="/profile/{{../user._id}}/delete-photo/{{this._id}}" method="POST">
+              <button type="submit">Delete</button>
+          </form>
+      </div>
+      {{/each}}
+  </section>
 
-<form action="/profile/{{user._id}}/add-newPhoto" method="POST" enctype="multipart/form-data">
-    <input type="file" name="imgUrl">
-    <button type="submit">Add new photo</button>
-</form>
+  <img src="" alt="add new photo" onclick="showAddNewPhoto()">
 
-<a href="/logout">Logout</a>
+  <form class="hidden" action="/profile/{{user._id}}/add-newPhoto" method="POST" enctype="multipart/form-data">
+      <input type="file" name="imgUrl">
+      <button type="submit">Add new photo</button>
+  </form>
+
+  <a href="/logout"><img class="rounded-circle edit-btn" src="/images/logout.ico" alt="logout"></a>
 
 
-<nav class="navbar fixed-bottom spacing">
-  <ul class="navbar-list">
-    <li>
-      <a class="navbar-btn" href="/swipe/show/{{user._id}}"> <img src="/images/grey-tinder-logo.ico" alt="swipe icon"> </a>
-    </li>
-    <li>
-      <a class="navbar-btn" href="/profile/{{user._id}} "> <img src="/images/colored-profile-logo.png" alt="profile icon"> </a>
-    </li>
-    <li>
-      <a class="navbar-btn" href="/matches/{{user._id}}"> <img src="/images/grey-matches-logo.ico" alt="matches icon"> </a>
-    </li>
-  </ul>
-</nav>
+  <nav class="navbar fixed-bottom spacing">
+    <ul class="navbar-list">
+      <li>
+        <a class="navbar-btn" href="/swipe/show/{{user._id}}"> <img src="/images/grey-tinder-logo.ico" alt="swipe icon"> </a>
+      </li>
+      <li>
+        <a class="navbar-btn" href="/profile/{{user._id}} "> <img src="/images/colored-profile-logo.png" alt="profile icon"> </a>
+      </li>
+      <li>
+        <a class="navbar-btn" href="/matches/{{user._id}}"> <img src="/images/grey-matches-logo.ico" alt="matches icon"> </a>
+      </li>
+    </ul>
+  </nav>
+</div>
