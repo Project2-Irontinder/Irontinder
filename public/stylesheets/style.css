@@ -90,16 +90,117 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   padding: 10px;
 }
 
-.rounded-button {
-  border-radius: 50% !important;
-  border-color: rgba(148,43,250,1) !important;
-  color: rgba(148,43,250,1) !important
+.submit-button{
+  display: inline-block;
+  background-color: rgb(59, 192, 236);
+  border: 3px solid rgb(159, 91, 226);
+  border-radius: 10px;
+  width: 100px;
+  height: 40px;
+  color: white;
+  font-size: 15px;
 }
 
 /* END */
 
 /* FER'S CSS*/
 @media (max-device-width: 812px) {
+
+  /*CSS Luis*/
+
+.login-form-container{
+  padding-bottom: 70px;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+  .login{
+    display: flex;
+    margin: 0 auto;
+    align-self: center;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    color: black;
+    align-items: center;
+    box-sizing: border-box;
+    flex-direction: column;
+    border:2px solid rgb(159, 91, 226) ;
+    box-shadow: 0 0 2px 2px rgb(159, 91, 226) ;
+    border-radius: 3%;
+   
+}
+
+.all-divs{
+  margin-top: 5%;
+  margin-bottom: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login input{
+  width: 95%;
+  margin-left: 5px;
+  margin-bottom: 40px;
+}
+
+.div-user{
+  margin-top: 20%;
+}
+.login input[type="text"],
+.login input[type="password"]{
+  padding-left: 10px;
+  border: none;
+  border-bottom: 1.8px solid rgb(159, 91, 226);
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: black;
+  font-size: 16px;
+}
+.login-user{
+  margin-left: 15px;
+}
+
+
+.login img{
+  margin-bottom: 30px;
+  width: 30vw;
+}
+
+.login-pwd{
+  margin-left: 15px;
+}
+
+.login button[type="submit"]{
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 85px;
+  background-color:rgb(198, 150, 243) ;
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+}
+.login-button{
+  top: 20%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+}
+
+.rounded-button {
+  border-radius: 50% !important;
+  width: 50px;
+  border-color: rgba(148,43,250,1) !important;
+  color: rgba(148,43,250,1) !important;
+}
+/*End Luis*/
   
   .mobile-card-img{
     width: 80vw;
@@ -199,7 +300,9 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   }
 }
 
+
 @media (min-device-width: 813px) {
+
   .pc-card{
     width: 21rem;
   }
@@ -327,6 +430,13 @@ a.animated-button.victoria-one:after { /* Background effect hover */
 
 
 /* DIEGO'S CSS*/
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
 .start-screen{
     background: rgb(43,197,250);
     background: linear-gradient(138deg, rgba(43,197,250,1) 20%, rgba(148,43,250,1) 50%, rgba(254,61,99,1) 80%);

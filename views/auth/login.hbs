@@ -1,14 +1,36 @@
-<form action="/login" method="POST">
-  <label for="username">Username </label>
-  <input type="text" name="username" minlength="3" maxlength="15" required>
+<div class="login-form-container">
+  <div class="login">
 
-  <label for="password">Password:</label>
-  <input type="password" name="password" required>
+  <div class="all-divs">
+ 
+  <img  src="/images/colored-tinder-logo.png" alt="logo">
+    
+  <form action="/login" method="POST">
+  
+  <div class="div-user">
+    <label  class="login-user" for="username">Username </label>
+    <input placeholder="Enter username" type="text" name="username" minlength="3" maxlength="15" required>
+  </div>
 
-  <button type="submit">Submit</button>
+  <div>
+     <label class="login-pwd" for="password">Password</label>
+     <input placeholder="Enter password" type="password" name="password" required>
+  </div>
+  
+  <div class="login-button">
+     <button  type="submit">Login</button>
+     <a href="/" class="btn rounded-button" >&#8629;</a>
+  </div>
+  
+</div>
+
 </form>
 
-<a href="/" class="btn rounded-button" >&#8629;</a>
+</div>
+
+
+</div>
+
 
 {{#if errorMessage}}
   <p>{{errorMessage}}</p>
