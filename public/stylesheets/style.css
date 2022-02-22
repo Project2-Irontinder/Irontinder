@@ -644,7 +644,8 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   height: 100%;
 }
 .card{
-  background: linear-gradient(rgba(0, 0, 0, 1),transparent 100% ) !important;
+ /* background: linear-gradient(transparent -100%, rgba(0, 0, 0, 0.8)) !important;*/
+  background: linear-gradient(0deg,rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.75) 35%, transparent 150%) !important;
 }
 .card img{
   
@@ -654,4 +655,8 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   object-fit:cover !important;
 }
 
+.name-age,
+.campus{
+  color: rgba(255,255, 255, 0.75);
+}
 /* END */

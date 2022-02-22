@@ -7,8 +7,8 @@
         <div class="card-img-overlay">
 
 
-            <h2>{{randomUser.username}}, {{randomUser.age}}</h2>
-            <h3>{{randomUser.campus}}</h3>
+            <h2 class="name-age">{{randomUser.username}}, {{randomUser.age}}</h2>
+            <h3 class="campus">{{randomUser.campus}}</h3>
 
             <div class="inline-buttons">
                 <form action="/swipe/dislike/{{user._id}}/{{randomUser._id}}" method="POST">
