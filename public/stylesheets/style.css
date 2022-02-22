@@ -99,6 +99,88 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   color: rgba(148,43,250,1) !important
 }
 
+/* .signup-form-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.signup-step1 {
+    display: flex;
+    width: 320px;
+    height: 420px;
+    justify-content: center;
+    color: black;
+    align-items: center;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+.signup-boxes-firstpage input[type="text"],
+.signup-boxes-firstpage input[type="password"]{
+  border: none;
+  border-bottom: 1.8px solid rgba(148,43,250,1);
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: black;
+  font-size: 16px;
+}
+.signup-boxes-firstpage input[type="number"]{
+  border: none;
+  border-bottom: 1.8px solid rgba(148,43,250,1);
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: black;
+  font-size: 16px;
+}
+
+.signup-step1-button {
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 85px;
+  background-color:rgb(198, 150, 243);
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+  top: 20%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
+}
+
+.signup-step2 {
+    position: relative;
+    top: 20%;
+    width: 100%;
+    margin: 0 auto;
+    align-self: center;
+    width: 320px;
+    height: 420px;
+    justify-content: center;
+    color: black;
+    align-items: center;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+.signup-step3 {
+    position: relative;
+    margin: 0 auto;
+    align-self: center;
+    width: 320px;
+    height: 420px;
+    justify-content: center;
+    color: black;
+    align-items: center;
+    box-sizing: border-box;
+    flex-direction: column;
+}
+
+
 /* END */
 
 /* FER'S CSS*/

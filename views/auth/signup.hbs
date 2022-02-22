@@ -1,21 +1,41 @@
+
+<div class="signup-form-container">
+
+
+
 <form action="/signup" method="POST" enctype="multipart/form-data">
 
-<section>
+<div class="signup-boxes-firstpage">
 
+<section class="signup-step1">
+<div id="showOrHide">
+
+
+    <div class="signup-username">
     <label for="usernamme" >Username</label>
-    <input type="text" name="username" minlength="3" maxlength="15" required>
+    <input placeholder="Username" type="text" name="username" minlength="3" maxlength="15" required>
+    </div>
 
+    <div class="signup-password">
     <label for="password">Password</label>
-    <input type="password" name="password" required>
+    <input placeholder="Password" type="password" name="password" required>
+    </div>
 
+    <div class="signup-age">
     <label for="age">Age</label>
-    <input type="number" name="age" required>
+    <input placeholder="Age" type="number" name="age" required>
+    </div>
+ 
+    <button class="signup-step1-button" onclick="showOrHideDiv()">Step 2</button>
 
-  <button type="button"> Step 2</button>
+</div>
+</div>
+
 
 </section>
 
-<section>
+<section class="signup-step2 hidden">
+    <div id="showOrHide2">
     <label for="name">Name</label>
     <input type="text" name="name" minlength="3" maxlength="10" required>
 
@@ -46,12 +66,13 @@
         <option  value="Paris">Paris</option>
     </select>
 
-    <button type="button"> Step 3</button>
+    <button onclick="showOrHideDiv2()">Step 3</button>
 
+</div>
 </section>
 
 
-<section>
+<section class="signup-step3 hidden">
 
 <label for="profileImg">Photo</label>
 
@@ -65,6 +86,28 @@
 </form>
 
 <a href="/" class="btn rounded-button" >&#8629;</a>
+
+</div>
+
+<script>
+   function showOrHideDiv() {
+      let step1 = document.querySelector(".signup-step1")
+      let step2 = document.querySelector(".signup-step2")
+
+      step1.classList.toggle("hidden")
+      step2.classList.toggle("hidden")
+   }
+</script>
+
+<script>
+   function showOrHideDiv2() {
+      let step2 = document.querySelector(".signup-step2")
+      let step3 = document.querySelector(".signup-step3")
+
+      step2.classList.toggle("hidden")
+      step3.classList.toggle("hidden")
+   }
+</script>
 
 {{#if errorMessage}}
   <p>{{errorMessage}}</p>
