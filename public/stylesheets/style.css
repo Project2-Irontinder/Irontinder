@@ -101,26 +101,66 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   font-size: 15px;
 }
 
-/* .signup-form-container {
+.signup-form-container {
   display:flex;
+  margin: 0 auto;
+  align-self: center;
+  width: 100vw;
+  height: 100vh;
   justify-content: center;
   align-items: center;
-} */
+  color: black;
+  align-items: center;
+  box-sizing: border-box;
+  border: 2px solid rgb(159, 91, 226);
+  box-shadow: 0 0 2px 2px rgb(159, 91, 226);
+  border-radius: 3%;
+  flex-direction: column;
+  margin: 0;
+}
+
+.signup-username {
+  margin-top: 20%;
+  display:flex;
+  flex-direction:column;
+}
+
+.signup-password {
+  margin-top: 10%;
+  display:flex;
+  flex-direction:column;
+}
+
+.signup-age {
+  margin-top: 10%;
+  margin-bottom: 20%;
+  display:flex;
+  flex-direction:column;
+}
+
+.signup-button {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
 
 .signup-step1 {
-    display: flex;
-    width: 320px;
-    height: 420px;
-    justify-content: center;
-    color: black;
-    align-items: center;
-    box-sizing: border-box;
-    flex-direction: column;
+ margin-top: 5%;
+ margin-bottom: 25%;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ width: 100%;
 }
 
 .signup-boxes-firstpage input[type="text"],
 .signup-boxes-firstpage input[type="password"]{
   border: none;
+  width: 70vw;
+  height: 70vh;
   border-bottom: 1.8px solid rgba(148,43,250,1);
   background: transparent;
   outline: none;
@@ -130,12 +170,34 @@ a.animated-button.victoria-one:after { /* Background effect hover */
 }
 .signup-boxes-firstpage input[type="number"]{
   border: none;
+  width: 70vw;
+  height: 70vh;
   border-bottom: 1.8px solid rgba(148,43,250,1);
   background: transparent;
   outline: none;
   height: 40px;
   color: black;
   font-size: 16px;
+}
+
+.signup-name input[type="text"],
+.signup-aboutme input[type="text"]{
+  border: none;
+  border-bottom: 1.8px solid rgba(159,91,226);
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: black;
+  font-size: 16px;
+}
+
+.signup-interests-name {
+  font-size: 16px;
+}
+
+.signup-interests {
+  border: 1.8px solid rgb(159, 91, 226);
+  background: transparent;
 }
 
 .signup-step1-button {
@@ -148,7 +210,7 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   font-size: 18px;
   border-radius: 30px;
   top: 20%;
-  margin: 0 auto;
+  margin: 0;
   display: flex;
   flex-direction:row;
   justify-content:center;
@@ -513,11 +575,7 @@ a.animated-button.victoria-one:after { /* Background effect hover */
 
 /* DIEGO'S CSS*/
 
-body{
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
+
 
 .start-screen{
     background: rgb(43,197,250);

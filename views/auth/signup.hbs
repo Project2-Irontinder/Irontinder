@@ -1,18 +1,16 @@
-
 <div class="signup-form-container">
 
-
+ <div class="signup-boxes-firstpage">
 
 <form action="/signup" method="POST" enctype="multipart/form-data">
 
-<div class="signup-boxes-firstpage">
+
 
 <section class="signup-step1">
-<div id="showOrHide">
 
 
     <div class="signup-username">
-    <label for="usernamme" >Username</label>
+    <label for="username">Username</label>
     <input placeholder="Username" type="text" name="username" minlength="3" maxlength="15" required>
     </div>
 
@@ -26,8 +24,10 @@
     <input placeholder="Age" type="number" name="age" required>
     </div>
  
+    <div class="signup-button">
+    <a href="/" class="btn rounded-button" >&#8629;</a>
     <button class="signup-step1-button" onclick="showOrHideDiv()">Step 2</button>
-
+    </div>
 </div>
 </div>
 
@@ -35,25 +35,28 @@
 </section>
 
 <section class="signup-step2 hidden">
-    <div id="showOrHide2">
-    <label for="name">Name</label>
-    <input type="text" name="name" minlength="3" maxlength="10" required>
 
+    <div class="signup-name">
+    <label for="name">Name</label>
+    <input placeholder="Name" type="text" name="name" minlength="3" maxlength="10" required>
+    <div/>
 
     
     <fieldset>
-        <legend>Interests:</legend>
-        <select name="interests" multiple>
+        <legend class="signup-interests-name">Interests:</legend>
+        <select class="signup-interests" name="interests" multiple>
             <option value="Food">Food</option>
             <option value="Music">Music</option>
             <option value="Coding">Coding</option>
             <option value="Dance">Dance</option>
         </select>
     </fieldset>
+    
 
+     <div class="signup-aboutme">
     <label for="aboutMe">About me</label>
-    <input type="text" name="aboutMe" minlength="3" maxlength="250" required>
-
+    <input placeholder="About me" type="text" name="aboutMe" minlength="3" maxlength="250" required>
+    <div/>
 
     <label for="campus" >Campus</label>
     <select name="campus" required>
@@ -68,7 +71,7 @@
 
     <button onclick="showOrHideDiv2()">Step 3</button>
 
-</div>
+
 </section>
 
 
@@ -85,7 +88,7 @@
 
 </form>
 
-<a href="/" class="btn rounded-button" >&#8629;</a>
+
 
 </div>
 
