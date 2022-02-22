@@ -1,117 +1,118 @@
 <div class="signup-form-container">
 
- <div class="signup-boxes-firstpage">
+    <div class="signup-boxes-firstpage">
 
-<form action="/signup" method="POST" enctype="multipart/form-data">
-
-
-
-<section class="signup-step1">
+        <form action="/signup" method="POST" enctype="multipart/form-data">
 
 
-    <div class="signup-username">
-    <label for="username">Username</label>
-    <input placeholder="Username" type="text" name="username" minlength="3" maxlength="15" required>
+
+            <section class="signup-step1">
+
+
+                <div class="signup-username">
+                    <label for="username">Username</label>
+                    <input placeholder="Username" type="text" name="username" minlength="3" maxlength="15" required>
+                </div>
+
+                <div class="signup-password">
+                    <label for="password">Password</label>
+                    <input placeholder="Password" type="password" name="password" required>
+                </div>
+
+                <div class="signup-age">
+                    <label for="age">Age</label>
+                    <input placeholder="Age" type="number" name="age" required>
+                </div>
+
+                <div class="signup-button">
+                    <a href="/" class="btn rounded-button">&#8629;</a>
+                    <button class="signup-step1-button" onclick="showOrHideDiv()">Step 1</button>
+                </div>
     </div>
 
-    <div class="signup-password">
-    <label for="password">Password</label>
-    <input placeholder="Password" type="password" name="password" required>
-    </div>
-
-    <div class="signup-age">
-    <label for="age">Age</label>
-    <input placeholder="Age" type="number" name="age" required>
-    </div>
- 
-    <div class="signup-button">
-    <a href="/" class="btn rounded-button" >&#8629;</a>
-    <button class="signup-step1-button" onclick="showOrHideDiv()">Step 2</button>
-    </div>
-</div>
-</div>
 
 
-</section>
-
-<section class="signup-step2 hidden">
-
-    <div class="signup-name">
-    <label for="name">Name</label>
-    <input placeholder="Name" type="text" name="name" minlength="3" maxlength="10" required>
-    <div/>
-
-    
-    <fieldset>
-        <legend class="signup-interests-name">Interests:</legend>
-        <select class="signup-interests" name="interests" multiple>
-            <option value="Food">Food</option>
-            <option value="Music">Music</option>
-            <option value="Coding">Coding</option>
-            <option value="Dance">Dance</option>
-        </select>
-    </fieldset>
-    
-
-     <div class="signup-aboutme">
-    <label for="aboutMe">About me</label>
-    <input placeholder="About me" type="text" name="aboutMe" minlength="3" maxlength="250" required>
-    <div/>
-
-    <label for="campus" >Campus</label>
-    <select name="campus" required>
-        <option  selected="selected"  value="3">Select an option</option>
-        <option  value="Barcelona">Barcelona</option>
-        <option  value="Amsterdam">Amsterdam</option>
-        <option  value="Madrid">Madrid</option>
-        <option  value="Miami">Miami</option>
-        <option  value="Berlin">Berlin</option>
-        <option  value="Paris">Paris</option>
-    </select>
-
-    <button onclick="showOrHideDiv2()">Step 3</button>
+    </section>
 
 
-</section>
+
+    <section class="signup-step2 hidden">
+
+        <div class="signup-name">
+            <label for="name">Name</label>
+            <input placeholder="Name" type="text" name="name" minlength="3" maxlength="10" required>
+            <div />
 
 
-<section class="signup-step3 hidden">
-
-<label for="profileImg">Photo</label>
-
-    <input type="file" name="profileImg"required>
-    
-    <button type="submit">Submit>></button>
-
-</section>
-
-
-</form>
+            <fieldset>
+                <legend class="signup-interests-name">Interests:</legend>
+                <select class="signup-interests" name="interests" multiple>
+                    <option value="Food">Food</option>
+                    <option value="Music">Music</option>
+                    <option value="Coding">Coding</option>
+                    <option value="Dance">Dance</option>
+                </select>
+            </fieldset>
 
 
+            <div class="signup-aboutme">
+                <label for="aboutMe">About me</label>
+                <input placeholder="About me" type="text" name="aboutMe" minlength="3" maxlength="250" required>
+                <div />
+
+                <label for="campus">Campus</label>
+                <select name="campus" required>
+                    <option selected="selected" value="3">Select an option</option>
+                    <option value="Barcelona">Barcelona</option>
+                    <option value="Amsterdam">Amsterdam</option>
+                    <option value="Madrid">Madrid</option>
+                    <option value="Miami">Miami</option>
+                    <option value="Berlin">Berlin</option>
+                    <option value="Paris">Paris</option>
+                </select>
+
+                <button onclick="showOrHideDiv2()">Step 2</button>
+
+
+    </section>
+
+
+
+
+    <section class="signup-step3 hidden">
+
+        <label for="profileImg">Photo</label>
+
+        <input type="file" name="profileImg" required>
+
+        <button type="submit">Submit>></button>
+
+    </section>
+
+    </form>
 
 </div>
 
 <script>
-   function showOrHideDiv() {
-      let step1 = document.querySelector(".signup-step1")
-      let step2 = document.querySelector(".signup-step2")
+    function showOrHideDiv() {
+        let step1 = document.querySelector(".signup-step1")
+        let step2 = document.querySelector(".signup-step2")
 
-      step1.classList.toggle("hidden")
-      step2.classList.toggle("hidden")
-   }
+        step1.classList.toggle("hidden")
+        step2.classList.toggle("hidden")
+    }
 </script>
 
 <script>
-   function showOrHideDiv2() {
-      let step2 = document.querySelector(".signup-step2")
-      let step3 = document.querySelector(".signup-step3")
+    function showOrHideDiv2() {
+        let step2 = document.querySelector(".signup-step2")
+        let step3 = document.querySelector(".signup-step3")
 
-      step2.classList.toggle("hidden")
-      step3.classList.toggle("hidden")
-   }
+        step2.classList.toggle("hidden")
+        step3.classList.toggle("hidden")
+    }
 </script>
 
 {{#if errorMessage}}
-  <p>{{errorMessage}}</p>
+<p>{{errorMessage}}</p>
 {{/if}}
