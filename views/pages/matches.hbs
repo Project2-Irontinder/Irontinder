@@ -1,11 +1,15 @@
 <div class="matches-view">
+  <header class="app-logo-container">
+    <img class="app-logo" src="/images/gradient.png" alt="">
+    <hr class="logo-underline">
+  </header>
   <h1 class="title">Matches:</h1>
   <section class="matches-section">
       {{#each user.matches}}
           {{#if (equals firstUser._id ../user._id) }}
           <div class="match-div">
               <a href="/profile/{{firstUser._id}}"><img src="{{firstUser.profileImg}}" class="matches-img" alt="{{firstUser.name}}"></a>
-              <h1>{{firstUser.name}}, {{firstUser.age}}</h1>
+              <h2>{{firstUser.name}}, {{firstUser.age}}</h2>
           </div>
           <br>
           {{/if}}
@@ -13,7 +17,7 @@
           {{#if (equals secondUser._id ../user._id) }}
           <div class="match-div">
               <a href="/profile/{{secondUser._id}}"><img src="{{secondUser.profileImg}}" class="matches-img" alt="{{secondUser.name}}"></a> 
-              <h1>{{secondUser.name}}, {{secondUser.age}}</h1>
+              <h2>{{secondUser.name}}, {{secondUser.age}}</h2>
           </div>
           <br>
           {{/if}}
