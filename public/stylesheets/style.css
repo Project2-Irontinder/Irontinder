@@ -2,10 +2,8 @@ body {
   padding-top: 50px;
   padding-bottom: 70px;
   margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  font-size: 16px;
+  
 }
 
 .inline-buttons {
@@ -18,6 +16,7 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 /* CARWI'S CSS*/
@@ -105,12 +104,12 @@ a.animated-button.victoria-one:after { /* Background effect hover */
 @media (max-device-width: 812px) {
   
   .mobile-card-img{
-    width: 80vw;
-    height: 30vh;
+    
   }
 
   .mobile-card{
-    width: 80vw;
+    
+    
   }
 
   .navbar{
@@ -173,12 +172,11 @@ a.animated-button.victoria-one:after { /* Background effect hover */
 
 @media (min-device-width: 812px) {
   .pc-card{
-    width: 21rem;
+    
   }
   
   .pc-card-img{
-    width: 18rem;
-    height: 15rem;
+    
   }
 
   .navbar-list{
@@ -335,7 +333,14 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     display: none;
 }
 
+.card{
+  min-width: 350px !important;
+  max-width: 400px !important;
+}
 
+.card-img-top{
+  
+}
 
 
 /* END */
