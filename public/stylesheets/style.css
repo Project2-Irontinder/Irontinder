@@ -104,7 +104,12 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   font-size: 15px;
 }
 
-/*CSS Luis*/
+/* END */
+
+/* FER'S CSS*/
+@media (max-device-width: 812px) {
+
+  /*CSS Luis*/
 
 .login-form-container{
   padding-bottom: 70px;
@@ -199,11 +204,6 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   color: rgba(148,43,250,1) !important;
 }
 /*End Luis*/
-
-/* END */
-
-/* FER'S CSS*/
-@media (max-device-width: 812px) {
   
   .mobile-card-img{
     width: 80vw;
@@ -273,6 +273,7 @@ a.animated-button.victoria-one:after { /* Background effect hover */
 }
 
 @media (min-device-width: 812px) {
+
   .pc-card{
     width: 21rem;
   }
