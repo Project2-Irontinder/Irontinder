@@ -3,7 +3,7 @@ body {
   padding-bottom: 70px;
   margin: 0;
   font-size: 16px;
-  
+  border: 0;
 }
 
 .inline-buttons {
@@ -167,10 +167,41 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     opacity: 1;
     transition: 0s;
   }
+
+  .matches-view{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  .matches-section{
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   
+  .matches-img{
+    border-radius: 50%;
+    width: 20vw;
+  }
+  
+  .match-div{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1.5px solid rgba(148,43,250,0.3);
+    border-radius: 10px;
+    padding: 5px;
+    width: 90%;
+  }
 }
 
-@media (min-device-width: 812px) {
+@media (min-device-width: 813px) {
   .pc-card{
     
   }
@@ -190,6 +221,44 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   .navbar-list li{
     border-left: 1.5px solid lightgrey;
     border-right: 1.5px solid lightgrey;
+  }
+
+  .matches-view{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+  }
+  
+  .title{
+    text-align: start;
+    width: 45rem;
+  }
+
+  .matches-section{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 60rem;
+    text-align: center;
+  }
+  
+  .matches-img{
+    border-radius: 50%;
+    width: 5rem;
+  }
+
+  .match-div{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    border: 1.5px solid rgba(148,43,250,0.3);
+    border-radius: 10px;
+    padding: 5px;
   }
 }
 
@@ -243,6 +312,15 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   top:5%;
   opacity: 1;
   transition: 0s;
+}
+
+.match-div a{
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.match-div h1{
+  margin-right: 10px;
 }
 
 /* END */

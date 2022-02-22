@@ -1,32 +1,37 @@
-<section>
-    {{#each user.matches}}
-        {{#if (equals firstUser._id ../user._id) }}
-        <div>
-            <a href="/profile/{{firstUser._id}}"><img src="{{firstUser.profileImg}}" alt="{{firstUser.name}}"></a> 
-            <p>{{firstUser.name}}</p>
-        </div>
-        {{/if}}
+<div class="matches-view">
+  <h1 class="title">Matches:</h1>
+  <section class="matches-section">
+      {{#each user.matches}}
+          {{#if (equals firstUser._id ../user._id) }}
+          <div class="match-div">
+              <a href="/profile/{{firstUser._id}}"><img src="{{firstUser.profileImg}}" class="matches-img" alt="{{firstUser.name}}"></a>
+              <h1>{{firstUser.name}}, {{firstUser.age}}</h1>
+          </div>
+          <br>
+          {{/if}}
 
-        {{#if (equals secondUser._id ../user._id) }}
-        <div>
-            <a href="/profile/{{secondUser._id}}"><img src="{{secondUser.profileImg}}" alt="{{secondUser.name}}"></a> 
-            <p>{{secondUser.name}}</p>
-        </div>
-        {{/if}}
-    {{/each}}
-</section>
+          {{#if (equals secondUser._id ../user._id) }}
+          <div class="match-div">
+              <a href="/profile/{{secondUser._id}}"><img src="{{secondUser.profileImg}}" class="matches-img" alt="{{secondUser.name}}"></a> 
+              <h1>{{secondUser.name}}, {{secondUser.age}}</h1>
+          </div>
+          <br>
+          {{/if}}
+      {{/each}}
+  </section>
 
 
-<nav class="navbar fixed-bottom spacing">
-  <ul class="navbar-list">
-    <li>
-      <a class="navbar-btn" href="/swipe/show/{{user._id}}"> <img src="/images/grey-tinder-logo.ico" alt="swipe icon"> </a>
-    </li>
-    <li>
-      <a class="navbar-btn" href="/profile/{{user._id}} "> <img src="/images/grey-profile-logo.ico" alt="profile icon"> </a>
-    </li>
-    <li>
-      <a class="navbar-btn" href="/matches/{{user._id}}"> <img src="/images/colored-matches-logo.png" alt="matches icon"> </a>
-    </li>
-  </ul>
-</nav>
+  <nav class="navbar fixed-bottom spacing">
+    <ul class="navbar-list">
+      <li>
+        <a class="navbar-btn" href="/swipe/show/{{user._id}}"> <img src="/images/grey-tinder-logo.ico" alt="swipe icon"> </a>
+      </li>
+      <li>
+        <a class="navbar-btn" href="/profile/{{user._id}} "> <img src="/images/grey-profile-logo.ico" alt="profile icon"> </a>
+      </li>
+      <li>
+        <a class="navbar-btn" href="/matches/{{user._id}}"> <img src="/images/colored-matches-logo.png" alt="matches icon"> </a>
+      </li>
+    </ul>
+  </nav>
+</div>
