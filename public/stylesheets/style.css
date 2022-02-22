@@ -280,8 +280,9 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     width: 100%;
-    padding-top: 50px;
+    padding-top: 30px;
     padding-bottom: 70px;
     text-align: center;
   }
@@ -392,8 +393,9 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     width: 100vw;
-    padding-top: 50px;
+    padding-top: 30px;
     padding-bottom: 70px;
   }
 
@@ -536,7 +538,7 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   margin-right: 10px;
 }
 
-.match-div h1{
+.match-div>h2{
   margin-right: 10px;
 }
 
