@@ -119,7 +119,7 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     margin: 0 auto;
     align-self: center;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     justify-content: center;
     color: black;
     align-items: center;
