@@ -1,6 +1,4 @@
 body {
-  padding-top: 50px;
-  padding-bottom: 70px;
   margin: 0;
   font-size: 16px;
   border: 0;
@@ -118,14 +116,14 @@ a.animated-button.victoria-one:after { /* Background effect hover */
 
   /*CSS Luis*/
 
-.login-form-container{
-  padding-bottom: 70px;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+  .login-form-container{
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   .login{
     display: flex;
     margin: 0 auto;
@@ -140,78 +138,79 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     border:2px solid rgb(159, 91, 226) ;
     box-shadow: 0 0 2px 2px rgb(159, 91, 226) ;
     border-radius: 3%;
-   
-}
+  }
 
-.all-divs{
-  margin-top: 5%;
-  margin-bottom: 25%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
+  .all-divs{
+    margin-top: 5%;
+    margin-bottom: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-.login input{
-  width: 95%;
-  margin-left: 5px;
-  margin-bottom: 40px;
-}
+  .login input{
+    width: 95%;
+    margin-left: 5px;
+    margin-bottom: 40px;
+  }
 
-.div-user{
-  margin-top: 20%;
-}
-.login input[type="text"],
-.login input[type="password"]{
-  padding-left: 10px;
-  border: none;
-  border-bottom: 1.8px solid rgb(159, 91, 226);
-  background: transparent;
-  outline: none;
-  height: 40px;
-  color: black;
-  font-size: 16px;
-}
-.login-user{
-  margin-left: 15px;
-}
+  .div-user{
+    margin-top: 20%;
+  }
 
+  .login input[type="text"],
+  .login input[type="password"]{
+    padding-left: 10px;
+    border: none;
+    border-bottom: 1.8px solid rgb(159, 91, 226);
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: black;
+    font-size: 16px;
+  }
 
-.login img{
-  margin-bottom: 30px;
-  width: 30vw;
-}
+  .login-user{
+    margin-left: 15px;
+  }
 
-.login-pwd{
-  margin-left: 15px;
-}
+  .login img{
+    margin-bottom: 30px;
+    width: 30vw;
+  }
 
-.login button[type="submit"]{
-  border: none;
-  outline: none;
-  height: 50px;
-  width: 85px;
-  background-color:rgb(198, 150, 243) ;
-  color: white;
-  font-size: 18px;
-  border-radius: 30px;
-}
-.login-button{
-  top: 20%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row-reverse;
-  justify-content: space-evenly;
-}
+  .login-pwd{
+    margin-left: 15px;
+  }
 
-.rounded-button {
-  border-radius: 50% !important;
-  width: 50px;
-  border-color: rgba(148,43,250,1) !important;
-  color: rgba(148,43,250,1) !important;
-}
-/*End Luis*/
-  
+  .login button[type="submit"]{
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 85px;
+    background-color:rgb(198, 150, 243) ;
+    color: white;
+    font-size: 18px;
+    border-radius: 30px;
+  }
+
+  .login-button{
+    top: 20%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-evenly;
+  }
+
+  .rounded-button {
+    border-radius: 50% !important;
+    width: 50px;
+    border-color: rgba(148,43,250,1) !important;
+    color: rgba(148,43,250,1) !important;
+  }
+  /*End Luis*/
+    
   .mobile-card-img{
     width: 80vw;
     height: 30vh;
@@ -224,13 +223,13 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   .navbar{
     margin-top: 15px;
   }
-  
+
   .navbar-list{
     list-style-type: none;
     display: flex;
     margin: 0;
   }
-  
+
   .navbar-btn{
     position: relative;
     width: 100px;
@@ -247,12 +246,12 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     transition-duration: 0.4s;
     -webkit-transition-duration: 0.4s; /* Safari */
   }
-  
+
   .navbar-btn img,
   .swipe-btn{
     width: 40px;
   }
-  
+
   .navbar-btn:after {
     content: "";
     display: block;
@@ -266,7 +265,7 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     transition: all 0.4s;
     box-shadow: 0 0 10px 40px rgb(203, 151, 255);
   }
-  
+
   .navbar-btn:active:after {
     box-shadow: 0 0 0 0 lightblue;
     position: absolute;
@@ -282,6 +281,8 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     flex-direction: column;
     justify-content: center;
     width: 100%;
+    padding-top: 50px;
+    padding-bottom: 70px;
     text-align: center;
   }
 
@@ -292,12 +293,12 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     justify-content: center;
     align-items: center;
   }
-  
+
   .matches-img{
     border-radius: 50%;
     width: 20vw;
   }
-  
+
   .match-div{
     display: flex;
     flex-direction: row;
@@ -308,6 +309,58 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     padding: 5px;
     width: 90%;
   }
+
+  .anotherUser-view{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 70px;
+  }
+
+  .app-logo-container{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .app-logo{
+    width: 25vw;
+  }
+  
+  .logo-underline{
+    width: 100%;
+  }
+
+  .info-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 80vw;
+  }
+  
+  .interest-container{
+    width: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+  }
+  
+  .interest{
+    border: 1.5px solid rgba(148,43,250,1);
+    border-radius: 30px;
+    width: 40%;
+    margin: 3px;
+    padding: 1px 3px;
+  }
+
 }
 
 
@@ -328,7 +381,7 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     margin: 0;
     padding: 0;
   }
-  
+
   .navbar-list li{
     border-left: 1.5px solid lightgrey;
     border-right: 1.5px solid lightgrey;
@@ -340,8 +393,10 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     justify-content: center;
     align-items: center;
     width: 100vw;
+    padding-top: 50px;
+    padding-bottom: 70px;
   }
-  
+
   .title{
     text-align: start;
     width: 45rem;
@@ -355,7 +410,7 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     width: 60rem;
     text-align: center;
   }
-  
+
   .matches-img{
     border-radius: 50%;
     width: 5rem;
@@ -370,6 +425,57 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     border: 1.5px solid rgba(148,43,250,0.3);
     border-radius: 10px;
     padding: 5px;
+  }
+
+  .anotherUser-view{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 70px;
+  }
+
+  .app-logo-container{
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .app-logo{
+    width: 5rem;
+  }
+  
+  .logo-underline{
+    width: 100%;
+  }
+
+  .info-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 32rem;
+  }
+  
+  .interest-container{
+    width: 50vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+  }
+  
+  .interest{
+    border: 1.5px solid rgba(148,43,250,1);
+    border-radius: 30px;
+    width: 40%;
+    margin: 3px;
+    padding: 1px 3px;
   }
 }
 
@@ -439,12 +545,6 @@ a.animated-button.victoria-one:after { /* Background effect hover */
 
 
 /* DIEGO'S CSS*/
-
-body{
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-}
 
 .start-screen{
     background: rgb(43,197,250);

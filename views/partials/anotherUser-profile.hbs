@@ -1,31 +1,41 @@
-<img src="{{user.profileImg}}" alt="profile image">
+<div class="anotherUser-view">
+  <header class="app-logo-container">
+    <img class="app-logo" src="/images/gradient.png" alt="">
+    <hr class="logo-underline">
+  </header>
+  <img class="rounded-circle" src="{{user.profileImg}}" alt="profile image">
 
-{{user.name}}
-{{user.age}}
-{{user.campus}}
-{{user.interests}}
-{{user.aboutMe}}
+  <section class="info-container">
+    <h2 class="profile-title">{{user.name}}, {{user.age}}</h2>
+    <p>{{user.campus}}</p>
+    <article class="interest-container">
+      {{#each user.interests}}
+      <div class="interest">{{this}}</div>
+      {{/each}}
+    </article>
+    <p>{{user.aboutMe}}</p>
+  </section>
+
+  <section>
+      {{#each user.photos}}
+      <div>
+          <img src="{{this.imgUrl}}" alt="photo">
+      </div>
+      {{/each}}
+  </section>
 
 
-<section>
-    {{#each user.photos}}
-    <div>
-        <img src="{{this.imgUrl}}" alt="photo">
-    </div>
-    {{/each}}
-</section>
-
-
-<nav class="navbar fixed-bottom spacing">
-  <ul class="navbar-list">
-    <li>
-      <a class="navbar-btn" href="/swipe/show/{{sessionId}}"> <img src="/images/grey-tinder-logo.ico" alt="swipe icon"> </a>
-    </li>
-    <li>
-      <a class="navbar-btn" href="/profile/{{sessionId}} "> <img src="/images/colored-profile-logo.png" alt="profile icon"> </a>
-    </li>
-    <li>
-      <a class="navbar-btn" href="/matches/{{sessionId}}"> <img src="/images/grey-matches-logo.ico" alt="matches icon"> </a>
-    </li>
-  </ul>
-</nav>
+  <nav class="navbar fixed-bottom spacing">
+    <ul class="navbar-list">
+      <li>
+        <a class="navbar-btn" href="/swipe/show/{{sessionId}}"> <img src="/images/grey-tinder-logo.ico" alt="swipe icon"> </a>
+      </li>
+      <li>
+        <a class="navbar-btn" href="/profile/{{sessionId}} "> <img src="/images/colored-profile-logo.png" alt="profile icon"> </a>
+      </li>
+      <li>
+        <a class="navbar-btn" href="/matches/{{sessionId}}"> <img src="/images/grey-matches-logo.ico" alt="matches icon"> </a>
+      </li>
+    </ul>
+  </nav>
+</div>
