@@ -1,52 +1,55 @@
 <div class="swipe-container">
-    <section class="card" >
 
-            <a href="/profile/{{randomUser._id}}" class="img-link">
-                <img src="{{randomUser.profileImg}}" alt="" class="card-img-top">
-            </a>
-        <div class="card-img-overlay">
+  <section class="card">
 
+    <div class="card inner-card">
 
-            <h2 class="name-age">{{randomUser.username}}, {{randomUser.age}}</h2>
-            <h3 class="campus">{{randomUser.campus}}</h3>
-
-            <div class="inline-buttons">
-                <form action="/swipe/dislike/{{user._id}}/{{randomUser._id}}" method="POST">
-                    <button type="submit" class="btn btn-danger">X</button>
-                </form>
+      <a href="/profile/{{randomUser._id}}" class="img-link">
+        <img src="{{randomUser.profileImg}}" alt="" class="card-img-top">
+      </a>
+      <div class="card-img-overlay">
 
 
-                <button type="button" class="btn btn-primary">Filter</button>
+        <h2 class="name-age">{{randomUser.username}}, {{randomUser.age}}</h2>
+        <h5 class="campus">{{randomUser.campus}}</h5>
+
+       
 
 
-                <form action="/swipe/like/{{user._id}}/{{randomUser._id}}" method="POST">
-                    <button type="submit" class="btn btn-success">✔</button>
-                </form>
+      </div>
+    </div>
+     <div class="inline-buttons card-footer">
+        <form action="/swipe/dislike/{{user._id}}/{{randomUser._id}}" method="POST">
+          <button type="submit" class="btn no-btn" onmousedown="clickedNo()" onmouseup="clickedNo()"><i class="fa fa-times" style="font-size:30px"></i></button>
+        </form>
 
-            </div>
 
+        <button type="button" class="btn filter-btn">Filter</button>
 
-        </div>
-    </section>
+        <form action="/swipe/like/{{user._id}}/{{randomUser._id}}" method="POST">
+          <button type="submit" class="btn yes-btn" onmousedown="clickedYes()" onmouseup="clickedYes()"><i class="fa fa-heart" style="font-size:30px"></i></button>
+        </form>
+      </div>
+  </section>
 </div>
 
 
 <div class="filter-form hidden">
-    <button type="button">X</button>
-    <h1>Filter by campus</h1>
-    <form action="/swipe/filter/{{user._id}}" method="POST">
-        <select name="campus">
-            <option value="Barcelona" {{#if (isEqual "Barcelona" inputFilter)}} selected="selected" {{/if}}>Barcelona</option>
-            <option value="Amsterdam" {{#if (isEqual "Amsterdam" inputFilter)}} selected="selected" {{/if}}>Amsterdam</option>
-            <option value="Madrid" {{#if (isEqual "Madrid" inputFilter)}} selected="selected" {{/if}}>Madrid</option>
-            <option value="Miami" {{#if (isEqual "Miami" inputFilter)}} selected="selected" {{/if}}>Miami</option>
-            <option value="Berlin" {{#if (isEqual "Berlin" inputFilter)}} selected="selected" {{/if}}>Berlin</option>
-            <option value="Paris" {{#if (isEqual "Paris" inputFilter)}} selected="selected" {{/if}}>Paris</option>
-            <option value="All" {{#if (isEqual "All" inputFilter)}} selected="selected" {{/if}}>All</option>
-        </select>
+  <button type="button">X</button>
+  <h1>Filter by campus</h1>
+  <form action="/swipe/filter/{{user._id}}" method="POST">
+    <select name="campus">
+      <option value="Barcelona" {{#if (isEqual "Barcelona" inputFilter)}} selected="selected" {{/if}}>Barcelona</option>
+      <option value="Amsterdam" {{#if (isEqual "Amsterdam" inputFilter)}} selected="selected" {{/if}}>Amsterdam</option>
+      <option value="Madrid" {{#if (isEqual "Madrid" inputFilter)}} selected="selected" {{/if}}>Madrid</option>
+      <option value="Miami" {{#if (isEqual "Miami" inputFilter)}} selected="selected" {{/if}}>Miami</option>
+      <option value="Berlin" {{#if (isEqual "Berlin" inputFilter)}} selected="selected" {{/if}}>Berlin</option>
+      <option value="Paris" {{#if (isEqual "Paris" inputFilter)}} selected="selected" {{/if}}>Paris</option>
+      <option value="All" {{#if (isEqual "All" inputFilter)}} selected="selected" {{/if}}>All</option>
+    </select>
 
-        <button type="submit">Filter</button>
-    </form>
+    <button type="submit">Filter</button>
+  </form>
 </div>
 
 
@@ -56,14 +59,28 @@
       {{#if inSwipe}}
       <a class="navbar-btn"> <img class="swipe-btn" src="/images/colored-tinder-logo.png" alt="swipe icon"> </a>
       {{else}}
-      <a class="navbar-btn" href="/swipe/show/{{user._id}}"> <img src="/images/colored-tinder-logo.png" alt="swipe icon"> </a>
+      <a class="navbar-btn" href="/swipe/show/{{user._id}}"> <img src="/images/colored-tinder-logo.png"
+          alt="swipe icon"> </a>
       {{/if}}
     </li>
     <li>
-      <a class="navbar-btn" href="/profile/{{user._id}} "> <img src="/images/grey-profile-logo.ico" alt="profile icon"> </a>
+      <a class="navbar-btn" href="/profile/{{user._id}} "> <img src="/images/grey-profile-logo.ico" alt="profile icon">
+      </a>
     </li>
     <li>
-      <a class="navbar-btn" href="/matches/{{user._id}}"> <img src="/images/grey-matches-logo.ico" alt="matches icon"> </a>
+      <a class="navbar-btn" href="/matches/{{user._id}}"> <img src="/images/grey-matches-logo.ico" alt="matches icon">
+      </a>
     </li>
   </ul>
 </nav>
+
+<script>
+
+  const clickedYes = () =>{
+    document.querySelector(".yes-btn").classList.toggle("clicked-yes")
+  }
+
+    const clickedNo = () =>{
+    document.querySelector(".no-btn").classList.toggle("clicked-no")
+  }
+</script>
