@@ -100,12 +100,13 @@ a.animated-button.victoria-one:after { /* Background effect hover */
 }
 
 .signup-form-container {
+  padding-top: 50px;
   display:flex;
   margin: 0 auto;
   align-self: center;
   width: 100vw;
-  height: 100vh;
-  justify-content: center;
+  min-height: 100vh;
+  justify-content: flex-start;
   align-items: center;
   color: black;
   align-items: center;
@@ -114,7 +115,6 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   box-shadow: 0 0 2px 2px rgb(159, 91, 226);
   border-radius: 3%;
   flex-direction: column;
-  margin: 0;
 }
 
 .signup-username {
@@ -178,6 +178,18 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   font-size: 16px;
 }
 
+.signup-label-name {
+  margin-top: 20%;
+  display:flex;
+  flex-direction:column;
+}
+
+.signup-label-aboutme {
+  margin-top: 20%;
+  display:flex;
+  flex-direction:column;
+}
+
 .signup-name input[type="text"],
 .signup-aboutme input[type="text"]{
   border: none;
@@ -187,16 +199,31 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   height: 40px;
   color: black;
   font-size: 16px;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
+  width: 72vw;
 }
 
 .signup-interests-name {
   font-size: 16px;
+
 }
 
-.signup-interests {
+.signup-fieldset {
+  width: 72vw;
+}
+
+.signup-interests-box {
   border: 1.8px solid rgb(159, 91, 226);
   background: transparent;
+  margin-left: 115px;
+}
+
+.signup-form-container img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 30vw;
 }
 
 .signup-step1-button {
@@ -213,7 +240,10 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   display: flex;
   flex-direction:row;
   justify-content:center;
+  text-align: center;
+  padding-top: 10px;
 }
+
 
 .signup-step2 {
   margin-top: 5%;
@@ -225,17 +255,83 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   width: 100%;
 }
 
+.campus-text {
+  margin-bottom: 20px;
+  width: 72vw;
+}
+
+.signup-step2-button {
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 85px;
+  background-color:rgb(198, 150, 243);
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+  top: 50%;
+  margin: 0;
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.signup-step3-submit {
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 85px;
+  background-color:rgb(198, 150, 243);
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+  top: 50%;
+  margin: 0;
+  display: flex;
+  flex-direction:row;
+  justify-content:center;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
 .signup-step3 {
-    position: relative;
-    margin: 0 auto;
-    align-self: center;
-    width: 320px;
-    height: 420px;
-    justify-content: center;
-    color: black;
-    align-items: center;
-    box-sizing: border-box;
-    flex-direction: column;
+  margin-top: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.signup-choosefile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 60vw;
+  display: none;
+  background-color: transparent !important;
+}
+
+.label-upload{
+  background-color: transparent !important;
+}
+
+.plus-icon {
+  width: 20%;
+}
+
+.test {
+  margin-top: 20px !important;
+}
+
+.add-plus {
+  background-color: transparent !important;
+  border: none !important; 
+  color: black !important;
+  margin-bottom: 50px !important;
 }
 
 

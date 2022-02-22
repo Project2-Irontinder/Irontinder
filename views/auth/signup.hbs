@@ -2,6 +2,8 @@
 
     <div class="signup-boxes-firstpage">
 
+        <img src="/images/colored-tinder-logo.png" alt="logo">
+
         <form action="/signup" method="POST" enctype="multipart/form-data">
 
 
@@ -39,53 +41,52 @@
     <section class="signup-step2 hidden">
 
         <div class="signup-name">
-            <label for="name">Name</label>
+            <label class="signup-label-name" for="name">Name</label>
             <input placeholder="Name" type="text" name="name" minlength="3" maxlength="10" required>
-            <div />
+        </div>
 
 
-            <fieldset>
-                <legend class="signup-interests-name">Interests:</legend>
-                <select class="signup-interests" name="interests" multiple>
-                    <option value="Food">Food</option>
-                    <option value="Music">Music</option>
-                    <option value="Coding">Coding</option>
-                    <option value="Dance">Dance</option>
-                </select>
-            </fieldset>
+        <fieldset class="signup-fieldset">
+            <legend class="signup-interests-name">Interests:</legend>
+            <select class="signup-interests-box" name="interests" multiple>
+                <option value="Food">Food</option>
+                <option value="Music">Music</option>
+                <option value="Coding">Coding</option>
+                <option value="Dance">Dance</option>
+            </select>
+        </fieldset>
 
 
-            <div class="signup-aboutme">
-                <label for="aboutMe">About me</label>
-                <input placeholder="About me" type="text" name="aboutMe" minlength="3" maxlength="250" required>
-                <div />
+        <div class="signup-aboutme">
+            <label class="signup-label-aboutme" for="aboutMe">About me</label>
+            <input placeholder="About me" type="text" name="aboutMe" minlength="3" maxlength="250" required>
+        </div>
 
-                <label for="campus">Campus</label>
-                <select name="campus" required>
-                    <option selected="selected" value="3">Select an option</option>
-                    <option value="Barcelona">Barcelona</option>
-                    <option value="Amsterdam">Amsterdam</option>
-                    <option value="Madrid">Madrid</option>
-                    <option value="Miami">Miami</option>
-                    <option value="Berlin">Berlin</option>
-                    <option value="Paris">Paris</option>
-                </select>
+        <label class="campus-text" for="campus">Campus</label>
+        <select name="campus" required>
+            <option selected="selected" value="3">Select an option</option>
+            <option value="Barcelona">Barcelona</option>
+            <option value="Amsterdam">Amsterdam</option>
+            <option value="Madrid">Madrid</option>
+            <option value="Miami">Miami</option>
+            <option value="Berlin">Berlin</option>
+            <option value="Paris">Paris</option>
+        </select>
 
-                <button onclick="showOrHideDiv2()">Step 2</button>
+        <button class="signup-step2-button" onclick="showOrHideDiv2()">Step 2</button>
 
 
     </section>
 
 
-
-
     <section class="signup-step3 hidden">
 
-        <label for="profileImg">Photo</label>
+        <label for="profileImg" class="btn btn-primary add-plus"> Add profile photo <img style="width: 30px;" src="/images/plus.ico" alt="plus-icon" class="test">
 
-        <input type="file" name="profileImg" required>
+        </label>
+        <input class="signup-choosefile" type="file" id="profileImg" name="profileImg" required>
 
-        <button type="submit">Submit>></button>
+        <button class="signup-step3-submit" type="submit">Submit</button>
 
     </section>
 
