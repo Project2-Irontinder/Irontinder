@@ -1,19 +1,32 @@
 <div class="login">
-  <img src="" alt="logo">
-  <h1>Login</h1>
+
+  <div class="logo">
+    <img src="" alt="logo">
+    <h1>Login</h1>
+  </div>
+  
 
   <form action="/login" method="POST">
-  <label for="username">Username </label>
-  <input placeholder="Enter username" type="text" name="username" minlength="3" maxlength="15" required>
-
-  <label for="password">Password:</label>
-  <input placeholder="Enter password" type="password" name="password" required>
-
-  <button type="submit">Submit</button>
   
+  <div class="user">
+    <label for="username">Username </label>
+    <input placeholder="Enter username" type="text" name="username" minlength="3" maxlength="15" required>
+  </div>
+
+  <div class="pwd">
+     <label for="password">Password</label>
+     <input placeholder="Enter password" type="password" name="password" required>
+  </div>
+  
+  <div class="login-button">
+     <button  type="submit">Login</button>
+     <a href="/" class="btn rounded-button" >&#8629;</a>
+  </div>
+  
+
 </form>
 
-<a href="/" class="btn rounded-button" >&#8629;</a>
+
 
 </div>
 {{#if errorMessage}}

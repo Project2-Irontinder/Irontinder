@@ -99,12 +99,61 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   font-size: 15px;
 }
 
-.form{
-  display:flex;
-  justify-content: center;
-  align-items: center;
-  margin:50px auto;
+/*CSS Luis*/
+  .login{
+    /*display: flex;*/
+    margin: 0 auto;
+    align-self: center;
+    width: 320px;
+    height: 420px;
+    justify-content: center;
+    color: black;
+    align-items: center;
+    box-sizing: border-box;
+    flex-direction: column;
+    border:3px solid rgb(159, 91, 226) ;
+    border-radius: 3%;
+}
+.login h1{
+  margin:0 ;
+  margin-top: 50px;
+  padding: 5px 0 0 0;
+  text-align: center;
+  font-size: 25px;
+}
 
+.login input{
+  width: 90%;
+  margin-bottom: 20px;
+}
+
+.login input[type="text"],
+.login input[type="password"]{
+  padding-left: 10px;
+  border: none;
+  border-bottom: 1.8px solid rgb(159, 91, 226);
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: black;
+  font-size: 16px;
+}
+
+.login button[type="submit"]{
+  border: none;
+  outline: none;
+  height: 40px;
+  background-color:rgb(198, 150, 243) ;
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+}
+.login-button{
+  margin: 0 auto;
+  
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
 }
 
 .text-button{
@@ -116,7 +165,7 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   border-color: rgba(148,43,250,1) !important;
   color: rgba(148,43,250,1) !important
 }
-
+/*End Luis*/
 
 /* DIEGO'S CSS*/
 
