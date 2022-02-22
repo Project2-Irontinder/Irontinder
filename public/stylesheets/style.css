@@ -1,6 +1,10 @@
 body {
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .inline-buttons {
@@ -13,6 +17,15 @@ body {
   width: 100%;
   display: flex;
   justify-content: center;
+}
+
+.pc-card{
+  width: 25rem;
+}
+
+.pc-card-img{
+  width: 23rem;
+  height: 20rem;
 }
 
 /* CARWI'S CSS*/
@@ -88,16 +101,102 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   padding: 10px;
 }
 
-.navbar{
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.rounded-button {
+  border-radius: 50% !important;
+  border-color: rgba(148,43,250,1) !important;
+  color: rgba(148,43,250,1) !important
 }
 
-.navbar-list{
-  list-style-type: none;
-  display: flex;
+/* END */
+
+/* FER'S CSS*/
+@media (max-device-width: 812px) {
+  
+  .mobile-card-img{
+    width: 80vw;
+    height: 30vh;
+  }
+
+  .mobile-card{
+    width: 80vw;
+  }
+
+  .navbar{
+    margin-top: 15px;
+  }
+  
+  .navbar-list{
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+  }
+  
+  .navbar-btn{
+    position: relative;
+    width: 100px;
+    text-decoration: none;
+    border-radius: 4em;
+    font-size: 19px;
+    color: white;
+    padding: 0.8em 1.8em;
+    cursor:pointer;
+    user-select:none;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    -webkit-transition-duration: 0.4s; /* Safari */
+  }
+  
+  .navbar-btn img,
+  .swipe-btn{
+    width: 40px;
+  }
+  
+  .navbar-btn:after {
+    content: "";
+    display: block;
+    position: absolute;
+    border-radius: 4em;
+    left: 25%;
+    top:5%;
+    width: 50%;
+    height: 100%;
+    opacity: 0;
+    transition: all 0.4s;
+    box-shadow: 0 0 10px 40px rgb(203, 151, 255);
+  }
+  
+  .navbar-btn:active:after {
+    box-shadow: 0 0 0 0 lightblue;
+    position: absolute;
+    border-radius: 4em;
+    left: 25%;
+    top:5%;
+    opacity: 1;
+    transition: 0s;
+  }
+  
+}
+
+@media (min-device-width: 812px) {
+  .navbar-list{
+    list-style-type: none;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0;
+  }
+  
+  .navbar-list li{
+    border-left: 1.5px solid lightgrey;
+    border-right: 1.5px solid lightgrey;
+  }
+}
+
+.navbar{
+  margin-top: 15px;
+  border-top: 1.5px solid lightgrey;
 }
 
 .navbar-btn{
@@ -105,7 +204,7 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   width: 100px;
   text-decoration: none;
   border-radius: 4em;
-  font-size: 16px;
+  font-size: 19px;
   color: white;
   padding: 0.8em 1.8em;
   cursor:pointer;
@@ -127,31 +226,28 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   display: block;
   position: absolute;
   border-radius: 4em;
-  left: 0;
-  top:0;
+  left: 25%;
+  top:5%;
   width: 50%;
   height: 100%;
   opacity: 0;
   transition: all 0.4s;
-  box-shadow: 0 0 10px 40px rgb(200, 140, 255, 1);
+  box-shadow: 0 0 10px 40px rgb(203, 151, 255);
 }
 
 .navbar-btn:active:after {
-  box-shadow: 0 0 0 0 rgba(200, 140, 255, 1);
+  box-shadow: 0 0 0 0 lightblue;
   position: absolute;
   border-radius: 4em;
-  left: 0;
-  top:0;
+  left: 25%;
+  top:5%;
   opacity: 1;
   transition: 0s;
 }
 
+/* END */
 
-.rounded-button {
-  border-radius: 50% !important;
-  border-color: rgba(148,43,250,1) !important;
-  color: rgba(148,43,250,1) !important
-}
+
 
 /* DIEGO'S CSS*/
 .start-screen{
@@ -240,4 +336,4 @@ a.animated-button.victoria-one:after { /* Background effect hover */
 
 
 
-/* END*/
+/* END */

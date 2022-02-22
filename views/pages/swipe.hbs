@@ -1,9 +1,9 @@
 <div class="swipe-container">
-    <section class="card" style="width: 25rem;">
+    <section class="card mobile-card pc-card">
         <div class="card-body">
 
             <a href="/profile/{{randomUser._id}}">
-                <img src="{{randomUser.profileImg}}" alt="" class="card-img-top">
+                <img src="{{randomUser.profileImg}}" alt="" class="card-img-top mobile-card-img pc-card-img">
             </a>
 
             <h2>{{randomUser.username}}, {{randomUser.age}}</h2>
@@ -51,22 +51,21 @@
     </form>
 </div>
 
-<footer>
-  <nav class="navbar">
-    <ul class="navbar-list">
-      <li>
-        {{#if inSwipe}}
-        <a class="navbar-btn"> <img class="swipe-btn" src="/images/colored-tinder-logo.png" alt="swipe icon"> </a>
-        {{else}}
-        <a class="navbar-btn" href="/swipe/show/{{user._id}}"> <img src="/images/colored-tinder-logo.png" alt="swipe icon"> </a>
-        {{/if}}
-      </li>
-      <li>
-        <a class="navbar-btn" href="/profile/{{user._id}} "> <img src="/images/grey-profile-logo.ico" alt="profile icon"> </a>
-      </li>
-      <li>
-        <a class="navbar-btn" href="/matches/{{user._id}}"> <img src="/images/grey-matches-logo.ico" alt="matches icon"> </a>
-      </li>
-    </ul>
-  </nav>
-</footer>
+
+<nav class="navbar fixed-bottom spacing">
+  <ul class="navbar-list">
+    <li>
+      {{#if inSwipe}}
+      <a class="navbar-btn"> <img class="swipe-btn" src="/images/colored-tinder-logo.png" alt="swipe icon"> </a>
+      {{else}}
+      <a class="navbar-btn" href="/swipe/show/{{user._id}}"> <img src="/images/colored-tinder-logo.png" alt="swipe icon"> </a>
+      {{/if}}
+    </li>
+    <li>
+      <a class="navbar-btn" href="/profile/{{user._id}} "> <img src="/images/grey-profile-logo.ico" alt="profile icon"> </a>
+    </li>
+    <li>
+      <a class="navbar-btn" href="/matches/{{user._id}}"> <img src="/images/grey-matches-logo.ico" alt="matches icon"> </a>
+    </li>
+  </ul>
+</nav>
