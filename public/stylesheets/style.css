@@ -88,7 +88,6 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   padding: 10px;
 }
 
-
 .submit-button{
   display: inline-block;
   background-color: rgb(59, 192, 236);
@@ -112,7 +111,6 @@ a.animated-button.victoria-one:after { /* Background effect hover */
  background-image: -webkit-linear-gradient(rgba(43,197,250,1) 20%, rgba(148,43,250,1) 50%, rgba(254,61,99,1) 80%);
 }
 
-
 .rounded-button {
   border-radius: 50% !important;
   border-color: rgba(148,43,250,1) !important;
@@ -121,6 +119,13 @@ a.animated-button.victoria-one:after { /* Background effect hover */
 
 
 /* DIEGO'S CSS*/
+
+body{
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
 .start-screen{
     background: rgb(43,197,250);
     background: linear-gradient(138deg, rgba(43,197,250,1) 20%, rgba(148,43,250,1) 50%, rgba(254,61,99,1) 80%);

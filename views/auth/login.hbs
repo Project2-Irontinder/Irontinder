@@ -1,15 +1,21 @@
-<form class="form" action="/login" method="POST">
+<div class="login">
+  <img src="" alt="logo">
+  <h1>Login</h1>
+
+  <form action="/login" method="POST">
   <label for="username">Username </label>
-  <input type="text" name="username" minlength="3" maxlength="15" required>
+  <input placeholder="Enter username" type="text" name="username" minlength="3" maxlength="15" required>
 
   <label for="password">Password:</label>
-  <input type="password" name="password" required>
+  <input placeholder="Enter password" type="password" name="password" required>
 
-  <button class="submit-button" type="submit">Submit</button>
+  <button type="submit">Submit</button>
+  
 </form>
 
 <a href="/" class="btn rounded-button" >&#8629;</a>
 
+</div>
 {{#if errorMessage}}
   <p>{{errorMessage}}</p>
 {{/if}}
