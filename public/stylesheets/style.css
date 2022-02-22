@@ -1,5 +1,6 @@
 body {
-  padding: 0;
+  padding-top: 50px;
+  padding-bottom: 70px;
   margin: 0;
   display: flex;
   flex-direction: column;
@@ -20,12 +21,12 @@ body {
 }
 
 .pc-card{
-  width: 25rem;
+  width: 21rem;
 }
 
 .pc-card-img{
-  width: 23rem;
-  height: 20rem;
+  width: 18rem;
+  height: 15rem;
 }
 
 /* CARWI'S CSS*/
@@ -195,6 +196,7 @@ a.animated-button.victoria-one:after { /* Background effect hover */
 }
 
 .navbar{
+  background-color: white;
   margin-top: 15px;
   border-top: 1.5px solid lightgrey;
 }
