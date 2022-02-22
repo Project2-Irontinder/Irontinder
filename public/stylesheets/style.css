@@ -20,15 +20,6 @@ body {
   justify-content: center;
 }
 
-.pc-card{
-  width: 21rem;
-}
-
-.pc-card-img{
-  width: 18rem;
-  height: 15rem;
-}
-
 /* CARWI'S CSS*/
 
 a.animated-button:link:after,
@@ -181,6 +172,15 @@ a.animated-button.victoria-one:after { /* Background effect hover */
 }
 
 @media (min-device-width: 812px) {
+  .pc-card{
+    width: 21rem;
+  }
+  
+  .pc-card-img{
+    width: 18rem;
+    height: 15rem;
+  }
+
   .navbar-list{
     list-style-type: none;
     width: 100%;
