@@ -2,34 +2,41 @@
 
   <section class="card outter-card">
 
-    <div class="card inner-card">
+      <div id="{{firstRandom._id}}" class="card inner-card active-card">
 
-      <a href="/profile/{{randomUser._id}}" class="img-link">
-        <img src="{{randomUser.profileImg}}" alt="" class="card-img-top">
+      <a href="/profile/{{firstRandom._id}}" class="img-link">
+        <img src="{{firstRandom.profileImg}}" alt="" class="card-img-top">  
       </a>
       <div class="card-img-overlay">
-
-
-        <h2 class="name-age">{{randomUser.username}}, {{randomUser.age}}</h2>
-        <h5 class="campus">{{randomUser.campus}}</h5>
-
-       
-
-
+        <h2 class="name-age">{{firstRandom.username}}, {{firstRandom.age}}</h2>
+        <h5 class="campus">{{firstRandom.campus}}</h5>
       </div>
     </div>
-     <div class="inline-buttons card-footer">
-        <form action="/swipe/dislike/{{user._id}}/{{randomUser._id}}" method="POST">
-          <button type="submit" class="btn no-btn" onmousedown="clickedNo()" onmouseup="clickedNo()"><i class="fa fa-times" style="font-size:30px"></i></button>
-        </form>
 
+    {{#each shuffledArray}}
+    <div id="{{_id}}" class="card inner-card hidden">
 
-        <button type="button" class="btn filter-btn">Filter</button>
-
-        <form action="/swipe/like/{{user._id}}/{{randomUser._id}}" method="POST">
-          <button type="submit" class="btn yes-btn" onmousedown="clickedYes()" onmouseup="clickedYes()"><i class="fa fa-heart" style="font-size:30px"></i></button>
-        </form>
+      <a href="/profile/{{_id}}" class="img-link">
+        <img src="{{profileImg}}" alt="" class="card-img-top">
+      </a>
+      <div class="card-img-overlay">
+        <h2 class="name-age">{{username}}, {{age}}</h2>
+        <h5 class="campus">{{campus}}</h5>
       </div>
+    </div>
+    {{/each}}
+
+    <div class="inline-buttons card-footer">
+      <!--form action="/swipe/dislike/{{user._id}}/{{shuffledArray.[0]._id}}" method="POST"-->
+        <button type="submit" class="btn no-btn"  onclick="changeId()"><i class="fa fa-times" style="font-size:30px"></i></button>
+      <!--/form-->
+      <button type="button" class="btn filter-btn"><i class="fa fa-filter" style="font-size:24px"></i></button>
+
+      <!--form action="/swipe/like/{{user._id}}/{{shuffledArray.[0]._id}}" method="POST"-->
+        <button type="submit" class="btn yes-btn" onmousedown="clickedYes()" onmouseup="clickedYes()"><i
+            class="fa fa-heart" style="font-size:30px"></i></button>
+      <!--/form-->
+    </div>
   </section>
 </div>
 
@@ -75,12 +82,15 @@
 </nav>
 
 <script>
+  const changeId = () =>{
+    
+  }
 
-  const clickedYes = () =>{
+  const clickedYes = () => {
     document.querySelector(".yes-btn").classList.toggle("clicked-yes")
   }
 
-    const clickedNo = () =>{
+  const clickedNo = () => {
     document.querySelector(".no-btn").classList.toggle("clicked-no")
   }
 </script>

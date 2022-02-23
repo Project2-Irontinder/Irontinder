@@ -17,9 +17,10 @@ body {
 }
 
 .inline-buttons {
+  padding-top: 20px !important;
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
   border: none !important; 
   border-radius: 0px 0px 30px 30px !important;
   background-color: white !important;
@@ -1233,6 +1234,16 @@ a.animated-button.victoria-one:after {
   }
 }
 
+@keyframes card-slide-right{
+  0% {
+    text-replace: auto;
+  }
+
+  100% {
+    transform: scale(200, 200);
+  }
+}
+
 .start-img {
   width: 50%;
   max-width: 414px;
@@ -1261,7 +1272,7 @@ a.animated-button.victoria-one:after {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 
@@ -1280,7 +1291,7 @@ a.animated-button.victoria-one:after {
   border-radius: 20px !important;
   overflow: hidden !important;
   border: none !important;
-  box-shadow: 0px 10px 15px rgb(104, 104, 104) !important;
+  box-shadow: 0px 5px 10px rgb(104, 104, 104) !important;
 
   
 }
@@ -1324,12 +1335,25 @@ a.animated-button.victoria-one:after {
 }
 
 .no-btn{
-  background-color: red !important;
-   color: rgba(255, 255, 255, 0.85) !important;
+  background-color: white !important;
+  color: #fd6c6b !important;
+  outline: #eeeeee solid 7px;
+  
 }
 .yes-btn{
-  background-color: green !important;
-  color: rgba(255, 255, 255, 0.85) !important;
+  background-color: white !important;
+  color: #4fcc94 !important;
+  outline: #eeeeee solid 7px;
+}
+
+.filter-btn{
+  height: 50px;
+  width: 50px;
+  border-radius: 50% !important ;
+  background-color: white !important;
+  color: #2cb4ca !important;
+  outline: #eeeeee solid 7px;
+  margin: 0 10px;
 }
 
 .clicked-No{
