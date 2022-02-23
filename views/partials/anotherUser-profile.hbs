@@ -3,7 +3,7 @@
     <img class="app-logo" src="/images/gradient.png" alt="">
     <hr class="logo-underline">
   </header>
-  <img class="rounded-circle" src="{{user.profileImg}}" alt="profile image">
+  <img class="rounded-circle profileImg" src="{{user.profileImg}}" alt="profile image">
 
   <section class="info-container">
     <h2 class="profile-title">{{user.name}}, {{user.age}}</h2>
@@ -16,10 +16,10 @@
     <p>{{user.aboutMe}}</p>
   </section>
 
-  <section>
+  <section class="photos-container">
       {{#each user.photos}}
-      <div>
-          <img src="{{this.imgUrl}}" alt="photo">
+      <div class="onePhoto-container card">
+          <img class="card-img-top" src="{{this.imgUrl}}" alt="photo">
       </div>
       {{/each}}
   </section>
