@@ -2,32 +2,37 @@
 
     <div class="signup-boxes-firstpage">
 
-        <img src="/images/colored-tinder-logo.png" alt="logo">
 
-        <form action="/signup" method="POST" enctype="multipart/form-data">
+        <form action="/signup" method="POST" enctype="multipart/form-data" >
 
 
 
             <section class="signup-step1">
+        <img src="/images/colored-tinder-logo.png" alt="logo">
 
+{{#if errorMessage}}
+<p style="margin-top: 10px">{{errorMessage}}</p>
+{{/if}}
 
                 <div class="signup-username">
                     <label for="username">Username</label>
-                    <input placeholder="Username" type="text" name="username" minlength="3" maxlength="15" required>
+                    <input placeholder="Username" class="no-autocomplete" autocomplete="on" type="text" name="username" minlength="3" maxlength="15" >
                 </div>
 
                 <div class="signup-password">
                     <label for="password">Password</label>
-                    <input placeholder="Password" type="password" name="password" required>
+                    <input placeholder="Password" type="password" name="password" >
                 </div>
 
                 <div class="signup-age">
                     <label for="age">Age</label>
-                    <input placeholder="Age" type="number" name="age" required>
+                    <input placeholder="Age" type="number" name="age" >
                 </div>
 
                 <div class="signup-button">
-                    <a href="/" class="btn rounded-button">&#8629;</a>
+                    <a href="/" class="btn rounded-button">
+                        <h2>&#8629;</h2>
+                    </a>
                     <button class="signup-step1-button" onclick="showOrHideDiv()">Step 1</button>
                 </div>
     </div>
@@ -39,10 +44,11 @@
 
 
     <section class="signup-step2 hidden">
+        <img src="/images/colored-tinder-logo.png" alt="logo">
 
         <div class="signup-name">
             <label class="signup-label-name" for="name">Name</label>
-            <input placeholder="Name" type="text" name="name" minlength="3" maxlength="10" required>
+            <input placeholder="Name" class="no-autocomplete2" autocomplete="on" type="text" name="name" minlength="3" maxlength="10" >
         </div>
 
 
@@ -59,12 +65,12 @@
 
         <div class="signup-aboutme">
             <label class="signup-label-aboutme" for="aboutMe">About me</label>
-            <input placeholder="About me" type="text" name="aboutMe" minlength="3" maxlength="250" required>
+            <input placeholder="About me" type="text" name="aboutMe" minlength="3" maxlength="250" >
         </div>
 
         <label class="campus-text" for="campus">Campus</label>
-        <select name="campus" required>
-            <option selected="selected" value="3">Select an option</option>
+        <select class="select-campus" name="campus" >
+            <option selected="selected" value="3">Select a campus</option>
             <option value="Barcelona">Barcelona</option>
             <option value="Amsterdam">Amsterdam</option>
             <option value="Madrid">Madrid</option>
@@ -80,8 +86,10 @@
 
 
     <section class="signup-step3 hidden">
+        <img src="/images/colored-tinder-logo.png" alt="logo">
 
-        <label for="profileImg" class="btn btn-primary add-plus"> Add profile photo <img style="width: 30px;" src="/images/plus.ico" alt="plus-icon" class="test">
+        <label for="profileImg" class="btn btn-primary add-plus"> Add profile photo <img style="width: 30px;"
+                src="/images/plus.ico" alt="plus-icon" class="signup-icon">
 
         </label>
         <input class="signup-choosefile" type="file" id="profileImg" name="profileImg" required>
@@ -97,10 +105,17 @@
 <script>
     function showOrHideDiv() {
         let step1 = document.querySelector(".signup-step1")
-        let step2 = document.querySelector(".signup-step2")
+        let step2 = document.querySelector(".signup-step2") 
 
+        let noAutocomplete = document.querySelector(".no-autocomplete")
+
+        noAutocomplete.setAttribute("autocomplete", "off")
+        
+        step1.classList.toggle("slide-up")
+        setTimeout(()=>{
         step1.classList.toggle("hidden")
         step2.classList.toggle("hidden")
+        },1000)
     }
 </script>
 
@@ -109,11 +124,15 @@
         let step2 = document.querySelector(".signup-step2")
         let step3 = document.querySelector(".signup-step3")
 
+        let noAutocomplete2 = document.querySelector(".no-autocomplete2")
+
+        noAutocomplete2.setAttribute("autocomplete", "off")
+
+        step2.classList.toggle("slide-up")
+        setTimeout(() => {
         step2.classList.toggle("hidden")
         step3.classList.toggle("hidden")
+        },1000)
     }
 </script>
 
-{{#if errorMessage}}
-<p>{{errorMessage}}</p>
-{{/if}}
