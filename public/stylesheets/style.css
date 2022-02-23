@@ -6,19 +6,27 @@
 
 body {
   margin: 0;
+  font-size: 16px;
   border: 0;
 }
 
 .inline-buttons {
+  padding-top: 20px !important;
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
+  border: none !important; 
+  border-radius: 0px 0px 30px 30px !important;
+  background-color: white !important;
 }
 
 .swipe-container {
   width: 100%;
+  height: 90vh;
   display: flex;
   justify-content: center;
+  align-items:center;
+
 }
 
 /* CARWI'S CSS*/
@@ -513,6 +521,12 @@ a.animated-button.victoria-one:after {
 
 /* FER'S CSS*/
 @media (max-device-width: 812px) {
+
+  .inner-card{
+    width: 20rem !important;
+    height: calc(20rem * 1.4) !important;
+  }
+
   /*CSS Luis*/
 
   .login-form-container {
@@ -1182,13 +1196,10 @@ a.animated-button.victoria-one:after {
 }
 
 @media (min-device-width: 813px) {
-  .pc-card {
-    width: 21rem;
-  }
 
-  .pc-card-img {
-    width: 18rem;
-    height: 15rem;
+  .inner-card{
+    width: 20rem !important;
+    height: calc(20rem * 1.35) !important;
   }
 
   .navbar-list {
@@ -1197,6 +1208,7 @@ a.animated-button.victoria-one:after {
     display: flex;
     justify-content: space-evenly;
     margin: 0;
+    padding: 0;
   }
 
   .navbar-list li {
@@ -1620,6 +1632,34 @@ a.animated-button.victoria-one:after {
   }
 }
 
+@keyframes card-slide-right-animation{
+  0% {
+    transform: translateX(0) rotateZ(0deg);
+  }
+  
+  100% {
+    transform: translateX(300%) rotateZ(45deg);
+  }
+}
+
+@keyframes card-slide-left-animation{
+  0% {
+    transform: translateX(0) rotateZ(0deg);
+  }
+  
+  100% {
+    transform: translateX(-300%) rotateZ(-45deg);
+  }
+}
+
+.slide-card-right{
+  animation: 1s card-slide-right-animation;
+}
+
+.slide-card-left{
+  animation: 1s card-slide-left-animation;
+}
+
 .start-img {
   width: 50%;
   max-width: 414px;
@@ -1639,6 +1679,7 @@ a.animated-button.victoria-one:after {
   justify-content: center;
 }
 
+/* CARD STYLES*/
 .circle {
   position: absolute;
   width: 1px;
@@ -1651,7 +1692,100 @@ a.animated-button.victoria-one:after {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
+
+.card-img-overlay{
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.img-link{
+  height: 100%;
+}
+.inner-card{
+ /* background: linear-gradient(transparent -100%, rgba(0, 0, 0, 0.8)) !important;*/
+  background: linear-gradient(0deg,black, rgba(0, 0, 0, 0.75) 35%, transparent 130%) !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+  border: none !important;
+  box-shadow: 0px 5px 10px rgb(104, 104, 104) !important;
+
+  
+}
+.inner-card img{
+  
+  mix-blend-mode: overlay;
+  width: 100%;
+  height: 100%;
+  object-fit:cover !important;
+}
+
+.outter-card{
+  padding-top: 0.8rem;
+  width: 21.5rem;
+  display: flex;
+  align-items: center;
+  border: none !important;
+  box-shadow: 1px 1px 100px rgb(189, 189, 189);
+  border-radius: 20px 20px 20px 20px !important;
+}
+.campus{
+  color: rgba(255,255, 255, 0.75);
+  font-size: 1rem;
+  font-family: 'tinderFontLight', sans-serif;
+}
+.name-age{
+  color: rgba(255,255, 255, 0.75);
+  font-size: 2rem;
+  font-family: 'tinderFont', sans-serif;
+}
+
+.inner-card{
+  border: none !important;
+}
+
+.no-btn,
+.yes-btn{
+  height: 65px;
+  width: 65px;
+  border-radius: 50% !important ;
+}
+
+.no-btn{
+  background-color: white !important;
+  color: #fd6c6b !important;
+  outline: #eeeeee solid 7px;
+  
+}
+.yes-btn{
+  background-color: white !important;
+  color: #4fcc94 !important;
+  outline: #eeeeee solid 7px;
+}
+
+.filter-btn{
+  height: 50px;
+  width: 50px;
+  border-radius: 50% !important ;
+  background-color: white !important;
+  color: #2cb4ca !important;
+  outline: #eeeeee solid 7px;
+  margin: 0 10px;
+}
+
+.clicked-No{
+ transform: scale(0.85,0.85);
+ color: red !important;
+ background-color: white !important;
+}
+
+.clicked-Yes{
+  transform: scale(0.85,0.85);
+  color: green !important;
+  background-color: white !important;
+ }
+/* END */
 /* END */

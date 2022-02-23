@@ -26,9 +26,16 @@ router.get('/show/:userId', isLoggedIn, (req, res) => {
           {campus : {$in: filter}},
         ]
       })
-        .then(users => {
-          const randomUser = users[Math.floor(Math.random() * users.length)]
-          res.render("pages/swipe", { randomUser, user, inputFilter, inSwipe: true})
+        .then(usersArray => {
+          
+          const shuffledArray = usersArray;
+          shuffle(shuffledArray)
+          const firstRandom = shuffledArray[0]
+          shuffledArray.shift()
+
+          
+          
+          return res.render("pages/swipe", { firstRandom,shuffledArray,user, inputFilter, inSwipe: true})
         })
 
 
@@ -59,10 +66,12 @@ router.post("/dislike/:userId/:dislikedId", (req, res) => {
   User.findById(req.params.dislikedId)
     .then(dislikedUser => {
       User.findByIdAndUpdate(req.params.userId, { $push: { disliked: dislikedUser._id } })
-      .then(() => res.redirect(`/swipe/show/${req.params.userId}`))
+      .then(()=>{return})
+      //.then(() => res.redirect(`/swipe/show/${req.params.userId}`))
     })
     
 })
+
 
 
 
@@ -94,5 +103,24 @@ const handleMatch = (firstUser, secondUser) => {
       })
     }
   }
+
+
+const shuffle = (array) =>{
+  let currentIndex = array.length,  randomIndex;
+
+  // While there remain elements to shuffle...
+  while (currentIndex != 0) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+
+    // And swap it with the current element.
+    [array[currentIndex], array[randomIndex]] = [
+      array[randomIndex], array[currentIndex]];
+  }
+
+  return array;
+}
 
 module.exports = router;
