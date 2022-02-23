@@ -53,6 +53,10 @@ body {
   animation: 1s signup-slideup;
 }
 
+.slide-up2 {
+  animation: 1.3s signup-slideup;
+}
+
 /* LOGIN/SIGNUP BUTTONS*/
 a.animated-button:link:after,
 a.animated-button:visited:after {
