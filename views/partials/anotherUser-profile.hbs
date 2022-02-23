@@ -16,10 +16,10 @@
     <p>{{user.aboutMe}}</p>
   </section>
 
-  <section>
+  <section class="photos-container">
       {{#each user.photos}}
-      <div>
-          <img src="{{this.imgUrl}}" alt="photo">
+      <div class="onePhoto-container card">
+          <img class="card-img-top" src="{{this.imgUrl}}" alt="photo">
       </div>
       {{/each}}
   </section>
