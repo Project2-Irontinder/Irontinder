@@ -20,6 +20,9 @@ body {
   width: 100%;
   display: flex;
   justify-content: space-evenly;
+  border: none !important; 
+  border-radius: 0px 0px 30px 30px !important;
+  background-color: white !important;
 }
 
 .swipe-container {
@@ -121,9 +124,8 @@ a.animated-button.victoria-one:after { /* Background effect hover */
 @media (max-device-width: 812px) {
 
   .inner-card{
-    box-shadow: 1px 1px 1px black !important;
     width: 20rem !important;
-    height: calc(20rem * 1.413) !important;
+    height: calc(20rem * 1.4) !important;
   }
 
   /*CSS Luis*/
@@ -380,9 +382,8 @@ a.animated-button.victoria-one:after { /* Background effect hover */
 @media (min-device-width: 813px) {
 
   .inner-card{
-    box-shadow: 1px 1px 5px black !important;
     width: 20rem !important;
-    height: calc(20rem * 1.413) !important;
+    height: calc(20rem * 1.35) !important;
   }
 
   .navbar-list{
@@ -662,6 +663,9 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   border-radius: 20px !important;
   overflow: hidden !important;
   border: none !important;
+  box-shadow: 0px 10px 15px rgb(104, 104, 104) !important;
+
+  
 }
 .inner-card img{
   
@@ -671,7 +675,15 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   object-fit:cover !important;
 }
 
-
+.outter-card{
+  padding-top: 0.8rem;
+  width: 21.5rem;
+  display: flex;
+  align-items: center;
+  border: none !important;
+  box-shadow: 1px 1px 100px rgb(189, 189, 189);
+  border-radius: 20px 20px 20px 20px !important;
+}
 .campus{
   color: rgba(255,255, 255, 0.75);
   font-size: 1rem;
