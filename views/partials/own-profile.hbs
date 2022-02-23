@@ -1,14 +1,15 @@
-<div class="ownProfile-view">
+<div id="ownProfile-view" class="ownProfile-view">
   <header class="app-logo-container">
     <img class="app-logo" src="/images/gradient.png" alt="">
     <hr class="logo-underline">
   </header>
   <img class="rounded-circle profileImg" src="{{user.profileImg}}" alt="profile image">
-  <img class="rounded-circle edit-btn" src="/images/edit-profile-img.ico" alt="change profile image" onclick="showEditProfileImg()">
 
-  <form class="hidden" action="/profile/{{user._id}}/edit-imgProfile" method="POST" enctype="multipart/form-data">
-      <input type="file" name="profileImg">
-      <button type="submit">Change image profile</button>
+  <form action="/profile/{{user._id}}/edit-imgProfile" method="POST" enctype="multipart/form-data">
+    <label for="profileImg">
+      <img class="rounded-circle edit-profileImg-btn" src="/images/edit-profile-img.ico" alt="change profile image">
+    </label>
+    <input class="hidden" id="profileImg" type="file" name="profileImg" onchange="this.form.submit()">
   </form>
 
   <section class="info-container">
@@ -22,9 +23,9 @@
     <p>{{user.aboutMe}}</p>
   </section>
 
-  <img class="rounded-circle edit-btn" src="/images/edit-profile-info.png" alt="change profile info" onclick="showEditProfileInfo()">
+  <a href="#ownProfile-view"><img class="rounded-circle edit-profileInfo-btn" src="/images/edit-profile-info.png" alt="change profile info" onclick="document.getElementById('edit-profileInfo-section').classList.toggle('hidden')"></a>
 
-  <section class="hidden">
+  <section id="edit-profileInfo-section" class="hidden card">
       <form action="/profile/{{user._id}}/edit-infoProfile" method="POST">
 
       <label for="name">Name:</label>
@@ -47,33 +48,34 @@
 
       </form>
 
-      <button type="button">Close</button>
+      <button type="button" onclick="document.getElementById('edit-profileInfo-section').classList.toggle('hidden')">Close</button>
   </section>
 
   <section class="photos-container">
       {{#each user.photos}}
-      <div class="onePhoto-container">
-          <img src="{{this.imgUrl}}" alt="photo">
-          <form action="/profile/{{../user._id}}/delete-photo/{{this._id}}" method="POST">
-              <button type="submit">Delete</button>
-          </form>
+      <div class="onePhoto-container card">
+        <img class="card-img-top" src="{{this.imgUrl}}" alt="photo">
+
+        <form id="deleteForm-{{this._id}}" class="card-img-overlay flex-end" action="/profile/{{../user._id}}/delete-photo/{{this._id}}"method="POST">
+            <img class="rounded-circle edit-profileInfo-btn" src="/images/delete.ico" alt="delete photo" onclick="document.getElementById('deleteForm-{{this._id}}').submit()">
+        </form>
       </div>
       {{/each}}
   </section>
 
-  <img src="" alt="add new photo" onclick="showAddNewPhoto()">
-
-  <form class="hidden" action="/profile/{{user._id}}/add-newPhoto" method="POST" enctype="multipart/form-data">
-      <input type="file" name="imgUrl">
-      <button type="submit">Add new photo</button>
+  <form action="/profile/{{user._id}}/add-newPhoto" method="POST" enctype="multipart/form-data">
+    <label for="imgUrl">
+      <img class="rounded-circle edit-profileInfo-btn" src="/images/edit-profile-img.ico" alt="add new photo">
+    </label>
+    <input class="hidden" id="imgUrl" type="file" name="imgUrl" onchange="this.form.submit()">
   </form>
 
-  <a href="/logout"><img class="rounded-circle edit-btn" src="/images/logout.ico" alt="logout"></a>
+  <a href="/logout"><img class="rounded-circle logout-btn" src="/images/logout.ico" alt="logout"></a>
 
 
   <nav class="navbar fixed-bottom spacing">
     <ul class="navbar-list">
-      <li>
+      <li> 
         <a class="navbar-btn" href="/swipe/show/{{user._id}}"> <img src="/images/grey-tinder-logo.ico" alt="swipe icon"> </a>
       </li>
       <li>
