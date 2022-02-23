@@ -1203,7 +1203,8 @@ a.animated-button.victoria-one:after {
 
   .matches-img {
     border-radius: 50%;
-    width: 5rem;
+    width: 4.5rem;
+    height: 4.5rem;
   }
 
   .match-div {
