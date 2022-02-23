@@ -17,6 +17,23 @@ body {
 
 /* CARWI'S CSS*/
 
+/* KEYFRAMES */
+
+@keyframes signup-slideup {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-150%);
+  }
+}
+
+.slide-up {
+  animation: 1s signup-slideup;
+}
+
+/* LOGIN/SIGNUP BUTTONS*/
 a.animated-button:link:after,
 a.animated-button:visited:after {
   content: "";
@@ -37,11 +54,11 @@ a.animated-button:visited:hover {
 }
 a.animated-button:link:hover:after,
 a.animated-button:visited:hover:after {
-  
   height: 600%;
 }
 a.animated-button:link,
-a.animated-button:visited { /* contorno letra */
+a.animated-button:visited {
+  /* contorno letra */
   position: relative;
   display: relative;
   margin: 0 0 10px 0;
@@ -57,10 +74,15 @@ a.animated-button:visited { /* contorno letra */
   overflow: hidden;
   letter-spacing: 0.08em;
   /*text-shadow:-1.2px -1.2px rgba(148,43,250,1), 1.2px -1.2px rgba(148,43,250,1), 1.2px 1.2px rgba(148,43,250,1), -1.2px 1.2px rgba(148,43,250,1);*/
-  color: rgba(148,43,250,1);
-  background: linear-gradient(to right, rgba(43,197,250,1) 20%, rgba(148,43,250,1) 50%, rgba(254,61,99,1) 80%);
-	-webkit-background-clip: text;
-	-webkit-text-fill-color: transparent;
+  color: rgba(148, 43, 250, 1);
+  background: linear-gradient(
+    to right,
+    rgba(43, 197, 250, 1) 20%,
+    rgba(148, 43, 250, 1) 50%,
+    rgba(254, 61, 99, 1) 80%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
   -webkit-transition: all 1s ease;
   -moz-transition: all 1s ease;
   -o-transition: all 1s ease;
@@ -68,10 +90,16 @@ a.animated-button:visited { /* contorno letra */
 }
 
 a.animated-button.victoria-one {
-  border: 2px solid rgba(148,43,250,1);
+  border: 2px solid rgba(148, 43, 250, 1);
 }
-a.animated-button.victoria-one:after { /* Background effect hover */
-  background: linear-gradient(138deg, rgba(43,197,250,1) 20%, rgba(148,43,250,1) 50%, rgba(254,61,99,1) 80%);
+a.animated-button.victoria-one:after {
+  /* Background effect hover */
+  background: linear-gradient(
+    138deg,
+    rgba(43, 197, 250, 1) 20%,
+    rgba(148, 43, 250, 1) 50%,
+    rgba(254, 61, 99, 1) 80%
+  );
   -moz-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
   -ms-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
   -webkit-transform: translateX(-50%) translateY(-50%) rotate(-25deg);
@@ -88,7 +116,7 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   padding: 10px;
 }
 
-.submit-button{
+.submit-button {
   display: inline-block;
   background-color: rgb(59, 192, 236);
   border: 3px solid rgb(159, 91, 226);
@@ -99,14 +127,277 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   font-size: 15px;
 }
 
+/* SIGNUP CONFIG WEB*/
+.signup-form-container {
+  padding-top: 50px;
+  display: flex;
+  margin: 0 auto;
+  align-self: center;
+  width: 100vw;
+  min-height: 100vh;
+  justify-content: flex-start;
+  align-items: center;
+  color: black;
+  align-items: center;
+  box-sizing: border-box;
+  border-radius: 3%;
+  flex-direction: column;
+}
+
+.signup-username {
+  margin-top: 20%;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-password {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-age {
+  margin-top: 10%;
+  margin-bottom: 20%;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-button {
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.signup-step1 {
+  margin-bottom: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.signup-boxes-firstpage input[type="text"],
+.signup-boxes-firstpage input[type="password"] {
+  border: none;
+  width: 27vw;
+  border-bottom: 1.8px solid rgba(148, 43, 250, 1);
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: black;
+  font-size: 16px;
+}
+.signup-boxes-firstpage input[type="number"] {
+  border: none;
+  width: 27vw;
+  height: 27vh;
+  border-bottom: 1.8px solid rgba(148, 43, 250, 1);
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: black;
+  font-size: 16px;
+}
+
+.signup-label-name {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-label-aboutme {
+  margin-top: 10%;
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-name input[type="text"],
+.signup-aboutme input[type="text"] {
+  border: none;
+  border-bottom: 1.8px solid rgba(159, 91, 226);
+  background: transparent;
+  outline: none;
+  width: 27vw;
+  height: 40px;
+  color: black;
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.signup-interests-name {
+  font-size: 16px;
+}
+
+.signup-fieldset {
+  width: 27vw;
+}
+
+.signup-interests-box {
+  border: 1.8px solid rgb(159, 91, 226);
+  background: transparent;
+  display: block;
+  margin: 0 auto;
+}
+
+.signup-form-container img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  width: 7vw;
+}
+
+.signup-step1-button {
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 85px;
+  background-color: rgb(198, 150, 243);
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+  top: 20%;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.signup-step2 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.campus-text {
+  margin-bottom: 20px;
+  width: 27vw;
+}
+
+.signup-step2-button {
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 85px;
+  background-color: rgb(198, 150, 243);
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+  top: 50%;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 50px;
+  padding-top: 10px;
+}
+
+.signup-step3-submit {
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 85px;
+  background-color: rgb(198, 150, 243);
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+  top: 50%;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.signup-step3 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.signup-choosefile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 60vw;
+  display: none;
+  background-color: transparent !important;
+}
+
+.signup-icon {
+  margin-top: 20px !important;
+}
+
+.add-plus {
+  background-color: transparent !important;
+  border: none !important;
+  color: black !important;
+  margin-top: 120px !important;
+  margin-bottom: 60px !important;
+}
+
+.rounded-button {
+  border-radius: 50% !important;
+  width: 60px;
+  border-color: rgba(148, 43, 250, 1) !important;
+  color: rgba(148, 43, 250, 1) !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rounded-button h2 {
+  margin: 0;
+}
+
+.select-campus {
+  background-color: white;
+  border-color:rgb(159, 91, 226);
+  border-radius: 4px;
+  display: inline-block;
+  font: inherit;
+  line-height: 1.5em;
+  padding: 0.5em 3.5em 0.5em 1em;
+  margin: 0;      
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    radial-gradient(#ddd 70%, transparent 72%);
+  background-position:
+    calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px),
+    calc(100% - .5em) .5em;
+  background-size:
+    5px 5px,
+    5px 5px,
+    1.5em 1.5em;
+  background-repeat: no-repeat;
+}
+
 /* END */
 
 /* FER'S CSS*/
 @media (max-device-width: 812px) {
-
   /*CSS Luis*/
 
-  .login-form-container{
+  .login-form-container {
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -114,7 +405,7 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     align-items: center;
   }
 
-  .login{
+  .login {
     display: flex;
     margin: 0 auto;
     align-self: center;
@@ -125,12 +416,12 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     align-items: center;
     box-sizing: border-box;
     flex-direction: column;
-    border:2px solid rgb(159, 91, 226) ;
-    box-shadow: 0 0 2px 2px rgb(159, 91, 226) ;
+    border: 2px solid rgb(159, 91, 226);
+    box-shadow: 0 0 2px 2px rgb(159, 91, 226);
     border-radius: 3%;
   }
 
-  .all-divs{
+  .all-divs {
     margin-top: 5%;
     margin-bottom: 25%;
     display: flex;
@@ -139,18 +430,18 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     align-items: center;
   }
 
-  .login input{
+  .login input {
     width: 95%;
     margin-left: 5px;
     margin-bottom: 40px;
   }
 
-  .div-user{
+  .div-user {
     margin-top: 20%;
   }
 
   .login input[type="text"],
-  .login input[type="password"]{
+  .login input[type="password"] {
     padding-left: 10px;
     border: none;
     border-bottom: 1.8px solid rgb(159, 91, 226);
@@ -161,31 +452,31 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     font-size: 16px;
   }
 
-  .login-user{
+  .login-user {
     margin-left: 15px;
   }
 
-  .login img{
+  .login img {
     margin-bottom: 30px;
     width: 30vw;
   }
 
-  .login-pwd{
+  .login-pwd {
     margin-left: 15px;
   }
 
-  .login button[type="submit"]{
+  .login button[type="submit"] {
     border: none;
     outline: none;
     height: 50px;
     width: 85px;
-    background-color:rgb(198, 150, 243) ;
+    background-color: rgb(198, 150, 243);
     color: white;
     font-size: 18px;
     border-radius: 30px;
   }
 
-  .login-button{
+  .login-button {
     top: 20%;
     margin: 0 auto;
     display: flex;
@@ -196,31 +487,257 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   .rounded-button {
     border-radius: 50% !important;
     width: 50px;
-    border-color: rgba(148,43,250,1) !important;
-    color: rgba(148,43,250,1) !important;
+    border-color: rgba(148, 43, 250, 1) !important;
+    color: rgba(148, 43, 250, 1) !important;
   }
   /*End Luis*/
-    
-  .mobile-card-img{
+
+  /* SIGNUP CONFIG MOBILE*/
+  .signup-form-container {
+    padding-top: 50px;
+    display: flex;
+    margin: 0 auto;
+    align-self: center;
+    width: 100vw;
+    min-height: 100vh;
+    justify-content: flex-start;
+    align-items: center;
+    color: black;
+    align-items: center;
+    box-sizing: border-box;
+    border: 2px solid rgb(159, 91, 226);
+    box-shadow: 0 0 2px 2px rgb(159, 91, 226);
+    border-radius: 3%;
+    flex-direction: column;
+  }
+
+  .signup-username {
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .signup-password {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .signup-age {
+    margin-top: 10%;
+    margin-bottom: 20%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .signup-button {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .signup-step1 {
+    margin-top: 5%;
+    margin-bottom: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .signup-boxes-firstpage input[type="text"],
+  .signup-boxes-firstpage input[type="password"] {
+    border: none;
+    width: 70vw;
+    height: 70vh;
+    border-bottom: 1.8px solid rgba(148, 43, 250, 1);
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: black;
+    font-size: 16px;
+  }
+  .signup-boxes-firstpage input[type="number"] {
+    border: none;
+    width: 70vw;
+    height: 70vh;
+    border-bottom: 1.8px solid rgba(148, 43, 250, 1);
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: black;
+    font-size: 16px;
+  }
+
+  .signup-label-name {
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .signup-label-aboutme {
+    margin-top: 20%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .signup-name input[type="text"],
+  .signup-aboutme input[type="text"] {
+    border: none;
+    border-bottom: 1.8px solid rgba(159, 91, 226);
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: black;
+    font-size: 16px;
+    margin-bottom: 35px;
+    width: 72vw;
+  }
+
+  .signup-interests-name {
+    font-size: 16px;
+  }
+
+  .signup-fieldset {
+    width: 72vw;
+  }
+
+  .signup-interests-box {
+    border: 1.8px solid rgb(159, 91, 226);
+    background: transparent;
+    margin-left: 115px;
+  }
+
+  .signup-form-container img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 30vw;
+  }
+
+  .signup-step1-button {
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 85px;
+    background-color: rgb(198, 150, 243);
+    color: white;
+    font-size: 18px;
+    border-radius: 30px;
+    top: 20%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    padding-top: 10px;
+  }
+
+  .signup-step2 {
+
+    margin-bottom: 25%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .campus-text {
+    margin-bottom: 20px;
+    width: 72vw;
+  }
+
+  .signup-step2-button {
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 85px;
+    background-color: rgb(198, 150, 243);
+    color: white;
+    font-size: 18px;
+    border-radius: 30px;
+    top: 50%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    padding-top: 10px;
+  }
+
+  .signup-step3-submit {
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 85px;
+    background-color: rgb(198, 150, 243);
+    color: white;
+    font-size: 18px;
+    border-radius: 30px;
+    top: 50%;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 20px;
+    padding-top: 10px;
+  }
+
+  .signup-step3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .signup-choosefile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    width: 60vw;
+    display: none;
+    background-color: transparent !important;
+  }
+
+  .signup-icon {
+    margin-top: 20px !important;
+  }
+
+  .add-plus {
+    background-color: transparent !important;
+    border: none !important;
+    color: black !important;
+    margin-bottom: 50px !important;
+  }
+  /*END CARWI */
+
+  .mobile-card-img {
     width: 80vw;
     height: 30vh;
   }
 
-  .mobile-card{
+  .mobile-card {
     width: 80vw;
   }
 
-  .navbar{
+  .navbar {
     margin-top: 15px;
   }
 
-  .navbar-list{
+  .navbar-list {
     list-style-type: none;
     display: flex;
     margin: 0;
   }
 
-  .navbar-btn{
+  .navbar-btn {
     position: relative;
     width: 100px;
     text-decoration: none;
@@ -228,8 +745,8 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     font-size: 19px;
     color: white;
     padding: 0.8em 1.8em;
-    cursor:pointer;
-    user-select:none;
+    cursor: pointer;
+    user-select: none;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
@@ -238,7 +755,7 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   }
 
   .navbar-btn img,
-  .swipe-btn{
+  .swipe-btn {
     width: 40px;
   }
 
@@ -248,7 +765,7 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     position: absolute;
     border-radius: 4em;
     left: 25%;
-    top:5%;
+    top: 5%;
     width: 50%;
     height: 100%;
     opacity: 0;
@@ -261,12 +778,12 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     position: absolute;
     border-radius: 4em;
     left: 25%;
-    top:5%;
+    top: 5%;
     opacity: 1;
     transition: 0s;
   }
 
-  .matches-view{
+  .matches-view {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -277,7 +794,7 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     text-align: center;
   }
 
-  .matches-section{
+  .matches-section {
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -285,23 +802,23 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     align-items: center;
   }
 
-  .matches-img{
+  .matches-img {
     border-radius: 50%;
     width: 20vw;
   }
 
-  .match-div{
+  .match-div {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    border: 1.5px solid rgba(148,43,250,0.3);
+    border: 1.5px solid rgba(148, 43, 250, 0.3);
     border-radius: 10px;
     padding: 5px;
     width: 90%;
   }
 
-  .anotherUser-view{
+  .anotherUser-view {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -312,61 +829,58 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     padding-bottom: 70px;
   }
 
-  .app-logo-container{
+  .app-logo-container {
     width: 50vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  
-  .app-logo{
+
+  .app-logo {
     width: 25vw;
   }
-  
-  .logo-underline{
+
+  .logo-underline {
     width: 100%;
   }
 
-  .info-container{
+  .info-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     max-width: 80vw;
   }
-  
-  .interest-container{
+
+  .interest-container {
     width: 50vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-bottom: 10px;
   }
-  
-  .interest{
-    border: 1.5px solid rgba(148,43,250,1);
+
+  .interest {
+    border: 1.5px solid rgba(148, 43, 250, 1);
     border-radius: 30px;
     width: 40%;
     margin: 3px;
     padding: 1px 3px;
   }
-
 }
 
-
 @media (min-device-width: 813px) {
-
-  .pc-card{
+  .pc-card {
     width: 21rem;
   }
 
-  .pc-card-img{
+  .pc-card-img {
     width: 18rem;
     height: 15rem;
   }
 
-  .navbar-list{
+  .navbar-list {
     list-style-type: none;
     width: 100%;
     display: flex;
@@ -374,12 +888,12 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     margin: 0;
   }
 
-  .navbar-list li{
+  .navbar-list li {
     border-left: 1.5px solid lightgrey;
     border-right: 1.5px solid lightgrey;
   }
 
-  .matches-view{
+  .matches-view {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -390,12 +904,12 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     padding-bottom: 70px;
   }
 
-  .title{
+  .title {
     text-align: start;
     width: 45rem;
   }
 
-  .matches-section{
+  .matches-section {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -404,23 +918,23 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     text-align: center;
   }
 
-  .matches-img{
+  .matches-img {
     border-radius: 50%;
     width: 5rem;
   }
 
-  .match-div{
+  .match-div {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
     justify-content: flex-start;
-    border: 1.5px solid rgba(148,43,250,0.3);
+    border: 1.5px solid rgba(148, 43, 250, 0.3);
     border-radius: 10px;
     padding: 5px;
   }
 
-  .anotherUser-view{
+  .anotherUser-view {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -431,40 +945,40 @@ a.animated-button.victoria-one:after { /* Background effect hover */
     padding-bottom: 70px;
   }
 
-  .app-logo-container{
+  .app-logo-container {
     width: 50vw;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
-  
-  .app-logo{
+
+  .app-logo {
     width: 5rem;
   }
-  
-  .logo-underline{
+
+  .logo-underline {
     width: 100%;
   }
 
-  .info-container{
+  .info-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     max-width: 32rem;
   }
-  
-  .interest-container{
+
+  .interest-container {
     width: 50vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
     margin-bottom: 10px;
   }
-  
-  .interest{
-    border: 1.5px solid rgba(148,43,250,1);
+
+  .interest {
+    border: 1.5px solid rgba(148, 43, 250, 1);
     border-radius: 30px;
     width: 40%;
     margin: 3px;
@@ -472,13 +986,13 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   }
 }
 
-.navbar{
+.navbar {
   background-color: white;
   margin-top: 15px;
   border-top: 1.5px solid lightgrey;
 }
 
-.navbar-btn{
+.navbar-btn {
   position: relative;
   width: 100px;
   text-decoration: none;
@@ -486,8 +1000,8 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   font-size: 19px;
   color: white;
   padding: 0.8em 1.8em;
-  cursor:pointer;
-  user-select:none;
+  cursor: pointer;
+  user-select: none;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
@@ -496,7 +1010,7 @@ a.animated-button.victoria-one:after { /* Background effect hover */
 }
 
 .navbar-btn img,
-.swipe-btn{
+.swipe-btn {
   width: 40px;
 }
 
@@ -506,7 +1020,7 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   position: absolute;
   border-radius: 4em;
   left: 25%;
-  top:5%;
+  top: 5%;
   width: 50%;
   height: 100%;
   opacity: 0;
@@ -519,110 +1033,109 @@ a.animated-button.victoria-one:after { /* Background effect hover */
   position: absolute;
   border-radius: 4em;
   left: 25%;
-  top:5%;
+  top: 5%;
   opacity: 1;
   transition: 0s;
 }
 
-.match-div a{
+.match-div a {
   margin-left: 10px;
   margin-right: 10px;
 }
 
-.match-div>h2{
+.match-div > h2 {
   margin-right: 10px;
 }
 
 /* END */
 
-
-
 /* DIEGO'S CSS*/
 
-.start-screen{
-    background: rgb(43,197,250);
-    background: linear-gradient(138deg, rgba(43,197,250,1) 20%, rgba(148,43,250,1) 50%, rgba(254,61,99,1) 80%);
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+.start-screen {
+  background: rgb(43, 197, 250);
+  background: linear-gradient(
+    138deg,
+    rgba(43, 197, 250, 1) 20%,
+    rgba(148, 43, 250, 1) 50%,
+    rgba(254, 61, 99, 1) 80%
+  );
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
+
 @keyframes slide-in {
-    0% {
-      transform: translateX(-150%);
-    }
+  0% {
+    transform: translateX(-150%);
+  }
 
-    100%{
-        transform: translateX(0);
-    }
+  100% {
+    transform: translateX(0);
+  }
 }
 
-  @keyframes zoom-out{
+@keyframes zoom-out {
+  0% {
+    transform: scale(1, 1);
+  }
 
-    0% {
-        transform: scale(1,1)
-      }
-  
-      100%{
-          transform: scale(0,0)
-      }
-    }
-
-    @keyframes zoom-in{
-        0% {
-            transform: scale(0,0)
-          }
-      
-          100%{
-              transform: scale(1,1)
-          }
-    }
-
-    @keyframes zoom-all{
-        0% {
-            width: 100px;
-            height: 100px;
-        }
-
-        100%{
-            transform: scale(200,200);
-        }
-    }
-
-.start-img{
-    width: 50%;
-    max-width: 414px;
+  100% {
+    transform: scale(0, 0);
+  }
 }
 
-.animated{
-    animation: 0.7s ease-out 0s 1 slide-in, 0.7s zoom-out 0.9s, 0.7s 1.5s zoom-in ;
+@keyframes zoom-in {
+  0% {
+    transform: scale(0, 0);
+  }
+
+  100% {
+    transform: scale(1, 1);
+  }
 }
 
-.start-img-container{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    
+@keyframes zoom-all {
+  0% {
+    width: 100px;
+    height: 100px;
+  }
+
+  100% {
+    transform: scale(200, 200);
+  }
 }
 
-.circle{
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    background-color: white;
-    border-radius: 50%;
-    animation-name: zoom-all;
-    animation-delay: 1s;
-    animation-duration: 3s;
+.start-img {
+  width: 50%;
+  max-width: 414px;
 }
 
-.hidden{
-    display: none;
+.animated {
+  animation: 0.7s ease-out 0s 1 slide-in, 0.7s zoom-out 0.9s, 0.7s 1.5s zoom-in;
 }
 
+.start-img-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
+.circle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background-color: white;
+  border-radius: 50%;
+  animation-name: zoom-all;
+  animation-delay: 1s;
+  animation-duration: 3s;
+}
 
+.hidden {
+  display: none;
+}
 
 /* END */
