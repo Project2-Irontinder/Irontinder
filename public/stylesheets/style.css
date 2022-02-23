@@ -906,7 +906,8 @@ a.animated-button.victoria-one:after {
 
   .matches-img {
     border-radius: 50%;
-    width: 20vw;
+    width: 75px;
+    height: 70px;
   }
 
   .match-div {
@@ -918,6 +919,7 @@ a.animated-button.victoria-one:after {
     border-radius: 10px;
     padding: 5px;
     width: 90%;
+    height: 90px;
   }
 
   .anotherUser-view {
@@ -1009,10 +1011,91 @@ a.animated-button.victoria-one:after {
   }
 
   #edit-profileInfo-section{
-    border: 2px solid black;
+    border: 2px solid rgb(159, 91, 226);
+    border-radius: 30px;
     position: absolute;
     z-index: 20;
-    top: 300px;
+    top: 130px;
+    width: 80vw;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+
+  #edit-profileInfo-section label{
+    margin-right: 25px;
+  }
+
+  .editForm{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .profileInput{
+    margin-top: 10px;
+    border: none;
+    border-bottom: 1.5px solid rgba(159, 91, 226);
+    outline: none;
+    background: transparent;
+    height: 20px;
+    font-size: 16px;
+    color: black;
+  }
+  
+  .editFormContainer{
+    display: flex;
+    justify-content: flex-start;
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .edit-interests-box{
+    border: 1.8px solid rgb(159, 91, 226);
+    background: transparent;
+    max-height:60px;
+    width: 168px;
+    overflow:scroll;
+  }
+
+  ::selection{
+    background:rgb(203, 151, 255);
+  }
+
+  .edit-aboutMe-box{
+    border: 1.8px solid rgb(159, 91, 226);
+    background: transparent;
+    max-height:60px;
+    width: 163.5px;
+    overflow:scroll;
+  }
+
+  .editProfile-save-btn{
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 85px;
+    background-color: rgb(198, 150, 243);
+    color: white;
+    font-size: 18px;
+    border-radius: 30px;
+    margin: 0;
+    padding: 10px;
+  }
+
+  .closeEdit-btn{
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    border: 1px solid lightgray;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: rgba(255, 255, 255, 0.753);
   }
 
   .logout-btn{
@@ -1030,11 +1113,12 @@ a.animated-button.victoria-one:after {
     margin-top: 20px;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
     border: 2px solid rgb(198, 150, 243);
     border-radius: 10px;
     width: 90vw;
     background: linear-gradient(138deg, rgba(43,197,250,0.5) 20%, rgba(148,43,250,0.5) 50%, rgba(254,61,99,0.5) 80%);
-    height: 400px;
+    height: 390px;
     overflow: scroll;
   }
 
@@ -1058,6 +1142,14 @@ a.animated-button.victoria-one:after {
     justify-content: flex-end;
     align-items: center;
     margin: 5px;
+  }
+
+  .addPhoto-btn{
+    width: 40px;
+    height: 40px;
+    padding: 5px;
+    position: relative;
+    bottom: 11px;
   }
 }
 
