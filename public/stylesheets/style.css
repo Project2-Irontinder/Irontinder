@@ -1245,14 +1245,32 @@ a.animated-button.victoria-one:after {
   }
 }
 
-@keyframes card-slide-right{
+@keyframes card-slide-right-animation{
   0% {
-    text-replace: auto;
+    transform: translateX(0) rotateZ(0deg);
   }
-
+  
   100% {
-    transform: scale(200, 200);
+    transform: translateX(300%) rotateZ(45deg);
   }
+}
+
+@keyframes card-slide-left-animation{
+  0% {
+    transform: translateX(0) rotateZ(0deg);
+  }
+  
+  100% {
+    transform: translateX(-300%) rotateZ(-45deg);
+  }
+}
+
+.slide-card-right{
+  animation: 1s card-slide-right-animation;
+}
+
+.slide-card-left{
+  animation: 1s card-slide-left-animation;
 }
 
 .start-img {

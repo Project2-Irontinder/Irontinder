@@ -35,7 +35,7 @@ router.get('/show/:userId', isLoggedIn, (req, res) => {
 
           
           
-          res.render("pages/swipe", { firstRandom,shuffledArray,user, inputFilter, inSwipe: true})
+          return res.render("pages/swipe", { firstRandom,shuffledArray,user, inputFilter, inSwipe: true})
         })
 
 
@@ -66,10 +66,12 @@ router.post("/dislike/:userId/:dislikedId", (req, res) => {
   User.findById(req.params.dislikedId)
     .then(dislikedUser => {
       User.findByIdAndUpdate(req.params.userId, { $push: { disliked: dislikedUser._id } })
+      .then(()=>{return})
       //.then(() => res.redirect(`/swipe/show/${req.params.userId}`))
     })
     
 })
+
 
 
 

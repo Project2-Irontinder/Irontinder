@@ -29,6 +29,12 @@ hbs.registerHelper('isEqual', function (value1, value2) {
   return value1 === value2
 });
 
+//To JSON helper
+
+hbs.registerHelper('json', function (content) {
+  return JSON.stringify(content);
+});
+
 
 
 // Middleware configuration

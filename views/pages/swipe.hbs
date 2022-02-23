@@ -2,15 +2,15 @@
 
   <section class="card outter-card">
 
-      <div id="{{firstRandom._id}}" class="card inner-card active-card">
+    <div id="{{firstRandom._id}}" class="card inner-card active-card">
 
       <a href="/profile/{{firstRandom._id}}" class="img-link">
-        <img src="{{firstRandom.profileImg}}" alt="" class="card-img-top">  
+        <img src="{{firstRandom.profileImg}}" alt="" class="card-img-top">
+        <div class="card-img-overlay">
+          <h2 class="name-age">{{firstRandom.username}}, {{firstRandom.age}}</h2>
+          <h5 class="campus">{{firstRandom.campus}}</h5>
+        </div>
       </a>
-      <div class="card-img-overlay">
-        <h2 class="name-age">{{firstRandom.username}}, {{firstRandom.age}}</h2>
-        <h5 class="campus">{{firstRandom.campus}}</h5>
-      </div>
     </div>
 
     {{#each shuffledArray}}
@@ -18,23 +18,24 @@
 
       <a href="/profile/{{_id}}" class="img-link">
         <img src="{{profileImg}}" alt="" class="card-img-top">
-      </a>
       <div class="card-img-overlay">
         <h2 class="name-age">{{username}}, {{age}}</h2>
         <h5 class="campus">{{campus}}</h5>
       </div>
+      </a>
     </div>
     {{/each}}
 
     <div class="inline-buttons card-footer">
       <!--form action="/swipe/dislike/{{user._id}}/{{shuffledArray.[0]._id}}" method="POST"-->
-        <button type="submit" class="btn no-btn"  onclick="changeId()"><i class="fa fa-times" style="font-size:30px"></i></button>
+      <button type="submit" class="btn no-btn" onclick="dislike()"><i class="fa fa-times"
+          style="font-size:30px"></i></button>
       <!--/form-->
       <button type="button" class="btn filter-btn"><i class="fa fa-filter" style="font-size:24px"></i></button>
 
       <!--form action="/swipe/like/{{user._id}}/{{shuffledArray.[0]._id}}" method="POST"-->
-        <button type="submit" class="btn yes-btn" onmousedown="clickedYes()" onmouseup="clickedYes()"><i
-            class="fa fa-heart" style="font-size:30px"></i></button>
+      <button type="submit" class="btn yes-btn" onclick="like()"><i class="fa fa-heart"
+          style="font-size:30px"></i></button>
       <!--/form-->
     </div>
   </section>
@@ -82,8 +83,55 @@
 </nav>
 
 <script>
-  const changeId = () =>{
+
+  const dislike = () => {
     
+    const userId = "{{user._id}}"
+    const activeCard = document.querySelector(".active-card");
+    const activeUserId = activeCard.id;
+    const randomArray = {{{ json shuffledArray }}}
+    const randomIdArray = randomArray.map(user => user._id)
+    const activeUserIndex = randomIdArray.indexOf(activeUserId)
+    const nextUserId = randomIdArray[activeUserIndex+1]
+    const nextCard = document.getElementById(nextUserId)
+
+    axios.post(`/swipe/dislike/${userId}/${activeUserId}`)
+
+    activeCard.classList.toggle("slide-card-left")
+    nextCard.classList.toggle("active-card")
+
+
+    setTimeout(()=>{
+    activeCard.classList.toggle("active-card")
+    nextCard.classList.toggle("hidden")
+    activeCard.classList.toggle("hidden")
+      
+    },1000)
+
+  }
+
+  const like = () => {
+    const userId = "{{user._id}}"
+    const activeCard = document.querySelector(".active-card");
+    const activeUserId = activeCard.id;
+    const randomArray = {{{ json shuffledArray }}}
+    const randomIdArray = randomArray.map(user => user._id)
+    const activeUserIndex = randomIdArray.indexOf(activeUserId)
+    const nextUserId = randomIdArray[activeUserIndex+1]
+    const nextCard = document.getElementById(nextUserId)
+
+    axios.post(`/swipe/like/${userId}/${activeUserId}`)
+
+    activeCard.classList.toggle("slide-card-right")
+    nextCard.classList.toggle("active-card")
+
+
+    setTimeout(()=>{
+    activeCard.classList.toggle("active-card")
+    nextCard.classList.toggle("hidden")
+    activeCard.classList.toggle("hidden")
+      
+    },1000)
   }
 
   const clickedYes = () => {
