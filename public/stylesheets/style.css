@@ -393,6 +393,107 @@ a.animated-button.victoria-one:after {
 
 /* END */
 
+ /*CSS Luis*/
+
+ .login-form-container{
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login{
+  display: flex;
+  margin: 0 auto;
+  align-self: center;
+  width: 100vw;
+  min-height: 100vh;
+  justify-content: center;
+  color: black;
+  align-items: center;
+  box-sizing: border-box;
+  flex-direction: column;
+  
+}
+
+.all-divs{
+  margin-top: 2%;
+  margin-bottom: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login input{
+  width: 95%;
+  margin-left: 5px;
+  margin-bottom: 40px;
+}
+
+.div-user{
+  margin-top: 10%;
+}
+
+.login input[type="text"],
+.login input[type="password"]{
+  padding-left: 10px;
+  border: none;
+  border-bottom: 1.8px solid rgb(159, 91, 226);
+  background: transparent;
+  outline: none;
+  height: 40px;
+  color: black;
+  font-size: 16px;
+}
+
+.login-user{
+  margin-left: 15px;
+}
+
+.login img{
+  margin-bottom: 20px;
+  width: 8vw;
+}
+
+.login-pwd{
+  margin-left: 15px;
+}
+
+.login button[type="submit"]{
+  border: none;
+  outline: none;
+  height: 50px;
+  width: 85px;
+  background-color:rgb(198, 150, 243) ;
+  color: white;
+  font-size: 18px;
+  border-radius: 30px;
+  margin-top: 10px;
+  
+}
+
+.login-button{
+  top: 20%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-evenly;
+}
+
+.rounded-button-login {
+  border-radius: 50% !important;
+  width: 60px;
+  border-color: rgba(148,43,250,1) !important;
+  color: rgba(148,43,250,1) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/*End Luis*/
+
 /* FER'S CSS*/
 @media (max-device-width: 812px) {
   /*CSS Luis*/
@@ -410,7 +511,7 @@ a.animated-button.victoria-one:after {
     margin: 0 auto;
     align-self: center;
     width: 100vw;
-    height: 100vh;
+    min-height: 100vh;
     justify-content: center;
     color: black;
     align-items: center;
@@ -474,6 +575,7 @@ a.animated-button.victoria-one:after {
     color: white;
     font-size: 18px;
     border-radius: 30px;
+    width: 30vw;
   }
 
   .login-button {
