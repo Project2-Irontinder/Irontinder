@@ -507,9 +507,13 @@ a.animated-button.victoria-one:after {
   width: 60px;
   border-color: rgba(148,43,250,1) !important;
   color: rgba(148,43,250,1) !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.rounded-button-login h2 {
+  margin: 0 !important;
 }
 
 /*End Luis*/
@@ -617,6 +621,13 @@ a.animated-button.victoria-one:after {
     width: 50px;
     border-color: rgba(148, 43, 250, 1) !important;
     color: rgba(148, 43, 250, 1) !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  .rounded-button h2 {
+    margin: 0 !important;
   }
   /*End Luis*/
 
