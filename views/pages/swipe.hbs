@@ -83,27 +83,64 @@
   }
 
   const like = () => {
+
+    const user = {{{ json user }}}
     const userId = "{{user._id}}"
     const activeCard = document.querySelector(".active-card");
     const activeUserId = activeCard.id;
+    
     const randomArray = {{{ json shuffledArray }}}
+
     const randomIdArray = randomArray.map(user => user._id)
     const activeUserIndex = randomIdArray.indexOf(activeUserId)
+
     const nextUserId = randomIdArray[activeUserIndex + 1]
     const nextCard = document.getElementById(nextUserId)
 
-    axios.post(`/swipe/like/${userId}/${activeUserId}`)
-    .then(() => {
-      nextCard.classList.toggle("active-card")
-      activeCard.classList.toggle("active-card")
-      
-      
-      activeCard.classList.toggle("slide-card-right")
-      setTimeout(()=>{
-      nextCard.classList.toggle("hidden")
-      activeCard.classList.toggle("hidden")
-      },1000)
-    })
+
+        axios.post(`/swipe/like/${userId}/${activeUserId}`)
+        .then((result) => {
+          console.log(result.data)
+
+          if(result.data.match){
+            console.log("START ANIMATION")
+            document.querySelector(".match-popup").classList.toggle("hidden")
+            setTimeout(()=>{
+
+            document.querySelector(".match-img").classList.toggle("hidden")
+            },1000)
+
+            setTimeout(()=>{
+              nextCard.classList.toggle("active-card")
+              activeCard.classList.toggle("active-card")
+
+              activeCard.classList.toggle("slide-card-right")
+
+              setTimeout(()=>{
+              nextCard.classList.toggle("hidden")
+              activeCard.classList.toggle("hidden")
+              document.querySelector(".match-popup").classList.toggle("hidden")
+              document.querySelector(".match-img").classList.toggle("hidden")
+              },1000)
+            },2000)
+
+
+
+          
+          }
+          else{
+          nextCard.classList.toggle("active-card")
+          activeCard.classList.toggle("active-card")
+
+          activeCard.classList.toggle("slide-card-right")
+          
+          setTimeout(()=>{
+          nextCard.classList.toggle("hidden")
+          activeCard.classList.toggle("hidden")
+          },1000)
+          
+          }
+        })
   }
 
   const clickedYes = () => {
@@ -147,6 +184,11 @@
       </a>
     </div>
     {{/each}}
+
+
+    <div class="match-popup animated-overlay hidden">
+      <img src="/images/itsamatch.png" alt="it's a match" class="match-img animated-match-img hidden">
+    </div>
 
     <div class="inline-buttons card-footer">
       <!--form action="/swipe/dislike/{{user._id}}/{{shuffledArray.[0]._id}}" method="POST"-->
@@ -202,4 +244,3 @@
     </li>
   </ul>
 </nav>
-

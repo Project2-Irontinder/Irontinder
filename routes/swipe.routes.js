@@ -64,12 +64,12 @@ router.post("/like/:userId/:likedId", (req, res) => {
             .then(()=>{
               User.findByIdAndUpdate(req.params.likedId, { $push: { matches: match._id } })
               .then(()=>{
-                return res.send("DONE")
+                return res.send({matched: true})
               })
             })
           })
         }
-        return res.send("DONE")
+        return res.send({matched:false})
       })
   })
 })
