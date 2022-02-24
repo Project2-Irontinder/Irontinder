@@ -55,6 +55,7 @@
       <img class="rounded-circle closeEdit-btn" src="/images/close-window.ico" alt="close window" onclick="document.getElementById('edit-profileInfo-section').classList.toggle('hidden')">
   </section>
 
+  <h1 class="title">Photos:</h1>
   <section class="photos-container">
       {{#each user.photos}}
       <div class="onePhoto-container card">
@@ -80,7 +81,7 @@
   <nav class="navbar fixed-bottom spacing">
     <ul class="navbar-list">
       <li> 
-        <a class="navbar-btn" href="/swipe/show/{{user._id}}"> <img src="/images/grey-tinder-logo.ico" alt="swipe icon"> </a>
+        <a class="navbar-btn-match" href="/swipe/show/{{user._id}}"> <img src="/images/grey-tinder-logo.ico" alt="swipe icon"> </a>
       </li>
       <li>
         <a class="navbar-btn" href="/profile/{{user._id}} "> <img src="/images/colored-profile-logo.png" alt="profile icon"> </a>
