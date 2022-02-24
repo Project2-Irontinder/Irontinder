@@ -15,19 +15,15 @@
 
    axios.post(`/swipe/dislike/${userId}/${activeUserId}`)
     .then(() => {
-      //activeCard.classList.toggle("slide-card-left")
 
       nextCard.classList.toggle("active-card")
       activeCard.classList.toggle("active-card")
+      activeCard.classList.toggle("slide-card-left")
 
+      setTimeout(()=>{
       nextCard.classList.toggle("hidden")
       activeCard.classList.toggle("hidden")
-
-
-      /*setTimeout(()=>{
-        
       },1000)
-      })*/
 
     })
   }
@@ -46,20 +42,14 @@
     .then(() => {
       nextCard.classList.toggle("active-card")
       activeCard.classList.toggle("active-card")
-
+      
+      
+      activeCard.classList.toggle("slide-card-right")
+      setTimeout(()=>{
       nextCard.classList.toggle("hidden")
       activeCard.classList.toggle("hidden")
-
-
-
+      },1000)
     })
-
-    /*activeCard.classList.toggle("slide-card-right")
-
-
-    setTimeout(()=>{
-      
-    },1000)*/
   }
 
   const clickedYes = () => {
