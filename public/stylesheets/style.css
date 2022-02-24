@@ -1027,8 +1027,9 @@ a.animated-button.victoria-one:after {
   }
 
   .profileImg{
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
     padding: 5px;
     border: 2px solid rgb(198, 150, 243);
   }
@@ -1367,8 +1368,9 @@ a.animated-button.victoria-one:after {
   }
 
   .profileImg{
-    width: 200px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
     padding: 5px;
     border: 2px solid rgb(198, 150, 243);
   }
