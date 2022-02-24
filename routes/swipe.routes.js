@@ -52,12 +52,27 @@ router.post("/like/:userId/:likedId", (req, res) => {
   .then(likedUser => {
     User.findByIdAndUpdate(req.params.userId, { $push: { liked: likedUser._id } })
     .then((user) => {
-      handleMatch(user, likedUser);
-      return res.redirect(`/swipe/show/${req.session.userId}`)
-    })
+      console.log(user.username, likedUser.username)
+      const liked = likedUser.liked
+
+        if (liked.includes(req.params.userId)) {
+          
+          Match.create({ firstUser: user._id, secondUser: likedUser._id })
+          .then( match=>{
+            console.log(match._id)
+            User.findByIdAndUpdate(req.params.userId, { $push: { matches: match._id } })
+            .then(()=>{
+              User.findByIdAndUpdate(req.params.likedId, { $push: { matches: match._id } })
+              .then(()=>{
+                return res.send("DONE")
+              })
+            })
+          })
+        }
+        return res.send("DONE")
+      })
   })
 })
-
 
 
 
@@ -66,8 +81,9 @@ router.post("/dislike/:userId/:dislikedId", (req, res) => {
   User.findById(req.params.dislikedId)
     .then(dislikedUser => {
       User.findByIdAndUpdate(req.params.userId, { $push: { disliked: dislikedUser._id } })
-      .then(()=>{return})
-      //.then(() => res.redirect(`/swipe/show/${req.params.userId}`))
+      .then(user=>{
+        res.send("DISLIKE-OK")
+      })
     })
     
 })
@@ -87,19 +103,14 @@ const handleMatch = (firstUser, secondUser) => {
 
     const liked = secondUser.liked
 
-    if (liked.includes(firstUser._id)) {
-
+    if (liked.includes(firstUser._id)) {  
+      
       Match.create({ firstUser: firstUser._id, secondUser: secondUser._id })
-      .then(async (match) => {
-
-        firstUser.matches.push(match._id);
-        secondUser.matches.push(match._id);
-
-        try{
-          await firstUser.save();
-          await secondUser.save();
-        }
-        catch(err){console.log(err)}
+      .then( match=>{
+        firstUser.matches.push(newMatch._id);
+        secondUser.matches.push(newMatch._id);
+        console.log(firstUser._id, secondUser._id)
+        return newMatch
       })
     }
   }
