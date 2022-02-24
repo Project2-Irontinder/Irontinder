@@ -1916,5 +1916,69 @@ a.animated-button.victoria-one:after {
   border: none !important;
  }
 
- .close-filter-btn{
+ .match-popup{
+   margin-top: -30px;
+  width: 100vw;
+  height: 100vh;
+  position: absolute !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center !important;
+  align-items: center ;
+  background-color: rgba(0,0,0,0.4);
+  z-index: 30;
  }
+
+ @keyframes match-overlay-animation {
+
+  0%{
+    background-color: rgba(0,0,0,0);
+  }
+  100%{
+    background-color: rgba(0,0,0,0.4);
+  }
+ }
+
+ @keyframes match-out-animation {
+
+  0%{
+    background-color: rgba(0,0,0,0.4);
+  }
+  100%{
+    background-color: rgba(0,0,0,0);
+  }
+ }
+
+ @keyframes match-img-animation{
+  0%{
+    transform: scale(0,0)
+  }
+  100%{
+    transform: scale(1,1)
+  }
+ }
+
+ @keyframes match-out-img-animation{
+  0%{
+    transform: scale(1,1)
+  }
+  100%{
+    transform: scale(0,0)
+  }
+ }
+
+ .animated-overlay{
+  animation: 1s match-overlay-animation;
+}
+
+.animated-match-img{
+   animation: 1s match-img-animation;
+ }
+ 
+ .match-out{
+   animation: 1s match-out-animation;
+ }
+
+ .match-out-img{
+  animation: 1s match-out-img-animation;
+}
