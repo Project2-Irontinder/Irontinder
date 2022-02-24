@@ -52,8 +52,11 @@ router.post("/like/:userId/:likedId", (req, res) => {
   .then(likedUser => {
     User.findByIdAndUpdate(req.params.userId, { $push: { liked: likedUser._id } })
     .then((user) => {
-      handleMatch(user, likedUser);
-      return res.redirect(`/swipe/show/${req.session.userId}`)
+      handleMatch(user, likedUser)
+      .then((matchResult)=>{
+        res.send("MATCH-OK")
+      })
+      .catch(error=>res.send("NO-MATCH"))
     })
   })
 })
@@ -66,8 +69,9 @@ router.post("/dislike/:userId/:dislikedId", (req, res) => {
   User.findById(req.params.dislikedId)
     .then(dislikedUser => {
       User.findByIdAndUpdate(req.params.userId, { $push: { disliked: dislikedUser._id } })
-      .then(()=>{return})
-      //.then(() => res.redirect(`/swipe/show/${req.params.userId}`))
+      .then(user=>{
+        res.send("DISLIKE-OK")
+      })
     })
     
 })
@@ -83,14 +87,13 @@ router.post("/filter/:userId", (req, res) => {
 
 
 
-const handleMatch = (firstUser, secondUser) => {
+const handleMatch = async (firstUser, secondUser) => {
 
     const liked = secondUser.liked
 
     if (liked.includes(firstUser._id)) {
 
-      Match.create({ firstUser: firstUser._id, secondUser: secondUser._id })
-      .then(async (match) => {
+      const newMatch = await Match.create({ firstUser: firstUser._id, secondUser: secondUser._id })
 
         firstUser.matches.push(match._id);
         secondUser.matches.push(match._id);
@@ -99,9 +102,13 @@ const handleMatch = (firstUser, secondUser) => {
           await firstUser.save();
           await secondUser.save();
         }
-        catch(err){console.log(err)}
-      })
+        catch(err){
+          console.log(err)
+        }
+        return newMatch
+
     }
+    throw new Error("NO-MATCH")
   }
 
 

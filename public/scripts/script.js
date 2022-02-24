@@ -16,3 +16,4 @@
         startScreen.classList.toggle("hidden")
     }, 4000);
 }*/
+

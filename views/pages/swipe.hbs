@@ -1,3 +1,81 @@
+<script>
+
+  const dislike = () => {
+
+    const userId = "{{user._id}}"
+    const activeCard = document.querySelector(".active-card");
+    const activeUserId = activeCard.id;
+    
+    const randomArray = {{{ json shuffledArray }}}
+    const randomIdArray = randomArray.map(user => user._id)
+  
+    const activeUserIndex = randomIdArray.indexOf(activeUserId)
+   const nextUserId = randomIdArray[activeUserIndex + 1]
+    const nextCard = document.getElementById(nextUserId)
+
+   axios.post(`/swipe/dislike/${userId}/${activeUserId}`)
+    .then(() => {
+      //activeCard.classList.toggle("slide-card-left")
+
+      nextCard.classList.toggle("active-card")
+      activeCard.classList.toggle("active-card")
+
+      nextCard.classList.toggle("hidden")
+      activeCard.classList.toggle("hidden")
+
+
+      /*setTimeout(()=>{
+        
+      },1000)
+      })*/
+
+    })
+  }
+
+  const like = () => {
+    const userId = "{{user._id}}"
+    const activeCard = document.querySelector(".active-card");
+    const activeUserId = activeCard.id;
+    const randomArray = {{{ json shuffledArray }}}
+    const randomIdArray = randomArray.map(user => user._id)
+    const activeUserIndex = randomIdArray.indexOf(activeUserId)
+    const nextUserId = randomIdArray[activeUserIndex + 1]
+    const nextCard = document.getElementById(nextUserId)
+
+    axios.post(`/swipe/like/${userId}/${activeUserId}`)
+    .then(() => {
+      nextCard.classList.toggle("active-card")
+      activeCard.classList.toggle("active-card")
+
+      nextCard.classList.toggle("hidden")
+      activeCard.classList.toggle("hidden")
+
+
+
+    })
+
+    /*activeCard.classList.toggle("slide-card-right")
+
+
+    setTimeout(()=>{
+      
+    },1000)*/
+  }
+
+  const clickedYes = () => {
+    document.querySelector(".yes-btn").classList.toggle("clicked-yes")
+  }
+
+  const clickedNo = () => {
+    document.querySelector(".no-btn").classList.toggle("clicked-no")
+  }
+</script>
+
+
+
+
+
+
 <div class="swipe-container">
 
   <section class="card outter-card">
@@ -18,10 +96,10 @@
 
       <a href="/profile/{{_id}}" class="img-link">
         <img src="{{profileImg}}" alt="" class="card-img-top">
-      <div class="card-img-overlay">
-        <h2 class="name-age">{{username}}, {{age}}</h2>
-        <h5 class="campus">{{campus}}</h5>
-      </div>
+        <div class="card-img-overlay">
+          <h2 class="name-age">{{username}}, {{age}}</h2>
+          <h5 class="campus">{{campus}}</h5>
+        </div>
       </a>
     </div>
     {{/each}}
@@ -82,63 +160,3 @@
   </ul>
 </nav>
 
-<script>
-
-  const dislike = () => {
-    
-    const userId = "{{user._id}}"
-    const activeCard = document.querySelector(".active-card");
-    const activeUserId = activeCard.id;
-    const randomArray = {{{ json shuffledArray }}}
-    const randomIdArray = randomArray.map(user => user._id)
-    const activeUserIndex = randomIdArray.indexOf(activeUserId)
-    const nextUserId = randomIdArray[activeUserIndex+1]
-    const nextCard = document.getElementById(nextUserId)
-
-    axios.post(`/swipe/dislike/${userId}/${activeUserId}`)
-
-    activeCard.classList.toggle("slide-card-left")
-    nextCard.classList.toggle("active-card")
-
-
-    setTimeout(()=>{
-    activeCard.classList.toggle("active-card")
-    nextCard.classList.toggle("hidden")
-    activeCard.classList.toggle("hidden")
-      
-    },1000)
-
-  }
-
-  const like = () => {
-    const userId = "{{user._id}}"
-    const activeCard = document.querySelector(".active-card");
-    const activeUserId = activeCard.id;
-    const randomArray = {{{ json shuffledArray }}}
-    const randomIdArray = randomArray.map(user => user._id)
-    const activeUserIndex = randomIdArray.indexOf(activeUserId)
-    const nextUserId = randomIdArray[activeUserIndex+1]
-    const nextCard = document.getElementById(nextUserId)
-
-    axios.post(`/swipe/like/${userId}/${activeUserId}`)
-
-    activeCard.classList.toggle("slide-card-right")
-    nextCard.classList.toggle("active-card")
-
-
-    setTimeout(()=>{
-    activeCard.classList.toggle("active-card")
-    nextCard.classList.toggle("hidden")
-    activeCard.classList.toggle("hidden")
-      
-    },1000)
-  }
-
-  const clickedYes = () => {
-    document.querySelector(".yes-btn").classList.toggle("clicked-yes")
-  }
-
-  const clickedNo = () => {
-    document.querySelector(".no-btn").classList.toggle("clicked-no")
-  }
-</script>
