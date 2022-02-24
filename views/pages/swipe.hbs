@@ -1,5 +1,59 @@
 <script>
 
+  window.onload = ()=>{
+
+    showShortFilter();
+  }
+
+  const showShortFilter = ()=>{
+        const filter = "{{inputFilter}}"
+    let shortFilter = ""
+
+    switch(filter){
+      case "Madrid":
+      shortFilter = "MAD"
+      break;
+
+      case "Barcelona":
+      shortFilter = "BCN"
+      break;
+      
+      case "Miami":
+      shortFilter = "MIA"
+      break; 
+      
+      case "Berlin":
+      shortFilter = "BER"
+      break; 
+    
+      case "Paris":
+      shortFilter = "PAR"
+      break; 
+      
+      case "Amsterdam":
+      shortFilter = "AMS"
+      break;
+
+      default:
+      shortFilter = "ALL"
+    }
+
+   document.querySelector(".filter-btn").innerHTML = `<span id="filter-span">${shortFilter}</span><i class="fa fa-caret-down"></i>`
+  }
+
+  const filterShow = ()=>{
+    
+    const filterForm = document.querySelector(".filter-form")
+    const filterBtn = document.querySelector(".filter-btn")
+
+    if(filterForm.classList.contains("hidden"))
+      filterBtn.innerHTML = `<i class="fa fa-caret-up"></i>`
+    else
+      showShortFilter();
+
+    filterForm.classList.toggle("hidden")
+  }
+
   const dislike = () => {
 
     const userId = "{{user._id}}"
@@ -99,22 +153,16 @@
       <button type="submit" class="btn no-btn" onclick="dislike()"><i class="fa fa-times"
           style="font-size:30px"></i></button>
       <!--/form-->
-      <button type="button" class="btn filter-btn"><i class="fa fa-filter" style="font-size:24px"></i></button>
+      <button type="button" class="btn filter-btn" onclick="filterShow()" style="font-size: 14px;"><span id="filter-span"></span><i class="fa fa-caret-down"></i></button>
 
       <!--form action="/swipe/like/{{user._id}}/{{shuffledArray.[0]._id}}" method="POST"-->
       <button type="submit" class="btn yes-btn" onclick="like()"><i class="fa fa-heart"
           style="font-size:30px"></i></button>
       <!--/form-->
     </div>
-  </section>
-</div>
-
-
-<div class="filter-form hidden">
-  <button type="button">X</button>
-  <h1>Filter by campus</h1>
+    <div class="filter-form hidden pop-up">
   <form action="/swipe/filter/{{user._id}}" method="POST">
-    <select name="campus">
+    <select name="campus" onchange="this.form.submit()" class="select-campus">
       <option value="Barcelona" {{#if (isEqual "Barcelona" inputFilter)}} selected="selected" {{/if}}>Barcelona</option>
       <option value="Amsterdam" {{#if (isEqual "Amsterdam" inputFilter)}} selected="selected" {{/if}}>Amsterdam</option>
       <option value="Madrid" {{#if (isEqual "Madrid" inputFilter)}} selected="selected" {{/if}}>Madrid</option>
@@ -124,8 +172,13 @@
       <option value="All" {{#if (isEqual "All" inputFilter)}} selected="selected" {{/if}}>All</option>
     </select>
 
-    <button type="submit">Filter</button>
+    <img class="rounded-circle edit-profileInfo-btn close-filter-btn" src="/images/close-window.ico" alt="close form button" onclick="filterShow()">
   </form>
+</div>
+  </section>
+
+
+
 </div>
 
 

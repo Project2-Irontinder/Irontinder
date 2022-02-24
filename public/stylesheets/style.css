@@ -1506,6 +1506,7 @@ a.animated-button.victoria-one:after {
     border-bottom: 1.5px solid rgba(159, 91, 226);
     outline: none;
     background: transparent;
+    width: 71%;
     height: 20px;
     font-size: 16px;
     color: black;
@@ -1866,8 +1867,8 @@ a.animated-button.victoria-one:after {
 }
 
 .filter-btn{
-  height: 50px;
-  width: 50px;
+  height: 58px;
+  width: 58px;
   border-radius: 50% !important ;
   background-color: white !important;
   color: #2cb4ca !important;
@@ -1886,5 +1887,34 @@ a.animated-button.victoria-one:after {
   color: green !important;
   background-color: white !important;
  }
-/* END */
-/* END */
+
+ .pop-up{
+   position: absolute !important;
+   bottom: 100px;
+   border-radius: 30px;
+   border: 2px solid rgb(159,91,226);
+   padding: 10px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center !important;
+   align-items: center ;
+   /*background: linear-gradient(to right,rgba(43, 197, 250, 0.75) 20%, rgba(148, 43, 250, 0.75) 50%,rgba(254, 61, 99, 0.75) 80%) !important;
+   */
+   background-color: white;
+   box-shadow: 1px 1px 5px black;
+
+ }
+
+ .pop-up>form{
+   margin: 0 !important;
+   display: flex !important;  
+   justify-content: space-between !important;
+ }
+
+ .pop-up select{
+   width: 80% !important;
+  border: none !important;
+ }
+
+ .close-filter-btn{
+ }
