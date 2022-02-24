@@ -1,5 +1,11 @@
 <script>
 
+
+  const filterShow = ()=>{
+    const filterForm = document.querySelector(".filter-form")
+
+    filterForm.classList.toggle("hidden")
+  }
   const dislike = () => {
 
     const userId = "{{user._id}}"
@@ -99,7 +105,7 @@
       <button type="submit" class="btn no-btn" onclick="dislike()"><i class="fa fa-times"
           style="font-size:30px"></i></button>
       <!--/form-->
-      <button type="button" class="btn filter-btn"><i class="fa fa-filter" style="font-size:24px"></i></button>
+      <button type="button" class="btn filter-btn" onclick="filterShow()"><i class="fa fa-filter" style="font-size:24px"></i></button>
 
       <!--form action="/swipe/like/{{user._id}}/{{shuffledArray.[0]._id}}" method="POST"-->
       <button type="submit" class="btn yes-btn" onclick="like()"><i class="fa fa-heart"
@@ -107,10 +113,9 @@
       <!--/form-->
     </div>
   </section>
-</div>
 
 
-<div class="filter-form hidden">
+<div class="filter-form hidden pop-up">
   <button type="button">X</button>
   <h1>Filter by campus</h1>
   <form action="/swipe/filter/{{user._id}}" method="POST">
@@ -126,6 +131,7 @@
 
     <button type="submit">Filter</button>
   </form>
+</div>
 </div>
 
 

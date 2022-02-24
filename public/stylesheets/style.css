@@ -1790,5 +1790,11 @@ a.animated-button.victoria-one:after {
   color: green !important;
   background-color: white !important;
  }
+
+ .pop-up{
+   position: absolute !important;
+
+   border: 1px 1px solid black !important;
+ }
 /* END */
 /* END */
