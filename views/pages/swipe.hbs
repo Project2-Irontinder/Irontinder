@@ -102,7 +102,7 @@
         .then((result) => {
           console.log(result.data)
 
-          if(result.data.match){
+          if(result.data.matched){
             console.log("START ANIMATION")
             document.querySelector(".match-popup").classList.toggle("hidden")
             setTimeout(()=>{
