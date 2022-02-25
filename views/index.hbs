@@ -1,4 +1,37 @@
-<div class="index-buttons">
-  <a href="/login" class="btn btn-sm animated-button victoria-one">Login</a>
-  <a href="/signup" class="btn btn-sm animated-button victoria-one">Signup</a>
+<div class="index-container" style="height: 100vh !important; overflow:hidden;">
+
+  <div class="start-screen" >
+    <div class="start-img-container animated">
+      <img src="/images/white2.png" alt="logo" class="start-img">
+      <div class="circle hidden"></div>
+    </div>
+  </div>
+
+  <div class="index-buttons hidden">
+    <a href="/login" class="btn btn-sm animated-button victoria-one">Login</a>
+    <a href="/signup" class="btn btn-sm animated-button victoria-one">Signup</a>
+  </div>
 </div>
+
+<script>
+  window.onload = () => {
+
+    setTimeout(() => {
+      const img = document.querySelector(".start-img")
+      img.src = "/images/icon2.png"
+      img.style.width = "120px"
+    }, 1500);
+
+    setTimeout(() => {
+      const circle = document.querySelector(".circle")
+      circle.classList.toggle("hidden")
+    }, 1500 + 500);
+    setTimeout(() => {
+      const startScreen = document.querySelector(".start-screen")
+      const indexScreen = document.querySelector(".index-buttons")
+      startScreen.classList.toggle("hidden")
+      indexScreen.classList.toggle("hidden")
+    }, 3800);
+  }
+
+</script>
