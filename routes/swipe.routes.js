@@ -69,7 +69,9 @@ router.post("/like/:userId/:likedId", (req, res) => {
             })
           })
         }
+        else{
         return res.send({matched:false})
+        }
       })
   })
 })
